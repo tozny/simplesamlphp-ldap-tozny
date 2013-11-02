@@ -3,13 +3,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head profile="http://selenium-ide.openqa.org/profiles/test-case">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<link rel="selenium.base" href="http://staging.seqrd.com/" />
-<title>delete_user_cancel</title>
+<link rel="selenium.base" href="http://sandbox.seqrd.com/" />
+<title>edit_key_no_reroll</title>
 </head>
 <body>
 <table cellpadding="1" cellspacing="1" border="1">
 <thead>
-<tr><td rowspan="1" colspan="3">delete_user_cancel</td></tr>
+<tr><td rowspan="1" colspan="3">edit_key_no_reroll</td></tr>
 </thead><tbody>
 <tr>
 	<td>open</td>
@@ -22,18 +22,28 @@
 	<td></td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>//div[@id='user-settings-button']/button</td>
+	<td>clickAndWait</td>
+	<td>css=div.counts a</td>
 	<td></td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>link=DELETE</td>
+	<td>clickAndWait</td>
+	<td>link=Destructoid</td>
 	<td></td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>//button[@type='submit']</td>
+	<td>clickAndWait</td>
+	<td>link=edit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=KeyName</td>
+	<td>Destructoidz</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//input[@value='Save']</td>
 	<td></td>
 </tr>
 </tbody></table>

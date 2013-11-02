@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head profile="http://selenium-ide.openqa.org/profiles/test-case">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<link rel="selenium.base" href="http://staging.seqrd.com/" />
+<link rel="selenium.base" href="http://sandbox.seqrd.com/" />
 <title>create_user</title>
 </head>
 <body>
@@ -13,7 +13,12 @@
 </thead><tbody>
 <tr>
 	<td>open</td>
-	<td>/realm/3/users</td>
+	<td>/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=bypass it</td>
 	<td></td>
 </tr>
 <tr>
@@ -23,35 +28,29 @@
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=526314fc8998d</td>
+	<td>css=input#username</td>
 	<td>Testname</td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=5263156709e3b</td>
+	<td>css=input#email_address</td>
 	<td>selenium@automail.com</td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=5263162ec70dd</td>
+	<td>css=input#birth_date</td>
 	<td>1/1/01</td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=52631673ed416</td>
+	<td>css=input#name</td>
 	<td>Robotman</td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>id=5268aeb1cbbfb</td>
-	<td>woo</td>
 </tr>
 <tr>
 	<td>clickAndWait</td>
 	<td>//input[@value='Save']</td>
 	<td></td>
 </tr>
-
 </tbody></table>
 </body>
 </html>

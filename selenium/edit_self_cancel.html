@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head profile="http://selenium-ide.openqa.org/profiles/test-case">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<link rel="selenium.base" href="http://staging.seqrd.com/" />
+<link rel="selenium.base" href="http://sandbox.seqrd.com/" />
 <title>edit_self_cancel</title>
 </head>
 <body>
@@ -13,7 +13,12 @@
 </thead><tbody>
 <tr>
 	<td>open</td>
-	<td>/realm/3/users</td>
+	<td>/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=bypass it</td>
 	<td></td>
 </tr>
 <tr>
@@ -28,15 +33,19 @@
 </tr>
 <tr>
 	<td>clickAndWait</td>
-	<td>xpath=(//a[contains(text(),'Edit')])[2]</td>
+	<td>link=Edit</td>
 	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=field_</td>
+	<td>WOOOOOOOO</td>
 </tr>
 <tr>
 	<td>clickAndWait</td>
 	<td>link=cancel</td>
 	<td></td>
 </tr>
-
 </tbody></table>
 </body>
 </html>
