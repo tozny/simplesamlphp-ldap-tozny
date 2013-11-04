@@ -1,0 +1,61 @@
+## Login
+* Navigate to the root of the system. Verify that it's running https 
+* Click "log in", you should be presented with a QR code            
+* As a person without an account, scan the QR code and add an account	
+* Verify that you have access to no realms				
+* As a person with an account, scan the QR code and add an account	
+* Verify that you have access to no realms				
+* As a person with access to realms, scan the QR code			
+* Verify that all of your realms are listed on the left	
+
+## First screen
+* Verify that you are viewing the first realm by default: The name in the upper left matches the name at the top center
+* Verify that you are at the user screen (USERS in upper-right)							
+* Verify that the number of users in parentheses on the left is correct by matching it with the list of users	
+
+
+## Managing a user
+* Add a user by clicking "add user"			
+* Fill out all the fields					
+* Click save							
+* Verify that you're at the "profile" (upper right)			
+* Verify that all the items entered match the displayed user		
+* Verify that the number of users on the left has increased by 1	
+* Verify that the user has 1 device, 0 authentications & failed logins, and blanks (dashes) for last authentications & logins	
+* Click edit and update a field, hit save				
+* Confirm that the update was saved					
+* Click edit and update a field, hit cancel			
+* Confirm that the update was not saved					
+
+## User Activity
+* Click the "profile" drop-down and select "activity"				
+* Verify that this is the correct user (display name matches the user we added)
+* Verify that there is no activity for this user			
+
+## Managing a device
+* Click the "activity" drop-down and select "devices"						
+* Verify that there is a single device called "new device" and that its status is "pending"	
+* Click on the device										
+* Enroll a device by scanning the QR code							
+  * If we're using an automated test suite, grab one of the URLs and enroll using that
+* Verify that the device enrolled successfully
+* Click on "activity"
+* Verify that there is no activity
+* Go back to the "devices" screen 
+* Add a new device and enroll a device by each of the following methods:
+  * Click "send setup email"
+    * Verify that the address defaults to the user's email address
+    * Send the setup email
+    * Verify that the setup email arrived, the provided URLs are the same, and that you can enroll by clicking on the login link and scanning the resulting QR code
+  * Do the same process but this time check the email on your phone and click on the seqrdenroll link. the app should launch and enroll you
+  * Print the QR code and enroll by scanning the paper
+* Delete a device and hit 'cancel', confirm that it's not deleted
+* Delete a device and hit 'confirm', confirm that it's deleted
+
+## Device activity
+* Use one of the enrolled devices to log into example.com
+* Verify that you can log in successfully
+* Select that device in the user's device list
+* Verify that the login appears under device activity and that it's the only thing that appears
+* Log in again, refresh, and verify that multiple activities appear and they're both accurate
+* Verify that this activity does not show up in other device lists

@@ -1,0 +1,79 @@
+## Managing Keys
+## Create Key
+* Click the navigation button at the top right, next to 'Users', and select 'Keys'
+*Verify that you're on the 'Keys' page
+* Click the 'Add Key' button
+* Type a name into the text box
+  * Click 'Cancel' and verify that no devices have been added
+* Click 'Save'and verify that the key you added is on the list
+* Click on the new key
+* Click the 'Profile' dropdown and select 'Activity'
+* Make sure there is no activity for the key
+
+## Edit a key
+* On the 'Keys' page, click on a key
+* On the profile screen, click 'Edit'
+* Take note of the current secret key (or just the first 5 characters)
+* Change the name, set 'Re-roll' to 'YES', and click 'Cancel'
+* Make sure the secret key and the name of the device have not changed
+* Click 'Edit' and edit in the following 3 ways
+  * Change the name, set 'Re-roll' to 'YES', and click 'Save'
+  * Verify that the name and the secret key have changed
+
+  * Change nothing, set 'Re-roll' to 'NO' and click 'Save'
+  * Verify that neither the secret key nor the name has changed
+  * Click 'Reset secret' and click 'Cancel' in the dialog box
+
+  * Verify that the secret key is unchanged
+  * Click 'Reset secret' and click 'Reset secret' in the dialog box
+  * Verify that the secret key has changed
+
+## Delete a key
+* On the 'Keys' page, click on the gear icon at the right side of one of the listed keys and select 'Delete'
+* In the pop-up, click 'Cancel'
+* Verify that the key is still there
+* Click the icon, and select 'Delete' again
+* In the pop-up, click 'Delete'
+* Verify that the key has been removed
+
+## Managing the domain settings
+## Changing domain settings
+* Click the navigation button next to 'Keys' and select 'Settings'
+* On the settings page, click 'Edit'
+* Change the values on the 'Edit' page, and click 'Cancel'
+* Verify that the values have not changed, and click 'Edit'
+* Change the values and flip the open enrollment switch to 'NO'
+* Click 'Save'
+* Verify that the values have changed and that the display name on the title and in the left-hand menu matches the new value
+
+## Managing postbacks
+## Create postback
+* Click the navigation button next to 'Settings' and select 'Postbacks'
+* On the 'Postbacks' page, click the 'Add postback' button
+* Fill out fields, set a few hooks and triggers, and do both of the following:
+  * Click 'Save'
+  * On the profile screen, verify that the values are the ones you set
+
+  * Click 'Cancel'
+  * Verify that the postback you created has not been added
+
+## Edit postback
+* On the 'Postbacks' page, click on one of the listed postbacks
+* On the profile page, click 'Edit' and do all of the following:
+  * Fill out the fields, change some of the switches, and click 'Cancel'
+  *Verify that none of the values have changed
+
+  * Don't change any of the values, and click 'Save'
+  * Verify that none of the values have changed
+
+  * Fill out the fields, change some of the switches, and click 'Save'
+  * Verify that the fields you edited have changed appropriately
+
+## Delete postback
+* On the 'Postbacks' page, click on the gear icon on the right side of one of the listed postbacks, and select 'Delete'
+* In the popup, do both of the following:
+  * Click 'Cancel'
+  * Verify that the postback is still listed
+
+  * Click 'Confirm'
+  * Verify that the postback has been deleted
