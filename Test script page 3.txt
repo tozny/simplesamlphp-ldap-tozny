@@ -1,0 +1,59 @@
+## Managing postbacks
+## Create postback
+* Click the navigation button next to 'Settings' and select 'Postbacks'
+* On the 'Postbacks' page, click the 'Add Postback' button
+* Fill out fields, set a few hooks and triggers, and do both of the following:
+  * Click 'Save'
+  * On the profile screen, verify that the values are the ones you set
+
+  * Click 'Cancel'
+  * Verify that the postback you created has not been added
+
+## Edit postback
+* On the 'Postbacks' page, click on one of the listed postbacks
+* On the profile page, click 'Edit' and do all of the following:
+  * Fill out the fields, change some of the switches, and click 'Cancel'
+  *Verify that none of the values have changed
+
+  * Don't change any of the values, and click 'Save'
+  * Verify that none of the values have changed
+
+  * Fill out the fields, change some of the switches, and click 'Save'
+  * Verify that the fields you edited have changed appropriately
+
+## Delete postback
+* On the 'Postbacks' page, click on the gear icon on the right side of one of the listed postbacks, and select 'Delete'
+* In the popup, do both of the following:
+  * Click 'Cancel'
+  * Verify that the postback is still listed
+
+  * Click 'Confirm'
+  * Verify that the postback has been deleted
+
+## Managing fields
+## Create field
+* Click the navigation button next to 'Postbacks' and select 'Fields'
+* On the 'Fields' page, click the 'Add Field' button
+* Fill out the form, and do both of the following:
+  * Click 'Cancel'
+  *Verify that the field was not created
+
+  * Click 'Save'
+  * Verify that the field was created and with the correct values
+
+## Edit field
+* On the 'Fields' page, click the gear icon on the right side of one of the fields, and select 'Edit'
+* On the 'Edit' page, make some changes to the form, and do each of the following:
+  * Click cancel
+  * Verify that the values of the field are unchanged
+
+  * Click 'Save'
+  * Verify that the values have changed according to how you filled the form out
+
+## Delete field
+* On the 'Fields' page, click the gear icon on the right side of one of the fields, and select 'Delete'. Then do both of the following:
+  * Click 'Cancel'
+  * Verify that the field was not deleted
+
+  * Click 'Delete'
+  * Verify that the field was deleted
