@@ -4,12 +4,12 @@
 <head profile="http://selenium-ide.openqa.org/profiles/test-case">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="selenium.base" href="http://sandbox.seqrd.com/" />
-<title>delete_device_cancel</title>
+<title>create_postback</title>
 </head>
 <body>
 <table cellpadding="1" cellspacing="1" border="1">
 <thead>
-<tr><td rowspan="1" colspan="3">delete_device_cancel</td></tr>
+<tr><td rowspan="1" colspan="3">create_postback</td></tr>
 </thead><tbody>
 <tr>
 	<td>open</td>
@@ -27,63 +27,53 @@
 	<td></td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>//div[@id='realms-profile']/div/div[2]/div/div[2]/div/button</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>//div[@id='realms-profile']/div/div[2]/div/div[2]/div/button</td>
-	<td></td>
-</tr>
-<tr>
 	<td>clickAndWait</td>
 	<td>link=POSTBACKS</td>
 	<td></td>
 </tr>
 <tr>
 	<td>clickAndWait</td>
-	<td>//div[@id='realms-profile']/div/div[2]/div/div[15]/a</td>
+	<td>link=+Add Postback</td>
 	<td></td>
 </tr>
 <tr>
-	<td>clickAndWait</td>
-	<td>//div[@id='realms-profile']/div/div[2]/div/div[15]/a[2]</td>
-	<td></td>
+	<td>type</td>
+	<td>id=postback_name</td>
+	<td>Smokestack</td>
 </tr>
 <tr>
-	<td>clickAndWait</td>
-	<td>//div[@id='realms-profile']/div/div[2]/div/div[15]/a[2]</td>
-	<td></td>
+	<td>type</td>
+	<td>id=postback_url</td>
+	<td>http://www.google.com</td>
 </tr>
 <tr>
-	<td>clickAndWait</td>
-	<td>//div[@id='realms-profile']/div/div[2]/div/div[15]/a[2]</td>
-	<td></td>
-</tr>
-<tr>
-	<td>clickAndWait</td>
-	<td>//div[@id='realms-profile']/div/div[2]/div/div[15]/a[2]</td>
-	<td></td>
-</tr>
-<tr>
-	<td>clickAndWait</td>
-	<td>//div[@id='realms-profile']/div/div[2]/div/div[15]/a[2]</td>
+	<td>click</td>
+	<td>//form[@id='addForm']/div[3]/div/div[7]/div/div/label</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>xpath=(//div[@id='postback-settings-button']/button)[2]</td>
+	<td>//form[@id='addForm']/div[3]/div/div[9]/div/div/label</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>xpath=(//a[contains(text(),'DELETE')])[2]</td>
+	<td>//form[@id='addForm']/div[3]/div/div[11]/div/div/label</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>xpath=(//button[@type='submit'])[2]</td>
+	<td>//form[@id='addForm']/div[3]/div[2]/div[6]/div/div/label</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//form[@id='addForm']/div[3]/div[2]/div[5]/div/div/label</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//input[@value='Save']</td>
 	<td></td>
 </tr>
 
