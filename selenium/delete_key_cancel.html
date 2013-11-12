@@ -4,12 +4,12 @@
 <head profile="http://selenium-ide.openqa.org/profiles/test-case">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="selenium.base" href="http://sandbox.seqrd.com/" />
-<title>create_key</title>
+<title>delete_key_cancel</title>
 </head>
 <body>
 <table cellpadding="1" cellspacing="1" border="1">
 <thead>
-<tr><td rowspan="1" colspan="3">create_key</td></tr>
+<tr><td rowspan="1" colspan="3">delete_key_cancel</td></tr>
 </thead><tbody>
 <tr>
 	<td>open</td>
@@ -17,35 +17,36 @@
 	<td></td>
 </tr>
 <tr>
-	<td>clickAndWait</td>
-	<td>css=div.counts a</td>
+	<td>click</td>
+	<td>//div[@id='realms-profile']/div/div[2]/div/div[2]/div/button</td>
 	<td></td>
 </tr>
 <tr>
 	<td>clickAndWait</td>
-	<td>link=+Add Key</td>
-	<td></td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>id=KeyName</td>
-	<td>Destructoid</td>
-</tr>
-<tr>
-	<td>clickAndWait</td>
-	<td>//input[@value='Save']</td>
+	<td>link=KEYS</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>link=Me</td>
+	<td>xpath=(//div[@id='key-settings-button']/button)[9]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=(//a[contains(text(),'DELETE')])[9]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=(//button[@type='submit'])[8]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>clickAndWait</td>
-	<td>link=Logout</td>
+	<td>xpath=(//input[@value='Confirm'])[9]</td>
 	<td></td>
 </tr>
+
 </tbody></table>
 </body>
 </html>

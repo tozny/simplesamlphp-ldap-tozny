@@ -4,12 +4,12 @@
 <head profile="http://selenium-ide.openqa.org/profiles/test-case">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="selenium.base" href="http://sandbox.seqrd.com/" />
-<title>create_key</title>
+<title>edit_user_cancel</title>
 </head>
 <body>
 <table cellpadding="1" cellspacing="1" border="1">
 <thead>
-<tr><td rowspan="1" colspan="3">create_key</td></tr>
+<tr><td rowspan="1" colspan="3">edit_user_cancel</td></tr>
 </thead><tbody>
 <tr>
 	<td>open</td>
@@ -17,33 +17,48 @@
 	<td></td>
 </tr>
 <tr>
-	<td>clickAndWait</td>
-	<td>css=div.counts a</td>
+	<td>click</td>
+	<td>//div[@id='user-settings-button']/button</td>
 	<td></td>
 </tr>
 <tr>
 	<td>clickAndWait</td>
-	<td>link=+Add Key</td>
+	<td>link=PROFILE</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=edit</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=KeyName</td>
-	<td>Destructoid</td>
+	<td>id=username_name</td>
+	<td>mr user</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=email_address</td>
+	<td>mruser@gmail.com</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=birth_date</td>
+	<td>happy birthday</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=name</td>
+	<td>somename</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=Something</td>
+	<td>somevalue</td>
 </tr>
 <tr>
 	<td>clickAndWait</td>
-	<td>//input[@value='Save']</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>link=Me</td>
-	<td></td>
-</tr>
-<tr>
-	<td>clickAndWait</td>
-	<td>link=Logout</td>
+	<td>link=cancel</td>
 	<td></td>
 </tr>
 </tbody></table>
