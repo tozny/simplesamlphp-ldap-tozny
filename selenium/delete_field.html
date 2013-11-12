@@ -4,12 +4,12 @@
 <head profile="http://selenium-ide.openqa.org/profiles/test-case">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="selenium.base" href="http://sandbox.seqrd.com/" />
-<title>delete_field</title>
+<title>delete_field_cancel</title>
 </head>
 <body>
 <table cellpadding="1" cellspacing="1" border="1">
 <thead>
-<tr><td rowspan="1" colspan="3">delete_field</td></tr>
+<tr><td rowspan="1" colspan="3">delete_field_cancel</td></tr>
 </thead><tbody>
 <tr>
 	<td>open</td>
@@ -27,18 +27,23 @@
 	<td></td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>//div[@id='realms-fields']/div/div[2]/div/div[10]/div/div/button</td>
+	<td>selectWindow</td>
+	<td>null</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>xpath=(//a[contains(text(),'DELETE')])[6]</td>
+	<td>//div[@id='realms-fields']/div/div[2]/div/div[9]/div/div/button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=(//a[contains(text(),'DELETE')])[5]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>clickAndWait</td>
-	<td>xpath=(//input[@value='Confirm'])[6]</td>
+	<td>xpath=(//input[@value='Confirm'])[5]</td>
 	<td></td>
 </tr>
 </tbody></table>
