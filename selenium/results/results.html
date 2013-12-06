@@ -50,23 +50,23 @@ a {
 <table>
 <tr>
 <td>result:</td>
-<td>passed</td>
+<td>failed</td>
 </tr>
 <tr>
 <td>totalTime:</td>
-<td>-1384213282</td>
+<td>581</td>
 </tr>
 <tr>
 <td>numTestTotal:</td>
-<td>0</td>
+<td>42</td>
 </tr>
 <tr>
 <td>numTestPasses:</td>
-<td>0</td>
+<td>11</td>
 </tr>
 <tr>
 <td>numTestFailures:</td>
-<td>0</td>
+<td>31</td>
 </tr>
 <tr>
 <td>numCommandPasses:</td>
@@ -78,7 +78,7 @@ a {
 </tr>
 <tr>
 <td>numCommandErrors:</td>
-<td>0</td>
+<td>31</td>
 </tr>
 <tr>
 <td>Selenium Version:</td>
@@ -90,16 +90,2458 @@ a {
 </tr>
 <tr>
 <td>
-<table border="1" cellpadding="1" cellspacing="1">
-<thead>
-<tr class="title status_passed"><td rowspan="1" colspan="3">sandbox_tests</td></tr>
-</thead><tbody>
-
+<table id="suiteTable" class="selenium" border="1" cellpadding="1" cellspacing="1"><tbody>
+<tr class="title                               status_failed"><td><b>Test Suite</b></td></tr>
+<tr class="  status_passed"><td><a href="#testresult0">sandbox_test_start</a></td></tr>
+<tr class="  status_passed"><td><a href="#testresult1">create_field_cancel</a></td></tr>
+<tr class="  status_passed"><td><a href="#testresult2">create_field</a></td></tr>
+<tr class="  status_passed"><td><a href="#testresult3">edit_field_cancel</a></td></tr>
+<tr class="  status_failed"><td><a href="#testresult4">edit_field</a></td></tr>
+<tr class="  status_failed"><td><a href="#testresult5">delete_field_cancel</a></td></tr>
+<tr class="  status_passed"><td><a href="#testresult6">delete_field</a></td></tr>
+<tr class="  status_passed"><td><a href="#testresult7">create_postback_cancel</a></td></tr>
+<tr class="  status_passed"><td><a href="#testresult8">create_postback</a></td></tr>
+<tr class="  status_failed"><td><a href="#testresult9">edit_postback_cancel</a></td></tr>
+<tr class="  status_failed"><td><a href="#testresult10">edit_postback</a></td></tr>
+<tr class="  status_failed"><td><a href="#testresult11">delete_postback_cancel</a></td></tr>
+<tr class="  status_passed"><td><a href="#testresult12">delete_postback</a></td></tr>
+<tr class="  status_failed"><td><a href="#testresult13">edit_domain_cancel</a></td></tr>
+<tr class="  status_passed"><td><a href="#testresult14">edit_domain</a></td></tr>
+<tr class="  status_passed"><td><a href="#testresult15">create_key_cancel</a></td></tr>
+<tr class="  status_passed"><td><a href="#testresult16">create_key</a></td></tr>
+<tr class="  status_failed"><td><a href="#testresult17">reset_secret_key</a></td></tr>
+<tr class="  status_failed"><td><a href="#testresult18">edit_key_cancel</a></td></tr>
+<tr class="  status_failed"><td><a href="#testresult19">edit_key_no_reroll</a></td></tr>
+<tr class="  status_failed"><td><a href="#testresult20">edit_key_reroll</a></td></tr>
+<tr class="  status_failed"><td><a href="#testresult21">delete_key_cancel</a></td></tr>
+<tr class="  status_failed"><td><a href="#testresult22">delete_key</a></td></tr>
+<tr class="  status_failed"><td><a href="#testresult23">create_user_cancel</a></td></tr>
+<tr class="  status_failed"><td><a href="#testresult24">create_user</a></td></tr>
+<tr class="  status_failed"><td><a href="#testresult25">edit_user_cancel</a></td></tr>
+<tr class="  status_failed"><td><a href="#testresult26">edit_user</a></td></tr>
+<tr class="  status_failed"><td><a href="#testresult27">delete_user_cancel</a></td></tr>
+<tr class="  status_failed"><td><a href="#testresult28">delete_user</a></td></tr>
+<tr class="  status_failed"><td><a href="#testresult29">device_setup_email_cancel</a></td></tr>
+<tr class="  status_failed"><td><a href="#testresult30">device_setup_email</a></td></tr>
+<tr class="  status_failed"><td><a href="#testresult31">edit_device_cancel</a></td></tr>
+<tr class="  status_failed"><td><a href="#testresult32">edit_device</a></td></tr>
+<tr class="  status_failed"><td><a href="#testresult33">delete_device_cancel</a></td></tr>
+<tr class="  status_failed"><td><a href="#testresult34">delete_device</a></td></tr>
+<tr class="  status_failed"><td><a href="#testresult35">edit_self</a></td></tr>
+<tr class="  status_failed"><td><a href="#testresult36">edit_self_cancel</a></td></tr>
+<tr class="  status_failed"><td><a href="#testresult37">check_user_activity</a></td></tr>
+<tr class="  status_failed"><td><a href="#testresult38">search_existing</a></td></tr>
+<tr class="  status_failed"><td><a href="#testresult39">search_nonexisting</a></td></tr>
+<tr class="  status_failed"><td><a href="#testresult40">test_device_navigator</a></td></tr>
+<tr class="  status_failed"><td><a href="#testresult41">logout</a></td></tr>
 </tbody></table>
 
 
 </td>
 <td>&nbsp;</td>
 </tr>
-</table><table></table><pre>
+</table><table><tr>
+<td><a name="testresult0">sandbox_test_start.html</a><br/><div>
+<table border="1" cellpadding="1" cellspacing="1">
+<thead>
+<tr class="title status_passed"><td rowspan="1" colspan="3">sandbox_tests</td></tr>
+</thead><tbody>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>open</td>
+	<td>/</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>link=bypass it</td>
+	<td></td>
+</tr>
+
+</tbody></table>
+
+
+</div></td>
+<td>&nbsp;</td>
+</tr><tr>
+<td><a name="testresult1">create_field_cancel.html</a><br/><div>
+<table border="1" cellpadding="1" cellspacing="1">
+<thead>
+<tr class="title status_passed"><td rowspan="1" colspan="3">create_field_cancel</td></tr>
+</thead><tbody>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>open</td>
+	<td>/realm/3/users</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>click</td>
+	<td>//div[@id='realms-profile']/div/div[2]/div/div[2]/div/button</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>link=FIELDS</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>link=+Add Field</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=name</td>
+	<td>AnotherField</td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=field</td>
+	<td>Something</td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>click</td>
+	<td>css=label.switch-small</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>click</td>
+	<td>//form[@id='addForm']/div[3]/div/div[7]/div/div/label</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=description</td>
+	<td>This field needs a description</td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>link=cancel</td>
+	<td></td>
+</tr>
+</tbody></table>
+
+
+</div></td>
+<td>&nbsp;</td>
+</tr><tr>
+<td><a name="testresult2">create_field.html</a><br/><div>
+<table border="1" cellpadding="1" cellspacing="1">
+<thead>
+<tr class="title status_passed"><td rowspan="1" colspan="3">create_field</td></tr>
+</thead><tbody>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>open</td>
+	<td>/realm/3/users</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>click</td>
+	<td>//div[@id='realms-profile']/div/div[2]/div/div[2]/div/button</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>link=FIELDS</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>link=+Add Field</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=name</td>
+	<td>AnotherField</td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=field</td>
+	<td>Something</td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>click</td>
+	<td>css=label.switch-small</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>click</td>
+	<td>//form[@id='addForm']/div[3]/div/div[7]/div/div/label</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=description</td>
+	<td>This field needs a description</td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>//input[@value='Save']</td>
+	<td></td>
+</tr>
+</tbody></table>
+
+
+</div></td>
+<td>&nbsp;</td>
+</tr><tr>
+<td><a name="testresult3">edit_field_cancel.html</a><br/><div>
+<table border="1" cellpadding="1" cellspacing="1">
+<thead>
+<tr class="title status_passed"><td rowspan="1" colspan="3">edit_field_cancel</td></tr>
+</thead><tbody>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>open</td>
+	<td>/realm/3/users</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>click</td>
+	<td>//div[@id='realms-profile']/div/div[2]/div/div[2]/div/button</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>link=FIELDS</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>selectWindow</td>
+	<td>null</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>click</td>
+	<td>//div[@id='realms-fields']/div/div[2]/div/div[9]/div/div/button</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>xpath=(//a[contains(text(),'EDIT')])[5]</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=description</td>
+	<td>This field needs no description</td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=field</td>
+	<td>Strawberries</td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=name</td>
+	<td>EditedField</td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>click</td>
+	<td>css=label.switch-small</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>link=cancel</td>
+	<td></td>
+</tr>
+</tbody></table>
+
+
+</div></td>
+<td>&nbsp;</td>
+</tr><tr>
+<td><a name="testresult4">edit_field.html</a><br/><div>
+<table border="1" cellpadding="1" cellspacing="1">
+<thead>
+<tr class="title status_failed"><td rowspan="1" colspan="3">edit_field_cancel</td></tr>
+</thead><tbody>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>open</td>
+	<td>/realm/3/users</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>click</td>
+	<td>//div[@id='realms-profile']/div/div[2]/div/div[2]/div/button</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>link=FIELDS</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>selectWindow</td>
+	<td>null</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>click</td>
+	<td>//div[@id='realms-fields']/div/div[2]/div/div[9]/div/div/button</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>xpath=(//a[contains(text(),'EDIT')])[5]</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=description</td>
+	<td>This field needs no description</td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=field</td>
+	<td>Strawberries</td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=name</td>
+	<td>EditedField</td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>click</td>
+	<td>css=label.switch-small</td>
+	<td></td>
+</tr>
+<tr class="  status_failed" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>link=Save</td>
+	<td>Element&nbsp;link=Save&nbsp;not&nbsp;found</td>
+</tr>
+</tbody></table>
+
+
+</div></td>
+<td>&nbsp;</td>
+</tr><tr>
+<td><a name="testresult5">delete_field_cancel.html</a><br/><div>
+<table border="1" cellpadding="1" cellspacing="1">
+<thead>
+<tr class="title status_failed"><td rowspan="1" colspan="3">delete_field_cancel</td></tr>
+</thead><tbody>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>open</td>
+	<td>/realm/3/users</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>click</td>
+	<td>//div[@id='realms-profile']/div/div[2]/div/div[2]/div/button</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>link=FIELDS</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>selectWindow</td>
+	<td>null</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>click</td>
+	<td>//div[@id='realms-fields']/div/div[2]/div/div[9]/div/div/button</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>click</td>
+	<td>xpath=(//a[contains(text(),'DELETE')])[5]</td>
+	<td></td>
+</tr>
+<tr class="  status_failed" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>xpath=(//input[@value='Cancel'])[5]</td>
+	<td>Element&nbsp;xpath=(//input[@value='Cancel'])[5]&nbsp;not&nbsp;found</td>
+</tr>
+</tbody></table>
+
+
+</div></td>
+<td>&nbsp;</td>
+</tr><tr>
+<td><a name="testresult6">delete_field.html</a><br/><div>
+<table border="1" cellpadding="1" cellspacing="1">
+<thead>
+<tr class="title status_passed"><td rowspan="1" colspan="3">delete_field_cancel</td></tr>
+</thead><tbody>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>open</td>
+	<td>/realm/3/users</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>click</td>
+	<td>//div[@id='realms-profile']/div/div[2]/div/div[2]/div/button</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>link=FIELDS</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>selectWindow</td>
+	<td>null</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>click</td>
+	<td>//div[@id='realms-fields']/div/div[2]/div/div[9]/div/div/button</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>click</td>
+	<td>xpath=(//a[contains(text(),'DELETE')])[5]</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>xpath=(//input[@value='Confirm'])[5]</td>
+	<td></td>
+</tr>
+</tbody></table>
+
+
+</div></td>
+<td>&nbsp;</td>
+</tr><tr>
+<td><a name="testresult7">create_postback_cancel.html</a><br/><div>
+<table border="1" cellpadding="1" cellspacing="1">
+<thead>
+<tr class="title status_passed"><td rowspan="1" colspan="3">create_postback_cancel</td></tr>
+</thead><tbody>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>open</td>
+	<td>/realm/3/users</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>click</td>
+	<td>//div[@id='realms-profile']/div/div[2]/div/div[2]/div/button</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>link=POSTBACKS</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>link=+Add Postback</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=postback_name</td>
+	<td>Smokestack</td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=postback_url</td>
+	<td>http://www.google.com</td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>click</td>
+	<td>//form[@id='addForm']/div[3]/div/div[7]/div/div/label</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>click</td>
+	<td>//form[@id='addForm']/div[3]/div/div[9]/div/div/label</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>click</td>
+	<td>//form[@id='addForm']/div[3]/div/div[11]/div/div/label</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>click</td>
+	<td>//form[@id='addForm']/div[3]/div[2]/div[6]/div/div/label</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>click</td>
+	<td>//form[@id='addForm']/div[3]/div[2]/div[5]/div/div/label</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>link=cancel</td>
+	<td></td>
+</tr>
+</tbody></table>
+
+
+</div></td>
+<td>&nbsp;</td>
+</tr><tr>
+<td><a name="testresult8">create_postback.html</a><br/><div>
+<table border="1" cellpadding="1" cellspacing="1">
+<thead>
+<tr class="title status_passed"><td rowspan="1" colspan="3">create_postback</td></tr>
+</thead><tbody>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>open</td>
+	<td>/realm/3/users</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>click</td>
+	<td>//div[@id='realms-profile']/div/div[2]/div/div[2]/div/button</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>link=POSTBACKS</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>link=+Add Postback</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=postback_name</td>
+	<td>Smokestack</td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=postback_url</td>
+	<td>http://www.google.com</td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>click</td>
+	<td>//form[@id='addForm']/div[3]/div/div[7]/div/div/label</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>click</td>
+	<td>//form[@id='addForm']/div[3]/div/div[9]/div/div/label</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>click</td>
+	<td>//form[@id='addForm']/div[3]/div/div[11]/div/div/label</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>click</td>
+	<td>//form[@id='addForm']/div[3]/div[2]/div[6]/div/div/label</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>click</td>
+	<td>//form[@id='addForm']/div[3]/div[2]/div[5]/div/div/label</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>//input[@value='Save']</td>
+	<td></td>
+</tr>
+</tbody></table>
+
+
+</div></td>
+<td>&nbsp;</td>
+</tr><tr>
+<td><a name="testresult9">edit_postback_cancel.html</a><br/><div>
+<table border="1" cellpadding="1" cellspacing="1">
+<thead>
+<tr class="title status_failed"><td rowspan="1" colspan="3">edit_postback_cancel</td></tr>
+</thead><tbody>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>open</td>
+	<td>/realm/3/users</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>click</td>
+	<td>//div[@id='realms-profile']/div/div[2]/div/div[2]/div/button</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>link=POSTBACKS</td>
+	<td></td>
+</tr>
+<tr class="  status_failed" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>link=test hook and triggers...</td>
+	<td>Element&nbsp;link=test&nbsp;hook&nbsp;and&nbsp;triggers...&nbsp;not&nbsp;found</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>link=Edit</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=postback_name</td>
+	<td>Test hook and triggers</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=postback_url</td>
+	<td>http://google.com</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>select</td>
+	<td>id=postback_type</td>
+	<td>label=GET</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>//form[@id='editForm']/div[3]/div[2]/div[4]/div/div/label</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>//form[@id='editForm']/div[3]/div[2]/div[8]/div/div/label</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>//form[@id='editForm']/div[3]/div[3]/div[3]/div/div/label</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>link=Cancel</td>
+	<td></td>
+</tr>
+</tbody></table>
+
+
+</div></td>
+<td>&nbsp;</td>
+</tr><tr>
+<td><a name="testresult10">edit_postback.html</a><br/><div>
+<table border="1" cellpadding="1" cellspacing="1">
+<thead>
+<tr class="title status_failed"><td rowspan="1" colspan="3">edit_postback</td></tr>
+</thead><tbody>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>open</td>
+	<td>/realm/3/users</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>click</td>
+	<td>//div[@id='realms-profile']/div/div[2]/div/div[2]/div/button</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>link=POSTBACKS</td>
+	<td></td>
+</tr>
+<tr class="  status_failed" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>link=test hook and triggers...</td>
+	<td>Element&nbsp;link=test&nbsp;hook&nbsp;and&nbsp;triggers...&nbsp;not&nbsp;found</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>link=Edit</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=postback_name</td>
+	<td>Test hook and triggers</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=postback_url</td>
+	<td>http://google.com</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>select</td>
+	<td>id=postback_type</td>
+	<td>label=GET</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>//form[@id='editForm']/div[3]/div[2]/div[4]/div/div/label</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>//form[@id='editForm']/div[3]/div[2]/div[8]/div/div/label</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>//form[@id='editForm']/div[3]/div[3]/div[3]/div/div/label</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>//input[@value='Save']</td>
+	<td></td>
+</tr>
+</tbody></table>
+
+
+</div></td>
+<td>&nbsp;</td>
+</tr><tr>
+<td><a name="testresult11">delete_postback_cancel.html</a><br/><div>
+<table border="1" cellpadding="1" cellspacing="1">
+<thead>
+<tr class="title status_failed"><td rowspan="1" colspan="3">delete_postback</td></tr>
+</thead><tbody>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>open</td>
+	<td>/realm/3/users</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>click</td>
+	<td>//div[@id='realms-profile']/div/div[2]/div/div[2]/div/button</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>click</td>
+	<td>//div[@id='realms-profile']/div/div[2]/div/div[2]/div/button</td>
+	<td></td>
+</tr>
+<tr class="  status_failed" style="cursor: pointer;">
+	<td>click</td>
+	<td>xpath=(//div[@id='postback-settings-button']/button)[2]</td>
+	<td>Element&nbsp;xpath=(//div[@id='postback-settings-button']/button)[2]&nbsp;not&nbsp;found</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>xpath=(//a[contains(text(),'DELETE')])[2]</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>link=Cancel</td>
+	<td></td>
+</tr>
+</tbody></table>
+
+
+</div></td>
+<td>&nbsp;</td>
+</tr><tr>
+<td><a name="testresult12">delete_postback.html</a><br/><div>
+<table border="1" cellpadding="1" cellspacing="1">
+<thead>
+<tr class="title status_passed"><td rowspan="1" colspan="3">delete_postback</td></tr>
+</thead><tbody>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>open</td>
+	<td>/realm/3/users</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>click</td>
+	<td>//div[@id='realms-profile']/div/div[2]/div/div[2]/div/button</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>click</td>
+	<td>//div[@id='realms-profile']/div/div[2]/div/div[2]/div/button</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>click</td>
+	<td>//div[@id='realms-profile']/div/div[2]/div/div[2]/div/button</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>link=POSTBACKS</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>//div[@id='realms-profile']/div/div[2]/div/div[15]/a</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>//div[@id='realms-profile']/div/div[2]/div/div[15]/a[2]</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>//div[@id='realms-profile']/div/div[2]/div/div[15]/a[2]</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>//div[@id='realms-profile']/div/div[2]/div/div[15]/a[2]</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>//div[@id='realms-profile']/div/div[2]/div/div[15]/a[2]</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>//div[@id='realms-profile']/div/div[2]/div/div[15]/a[2]</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>click</td>
+	<td>xpath=(//div[@id='postback-settings-button']/button)[2]</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>click</td>
+	<td>xpath=(//a[contains(text(),'DELETE')])[2]</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>xpath=(//input[@value='Confirm'])[2]</td>
+	<td></td>
+</tr>
+</tbody></table>
+
+
+</div></td>
+<td>&nbsp;</td>
+</tr><tr>
+<td><a name="testresult13">edit_domain_cancel.html</a><br/><div>
+<table border="1" cellpadding="1" cellspacing="1">
+<thead>
+<tr class="title status_failed"><td rowspan="1" colspan="3">edit_domain_cancel</td></tr>
+</thead><tbody>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>open</td>
+	<td>/realm/3/users</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>click</td>
+	<td>//div[@id='realms-profile']/div/div[2]/div/div[2]/div/button</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>link=SETTINGS</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>link=Edit</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=RealmDisplayName</td>
+	<td>Example.com!</td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=RealmDomain</td>
+	<td>http://example.com?</td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=RealmIpAddress</td>
+	<td>94.94.94.94!</td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=RealmInfoUrl</td>
+	<td>http://example.com/about-us?</td>
+</tr>
+<tr class="  status_failed" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>link=Edit</td>
+	<td>Element&nbsp;link=Edit&nbsp;not&nbsp;found</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>css=label.switch-small</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=RealmLogoUrl</td>
+	<td>http://66.147.244.206/~uafsunst/wp-content/uploads/2012/08/Batman-Logo-50x35.jpg!</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>link=cancel</td>
+	<td></td>
+</tr>
+</tbody></table>
+
+
+</div></td>
+<td>&nbsp;</td>
+</tr><tr>
+<td><a name="testresult14">edit_domain.html</a><br/><div>
+<table border="1" cellpadding="1" cellspacing="1">
+<thead>
+<tr class="title status_passed"><td rowspan="1" colspan="3">edit_domain_settings</td></tr>
+</thead><tbody>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>open</td>
+	<td>/realm/3/users</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>click</td>
+	<td>//div[@id='realms-profile']/div/div[2]/div/div[2]/div/button</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>link=SETTINGS</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>link=Edit</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=RealmDisplayName</td>
+	<td>Example.com!</td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=RealmDomain</td>
+	<td>http://example.com?</td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=RealmIpAddress</td>
+	<td>94.94.94.94!</td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=RealmInfoUrl</td>
+	<td>http://example.com/about-us?</td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>click</td>
+	<td>css=label.switch-small</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=RealmLogoUrl</td>
+	<td>http://66.147.244.206/~uafsunst/wp-content/uploads/2012/08/Batman-Logo-50x35.jpg!</td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>//input[@value='Save']</td>
+	<td></td>
+</tr>
+</tbody></table>
+
+
+</div></td>
+<td>&nbsp;</td>
+</tr><tr>
+<td><a name="testresult15">create_key_cancel.html</a><br/><div>
+<table border="1" cellpadding="1" cellspacing="1">
+<thead>
+<tr class="title status_passed"><td rowspan="1" colspan="3">create_key_cancel</td></tr>
+</thead><tbody>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>open</td>
+	<td>/realm/3/users</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>css=div.counts a</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>link=+Add Key</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>link=cancel</td>
+	<td></td>
+</tr>
+</tbody></table>
+
+
+</div></td>
+<td>&nbsp;</td>
+</tr><tr>
+<td><a name="testresult16">create_key.html</a><br/><div>
+<table border="1" cellpadding="1" cellspacing="1">
+<thead>
+<tr class="title status_passed"><td rowspan="1" colspan="3">create_key</td></tr>
+</thead><tbody>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>open</td>
+	<td>/realm/3/users</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>css=div.counts a</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>link=+Add Key</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=KeyName</td>
+	<td>Destructoid</td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>//input[@value='Save']</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>click</td>
+	<td>link=Me</td>
+	<td></td>
+</tr>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>link=Logout</td>
+	<td></td>
+</tr>
+</tbody></table>
+
+
+</div></td>
+<td>&nbsp;</td>
+</tr><tr>
+<td><a name="testresult17">reset_secret_key.html</a><br/><div>
+<table border="1" cellpadding="1" cellspacing="1">
+<thead>
+<tr class="title status_failed"><td rowspan="1" colspan="3">reset_secret_key</td></tr>
+</thead><tbody>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>open</td>
+	<td>/realm/3/users</td>
+	<td></td>
+</tr>
+<tr class="  status_failed" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>css=div.counts a</td>
+	<td>Element&nbsp;css=div.counts&nbsp;a&nbsp;not&nbsp;found</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>xpath=(//div[@id='key-settings-button']/button)[6]</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>xpath=(//a[contains(text(),'PROFILE')])[6]</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>link=reset secret</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>//input[@value='reset secret']</td>
+	<td></td>
+</tr>
+</tbody></table>
+
+
+</div></td>
+<td>&nbsp;</td>
+</tr><tr>
+<td><a name="testresult18">edit_key_cancel.html</a><br/><div>
+<table border="1" cellpadding="1" cellspacing="1">
+<thead>
+<tr class="title status_failed"><td rowspan="1" colspan="3">edit_key_cancel</td></tr>
+</thead><tbody>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>open</td>
+	<td>/realm/3/users</td>
+	<td></td>
+</tr>
+<tr class="  status_failed" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>css=div.counts a</td>
+	<td>Element&nbsp;css=div.counts&nbsp;a&nbsp;not&nbsp;found</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>//div[@id='key-settings-button']/button</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>link=PROFILE</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>link=edit</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>css=label.switch-small</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=KeyName</td>
+	<td>different</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>link=cancel</td>
+	<td></td>
+</tr>
+</tbody></table>
+
+
+</div></td>
+<td>&nbsp;</td>
+</tr><tr>
+<td><a name="testresult19">edit_key_no_reroll.html</a><br/><div>
+<table border="1" cellpadding="1" cellspacing="1">
+<thead>
+<tr class="title status_failed"><td rowspan="1" colspan="3">edit_key_no_reroll</td></tr>
+</thead><tbody>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>open</td>
+	<td>/realm/3/users</td>
+	<td></td>
+</tr>
+<tr class="  status_failed" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>css=div.counts a</td>
+	<td>Element&nbsp;css=div.counts&nbsp;a&nbsp;not&nbsp;found</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>link=Destructoid</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>link=edit</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=KeyName</td>
+	<td>Destructoidz</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>//input[@value='Save']</td>
+	<td></td>
+</tr>
+</tbody></table>
+
+
+</div></td>
+<td>&nbsp;</td>
+</tr><tr>
+<td><a name="testresult20">edit_key_reroll.html</a><br/><div>
+<table border="1" cellpadding="1" cellspacing="1">
+<thead>
+<tr class="title status_failed"><td rowspan="1" colspan="3">edit_key_reroll</td></tr>
+</thead><tbody>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>open</td>
+	<td>/realm/3/users</td>
+	<td></td>
+</tr>
+<tr class="  status_failed" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>css=div.counts a</td>
+	<td>Element&nbsp;css=div.counts&nbsp;a&nbsp;not&nbsp;found</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>link=Destructoidz</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>link=edit</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>css=label.switch-small</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=KeyName</td>
+	<td>Destructoid</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>//input[@value='Save']</td>
+	<td></td>
+</tr>
+</tbody></table>
+
+
+</div></td>
+<td>&nbsp;</td>
+</tr><tr>
+<td><a name="testresult21">delete_key_cancel.html</a><br/><div>
+<table border="1" cellpadding="1" cellspacing="1">
+<thead>
+<tr class="title status_failed"><td rowspan="1" colspan="3">delete_key_cancel</td></tr>
+</thead><tbody>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>open</td>
+	<td>/realm/3/users</td>
+	<td></td>
+</tr>
+<tr class="  status_failed" style="cursor: pointer;">
+	<td>click</td>
+	<td>//div[@id='realms-profile']/div/div[2]/div/div[2]/div/button</td>
+	<td>Element&nbsp;//div[@id='realms-profile']/div/div[2]/div/div[2]/div/button&nbsp;not&nbsp;found</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>link=KEYS</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>xpath=(//div[@id='key-settings-button']/button)[9]</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>xpath=(//a[contains(text(),'DELETE')])[9]</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>xpath=(//button[@type='submit'])[8]</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>xpath=(//input[@value='Confirm'])[9]</td>
+	<td></td>
+</tr>
+
+</tbody></table>
+
+
+</div></td>
+<td>&nbsp;</td>
+</tr><tr>
+<td><a name="testresult22">delete_key.html</a><br/><div>
+<table border="1" cellpadding="1" cellspacing="1">
+<thead>
+<tr class="title status_failed"><td rowspan="1" colspan="3">delete_key</td></tr>
+</thead><tbody>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>open</td>
+	<td>/realm/3/users</td>
+	<td></td>
+</tr>
+<tr class="  status_failed" style="cursor: pointer;">
+	<td>click</td>
+	<td>//div[@id='realms-profile']/div/div[2]/div/div[2]/div/button</td>
+	<td>Element&nbsp;//div[@id='realms-profile']/div/div[2]/div/div[2]/div/button&nbsp;not&nbsp;found</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>link=KEYS</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>xpath=(//div[@id='key-settings-button']/button)[9]</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>xpath=(//a[contains(text(),'DELETE')])[9]</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>xpath=(//input[@value='Confirm'])[9]</td>
+	<td></td>
+</tr>
+</tbody></table>
+
+
+</div></td>
+<td>&nbsp;</td>
+</tr><tr>
+<td><a name="testresult23">create_user_cancel.html</a><br/><div>
+<table border="1" cellpadding="1" cellspacing="1">
+<thead>
+<tr class="title status_failed"><td rowspan="1" colspan="3">create_user_cancel</td></tr>
+</thead><tbody>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>open</td>
+	<td>/realm/3/users</td>
+	<td></td>
+</tr>
+<tr class="  status_failed" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>link=+Add User</td>
+	<td>Element&nbsp;link=+Add&nbsp;User&nbsp;not&nbsp;found</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>type</td>
+	<td>css=input#username</td>
+	<td>Testname</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>type</td>
+	<td>css=input#email_address</td>
+	<td>selenium@automail.com</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>type</td>
+	<td>css=input#birth_date</td>
+	<td>1/1/01</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>type</td>
+	<td>css=input#name</td>
+	<td>Robotman</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>link=cancel</td>
+	<td></td>
+</tr>
+</tbody></table>
+
+
+</div></td>
+<td>&nbsp;</td>
+</tr><tr>
+<td><a name="testresult24">create_user.html</a><br/><div>
+<table border="1" cellpadding="1" cellspacing="1">
+<thead>
+<tr class="title status_failed"><td rowspan="1" colspan="3">create_user</td></tr>
+</thead><tbody>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>open</td>
+	<td>/realm/3/users</td>
+	<td></td>
+</tr>
+<tr class="  status_failed" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>link=+Add User</td>
+	<td>Element&nbsp;link=+Add&nbsp;User&nbsp;not&nbsp;found</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>type</td>
+	<td>css=input#username</td>
+	<td>Testname</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>type</td>
+	<td>css=input#email_address</td>
+	<td>selenium@automail.com</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>type</td>
+	<td>css=input#birth_date</td>
+	<td>1/1/01</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>type</td>
+	<td>css=input#name</td>
+	<td>Robotman</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>//input[@value='Save']</td>
+	<td></td>
+</tr>
+</tbody></table>
+
+
+</div></td>
+<td>&nbsp;</td>
+</tr><tr>
+<td><a name="testresult25">edit_user_cancel.html</a><br/><div>
+<table border="1" cellpadding="1" cellspacing="1">
+<thead>
+<tr class="title status_failed"><td rowspan="1" colspan="3">edit_user_cancel</td></tr>
+</thead><tbody>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>open</td>
+	<td>/realm/3/users</td>
+	<td></td>
+</tr>
+<tr class="  status_failed" style="cursor: pointer;">
+	<td>click</td>
+	<td>//div[@id='user-settings-button']/button</td>
+	<td>Element&nbsp;//div[@id='user-settings-button']/button&nbsp;not&nbsp;found</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>link=PROFILE</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>link=edit</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=username_name</td>
+	<td>mr user</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=email_address</td>
+	<td>mruser@gmail.com</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=birth_date</td>
+	<td>happy birthday</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=name</td>
+	<td>somename</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=Something</td>
+	<td>somevalue</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>link=cancel</td>
+	<td></td>
+</tr>
+</tbody></table>
+
+
+</div></td>
+<td>&nbsp;</td>
+</tr><tr>
+<td><a name="testresult26">edit_user.html</a><br/><div>
+<table border="1" cellpadding="1" cellspacing="1">
+<thead>
+<tr class="title status_failed"><td rowspan="1" colspan="3">New Test</td></tr>
+</thead><tbody>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>open</td>
+	<td>/realm/3/users</td>
+	<td></td>
+</tr>
+<tr class="  status_failed" style="cursor: pointer;">
+	<td>click</td>
+	<td>//div[@id='user-settings-button']/button</td>
+	<td>Element&nbsp;//div[@id='user-settings-button']/button&nbsp;not&nbsp;found</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>link=PROFILE</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>link=edit</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=username_name</td>
+	<td>mr user</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=email_address</td>
+	<td>mruser@gmail.com</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=birth_date</td>
+	<td>happy birthday</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=name</td>
+	<td>somename</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=Something</td>
+	<td>somevalue</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>link=save</td>
+	<td></td>
+</tr>
+</tbody></table>
+
+
+</div></td>
+<td>&nbsp;</td>
+</tr><tr>
+<td><a name="testresult27">delete_user_cancel.html</a><br/><div>
+<table border="1" cellpadding="1" cellspacing="1">
+<thead>
+<tr class="title status_failed"><td rowspan="1" colspan="3">delete_user_cancel</td></tr>
+</thead><tbody>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>open</td>
+	<td>/realm/3/users</td>
+	<td></td>
+</tr>
+<tr class="  status_failed" style="cursor: pointer;">
+	<td>click</td>
+	<td>//div[@id='user-settings-button']/button</td>
+	<td>Element&nbsp;//div[@id='user-settings-button']/button&nbsp;not&nbsp;found</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>link=DELETE</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>//button[@type='submit']</td>
+	<td></td>
+</tr>
+</tbody></table>
+
+
+</div></td>
+<td>&nbsp;</td>
+</tr><tr>
+<td><a name="testresult28">delete_user.html</a><br/><div>
+<table border="1" cellpadding="1" cellspacing="1">
+<thead>
+<tr class="title status_failed"><td rowspan="1" colspan="3">delete_user</td></tr>
+</thead><tbody>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>open</td>
+	<td>/realm/3/users</td>
+	<td></td>
+</tr>
+<tr class="  status_failed" style="cursor: pointer;">
+	<td>click</td>
+	<td>//div[@id='user-settings-button']/button</td>
+	<td>Element&nbsp;//div[@id='user-settings-button']/button&nbsp;not&nbsp;found</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>link=DELETE</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>//input[@value='Confirm']</td>
+	<td></td>
+</tr>
+</tbody></table>
+
+
+</div></td>
+<td>&nbsp;</td>
+</tr><tr>
+<td><a name="testresult29">device_setup_email_cancel.html</a><br/><div>
+<table border="1" cellpadding="1" cellspacing="1">
+<thead>
+<tr class="title status_failed"><td rowspan="1" colspan="3">device_setup_email_cancel</td></tr>
+</thead><tbody>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>open</td>
+	<td>/realm/3/users</td>
+	<td></td>
+</tr>
+<tr class="  status_failed" style="cursor: pointer;">
+	<td>click</td>
+	<td>//div[@id='user-settings-button']/button</td>
+	<td>Element&nbsp;//div[@id='user-settings-button']/button&nbsp;not&nbsp;found</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>link=DEVICES</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>link=+Add Device</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>//div[@id='profile']/div/div[2]/div[2]/div[3]/div/button</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=email</td>
+	<td>emaildumpst3r@gmail.com</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>xpath=(//button[@type='button'])[4]</td>
+	<td></td>
+</tr>
+</tbody></table>
+
+
+</div></td>
+<td>&nbsp;</td>
+</tr><tr>
+<td><a name="testresult30">device_setup_email.html</a><br/><div>
+<table border="1" cellpadding="1" cellspacing="1">
+<thead>
+<tr class="title status_failed"><td rowspan="1" colspan="3">device_setup_email</td></tr>
+</thead><tbody>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>open</td>
+	<td>/realm/3/users</td>
+	<td></td>
+</tr>
+<tr class="  status_failed" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>css=div.title a</td>
+	<td>Element&nbsp;css=div.title&nbsp;a&nbsp;not&nbsp;found</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>//div[@id='profile']/div/div[2]/div[2]/div/div/div/button</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>link=DEVICES</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>link=+Add Device</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>//div[@id='profile']/div/div[2]/div[2]/div[3]/div/button</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=email</td>
+	<td>emaildumpst3r@gmail.com</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>//form[@id='setupForm']/div[2]/div[4]/div/div/button</td>
+	<td></td>
+</tr>
+</tbody></table>
+
+
+</div></td>
+<td>&nbsp;</td>
+</tr><tr>
+<td><a name="testresult31">edit_device_cancel.html</a><br/><div>
+<table border="1" cellpadding="1" cellspacing="1">
+<thead>
+<tr class="title status_failed"><td rowspan="1" colspan="3">edit_device_cancel</td></tr>
+</thead><tbody>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>open</td>
+	<td>/realm/3/users</td>
+	<td></td>
+</tr>
+<tr class="  status_failed" style="cursor: pointer;">
+	<td>click</td>
+	<td>//div[@id='user-settings-button']/button</td>
+	<td>Element&nbsp;//div[@id='user-settings-button']/button&nbsp;not&nbsp;found</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>link=DEVICES</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>//div[@id='realm-users-devices']/div/div[2]/div/div[5]/div/div/button</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>xpath=(//a[contains(text(),'EDIT')])[2]</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=name</td>
+	<td>Old Device</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>link=cancel</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>//input[@value='Save']</td>
+	<td></td>
+</tr>
+
+</tbody></table>
+
+
+</div></td>
+<td>&nbsp;</td>
+</tr><tr>
+<td><a name="testresult32">edit_device.html</a><br/><div>
+<table border="1" cellpadding="1" cellspacing="1">
+<thead>
+<tr class="title status_failed"><td rowspan="1" colspan="3">edit_device</td></tr>
+</thead><tbody>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>open</td>
+	<td>/realm/3/users</td>
+	<td></td>
+</tr>
+<tr class="  status_failed" style="cursor: pointer;">
+	<td>click</td>
+	<td>//div[@id='user-settings-button']/button</td>
+	<td>Element&nbsp;//div[@id='user-settings-button']/button&nbsp;not&nbsp;found</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>link=DEVICES</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>//div[@id='realm-users-devices']/div/div[2]/div/div[5]/div/div/button</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>xpath=(//a[contains(text(),'EDIT')])[2]</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=name</td>
+	<td>Old Device</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>//input[@value='Save']</td>
+	<td></td>
+</tr>
+</tbody></table>
+
+
+</div></td>
+<td>&nbsp;</td>
+</tr><tr>
+<td><a name="testresult33">delete_device_cancel.html</a><br/><div>
+<table border="1" cellpadding="1" cellspacing="1">
+<thead>
+<tr class="title status_failed"><td rowspan="1" colspan="3">delete_device_cancel</td></tr>
+</thead><tbody>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>open</td>
+	<td>/realm/3/users</td>
+	<td></td>
+</tr>
+<tr class="  status_failed" style="cursor: pointer;">
+	<td>click</td>
+	<td>//div[@id='realms-profile']/div/div[2]/div/div[2]/div/button</td>
+	<td>Element&nbsp;//div[@id='realms-profile']/div/div[2]/div/div[2]/div/button&nbsp;not&nbsp;found</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>//div[@id='realms-profile']/div/div[2]/div/div[2]/div/button</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>//div[@id='realms-profile']/div/div[2]/div/div[2]/div/button</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>link=POSTBACKS</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>//div[@id='realms-profile']/div/div[2]/div/div[15]/a</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>//div[@id='realms-profile']/div/div[2]/div/div[15]/a[2]</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>//div[@id='realms-profile']/div/div[2]/div/div[15]/a[2]</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>//div[@id='realms-profile']/div/div[2]/div/div[15]/a[2]</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>//div[@id='realms-profile']/div/div[2]/div/div[15]/a[2]</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>//div[@id='realms-profile']/div/div[2]/div/div[15]/a[2]</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>xpath=(//div[@id='postback-settings-button']/button)[2]</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>xpath=(//a[contains(text(),'DELETE')])[2]</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>xpath=(//button[@type='submit'])[2]</td>
+	<td></td>
+</tr>
+</tbody></table>
+
+
+</div></td>
+<td>&nbsp;</td>
+</tr><tr>
+<td><a name="testresult34">delete_device.html</a><br/><div>
+<table border="1" cellpadding="1" cellspacing="1">
+<thead>
+<tr class="title status_failed"><td rowspan="1" colspan="3">delete_device</td></tr>
+</thead><tbody>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>open</td>
+	<td>/realm/3/users</td>
+	<td></td>
+</tr>
+<tr class="  status_failed" style="cursor: pointer;">
+	<td>click</td>
+	<td>//div[@id='user-settings-button']/button</td>
+	<td>Element&nbsp;//div[@id='user-settings-button']/button&nbsp;not&nbsp;found</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>link=DEVICES</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>css=div.title a</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>link=REMOVE</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>//input[@value='Confirm']</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>link=Me</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>link=Settings</td>
+	<td></td>
+</tr>
+</tbody></table>
+
+
+</div></td>
+<td>&nbsp;</td>
+</tr><tr>
+<td><a name="testresult35">edit_self.html</a><br/><div>
+<table border="1" cellpadding="1" cellspacing="1">
+<thead>
+<tr class="title status_failed"><td rowspan="1" colspan="3">change_self_profile</td></tr>
+</thead><tbody>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>open</td>
+	<td>/realm/3/users</td>
+	<td></td>
+</tr>
+<tr class="  status_failed" style="cursor: pointer;">
+	<td>click</td>
+	<td>link=Me</td>
+	<td>Element&nbsp;link=Me&nbsp;not&nbsp;found</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>link=Settings</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>link=Edit</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=field_o</td>
+	<td>AutoEdit</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>//input[@value='Save']</td>
+	<td></td>
+</tr>
+</tbody></table>
+
+
+</div></td>
+<td>&nbsp;</td>
+</tr><tr>
+<td><a name="testresult36">edit_self_cancel.html</a><br/><div>
+<table border="1" cellpadding="1" cellspacing="1">
+<thead>
+<tr class="title status_failed"><td rowspan="1" colspan="3">edit_self_cancel</td></tr>
+</thead><tbody>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>open</td>
+	<td>/realm/3/users</td>
+	<td></td>
+</tr>
+<tr class="  status_failed" style="cursor: pointer;">
+	<td>click</td>
+	<td>link=Me</td>
+	<td>Element&nbsp;link=Me&nbsp;not&nbsp;found</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>link=Settings</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>link=Edit</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=field_</td>
+	<td>WOOOOOOOO</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>link=cancel</td>
+	<td></td>
+</tr>
+</tbody></table>
+
+
+</div></td>
+<td>&nbsp;</td>
+</tr><tr>
+<td><a name="testresult37">check_user_activity.html</a><br/><div>
+<table border="1" cellpadding="1" cellspacing="1">
+<thead>
+<tr class="title status_failed"><td rowspan="1" colspan="3">check_user_activity</td></tr>
+</thead><tbody>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>open</td>
+	<td>/realm/3/users</td>
+	<td></td>
+</tr>
+<tr class="  status_failed" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>css=div.title a</td>
+	<td>Element&nbsp;css=div.title&nbsp;a&nbsp;not&nbsp;found</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>//div[@id='profile']/div/div[2]/div[2]/div/div/div/button</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>xpath=(//a[contains(text(),'ACTIVITY')])[2]</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>link=Me</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>link=Logout</td>
+	<td></td>
+</tr>
+</tbody></table>
+
+
+</div></td>
+<td>&nbsp;</td>
+</tr><tr>
+<td><a name="testresult38">search_existing.html</a><br/><div>
+<table border="1" cellpadding="1" cellspacing="1">
+<thead>
+<tr class="title status_failed"><td rowspan="1" colspan="3">search_existing</td></tr>
+</thead><tbody>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>open</td>
+	<td>/realm/3/users</td>
+	<td></td>
+</tr>
+<tr class="  status_failed" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=search_name</td>
+	<td>Element&nbsp;id=search_name&nbsp;not&nbsp;found</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>css=input.btn.search-submit</td>
+	<td></td>
+</tr>
+</tbody></table>
+
+
+</div></td>
+<td>&nbsp;</td>
+</tr><tr>
+<td><a name="testresult39">search_nonexisting.html</a><br/><div>
+<table border="1" cellpadding="1" cellspacing="1">
+<thead>
+<tr class="title status_failed"><td rowspan="1" colspan="3">search_nonexisting</td></tr>
+</thead><tbody>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>open</td>
+	<td>/realm/3/users</td>
+	<td></td>
+</tr>
+<tr class="  status_failed" style="cursor: pointer;">
+	<td>type</td>
+	<td>id=search_name</td>
+	<td>Element&nbsp;id=search_name&nbsp;not&nbsp;found</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>css=input.btn.search-submit</td>
+	<td></td>
+</tr>
+</tbody></table>
+
+
+</div></td>
+<td>&nbsp;</td>
+</tr><tr>
+<td><a name="testresult40">test_device_navigator.html</a><br/><div>
+<table border="1" cellpadding="1" cellspacing="1">
+<thead>
+<tr class="title status_failed"><td rowspan="1" colspan="3">test_device_navigator</td></tr>
+</thead><tbody>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>open</td>
+	<td>/realm/3/users</td>
+	<td></td>
+</tr>
+<tr class="  status_failed" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>css=div.counts a</td>
+	<td>Element&nbsp;css=div.counts&nbsp;a&nbsp;not&nbsp;found</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>//div[@id='key-settings-button']/button</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>xpath=(//a[contains(text(),'ACTIVITY')])[2]</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>//div[@id='keys-view']/div/div[2]/div/div[4]/div/button</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>link=PROFILE</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>click</td>
+	<td>//div[@id='profile']/div/div[2]/div[2]/div/div/div/button</td>
+	<td></td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>xpath=(//a[contains(text(),'ACTIVITY')])[2]</td>
+	<td></td>
+</tr>
+</tbody></table>
+
+
+</div></td>
+<td>&nbsp;</td>
+</tr><tr>
+<td><a name="testresult41">logout.html</a><br/><div>
+<table border="1" cellpadding="1" cellspacing="1">
+<thead>
+<tr class="title status_failed"><td rowspan="1" colspan="3">logout</td></tr>
+</thead><tbody>
+<tr class="  status_done" style="cursor: pointer;">
+	<td>open</td>
+	<td>/realm/3/users</td>
+	<td></td>
+</tr>
+<tr class="  status_failed" style="cursor: pointer;">
+	<td>click</td>
+	<td>link=Me</td>
+	<td>Element&nbsp;link=Me&nbsp;not&nbsp;found</td>
+</tr>
+<tr class="" style="cursor: pointer;">
+	<td>clickAndWait</td>
+	<td>link=Logout</td>
+	<td></td>
+</tr>
+</tbody></table>
+
+
+</div></td>
+<td>&nbsp;</td>
+</tr></table><pre>
+info: Starting test /selenium-server/tests/sandbox_test_start.html
+info: Executing: |open | / |  |
+info: Executing: |clickAndWait | link=bypass it |  |
+info: Starting test /selenium-server/tests/create_field_cancel.html
+info: Executing: |open | /realm/3/users |  |
+info: Executing: |click | //div[@id=&apos;realms-profile&apos;]/div/div[2]/div/div[2]/div/button |  |
+info: Executing: |clickAndWait | link=FIELDS |  |
+info: Executing: |clickAndWait | link=+Add Field |  |
+info: Executing: |type | id=name | AnotherField |
+info: Executing: |type | id=field | Something |
+info: Executing: |click | css=label.switch-small |  |
+info: Executing: |click | //form[@id=&apos;addForm&apos;]/div[3]/div/div[7]/div/div/label |  |
+info: Executing: |type | id=description | This field needs a description |
+info: Executing: |clickAndWait | link=cancel |  |
+info: Starting test /selenium-server/tests/create_field.html
+info: Executing: |open | /realm/3/users |  |
+info: Executing: |click | //div[@id=&apos;realms-profile&apos;]/div/div[2]/div/div[2]/div/button |  |
+info: Executing: |clickAndWait | link=FIELDS |  |
+info: Executing: |clickAndWait | link=+Add Field |  |
+info: Executing: |type | id=name | AnotherField |
+info: Executing: |type | id=field | Something |
+info: Executing: |click | css=label.switch-small |  |
+info: Executing: |click | //form[@id=&apos;addForm&apos;]/div[3]/div/div[7]/div/div/label |  |
+info: Executing: |type | id=description | This field needs a description |
+info: Executing: |clickAndWait | //input[@value=&apos;Save&apos;] |  |
+info: Starting test /selenium-server/tests/edit_field_cancel.html
+info: Executing: |open | /realm/3/users |  |
+info: Executing: |click | //div[@id=&apos;realms-profile&apos;]/div/div[2]/div/div[2]/div/button |  |
+info: Executing: |clickAndWait | link=FIELDS |  |
+info: Executing: |selectWindow | null |  |
+info: Executing: |click | //div[@id=&apos;realms-fields&apos;]/div/div[2]/div/div[9]/div/div/button |  |
+info: Executing: |clickAndWait | xpath=(//a[contains(text(),&apos;EDIT&apos;)])[5] |  |
+info: Executing: |type | id=description | This field needs no description |
+info: Executing: |type | id=field | Strawberries |
+info: Executing: |type | id=name | EditedField |
+info: Executing: |click | css=label.switch-small |  |
+info: Executing: |clickAndWait | link=cancel |  |
+info: Starting test /selenium-server/tests/edit_field.html
+info: Executing: |open | /realm/3/users |  |
+info: Executing: |click | //div[@id=&apos;realms-profile&apos;]/div/div[2]/div/div[2]/div/button |  |
+info: Executing: |clickAndWait | link=FIELDS |  |
+info: Executing: |selectWindow | null |  |
+info: Executing: |click | //div[@id=&apos;realms-fields&apos;]/div/div[2]/div/div[9]/div/div/button |  |
+info: Executing: |clickAndWait | xpath=(//a[contains(text(),&apos;EDIT&apos;)])[5] |  |
+info: Executing: |type | id=description | This field needs no description |
+info: Executing: |type | id=field | Strawberries |
+info: Executing: |type | id=name | EditedField |
+info: Executing: |click | css=label.switch-small |  |
+info: Executing: |clickAndWait | link=Save |  |
+error: Element link=Save not found
+warn: currentTest.recordFailure: Element link=Save not found
+info: Starting test /selenium-server/tests/delete_field_cancel.html
+info: Executing: |open | /realm/3/users |  |
+info: Executing: |click | //div[@id=&apos;realms-profile&apos;]/div/div[2]/div/div[2]/div/button |  |
+info: Executing: |clickAndWait | link=FIELDS |  |
+info: Executing: |selectWindow | null |  |
+info: Executing: |click | //div[@id=&apos;realms-fields&apos;]/div/div[2]/div/div[9]/div/div/button |  |
+info: Executing: |click | xpath=(//a[contains(text(),&apos;DELETE&apos;)])[5] |  |
+info: Executing: |clickAndWait | xpath=(//input[@value=&apos;Cancel&apos;])[5] |  |
+error: Element xpath=(//input[@value=&apos;Cancel&apos;])[5] not found
+warn: currentTest.recordFailure: Element xpath=(//input[@value=&apos;Cancel&apos;])[5] not found
+info: Starting test /selenium-server/tests/delete_field.html
+info: Executing: |open | /realm/3/users |  |
+info: Executing: |click | //div[@id=&apos;realms-profile&apos;]/div/div[2]/div/div[2]/div/button |  |
+info: Executing: |clickAndWait | link=FIELDS |  |
+info: Executing: |selectWindow | null |  |
+info: Executing: |click | //div[@id=&apos;realms-fields&apos;]/div/div[2]/div/div[9]/div/div/button |  |
+info: Executing: |click | xpath=(//a[contains(text(),&apos;DELETE&apos;)])[5] |  |
+info: Executing: |clickAndWait | xpath=(//input[@value=&apos;Confirm&apos;])[5] |  |
+info: Starting test /selenium-server/tests/create_postback_cancel.html
+info: Executing: |open | /realm/3/users |  |
+info: Executing: |click | //div[@id=&apos;realms-profile&apos;]/div/div[2]/div/div[2]/div/button |  |
+info: Executing: |clickAndWait | link=POSTBACKS |  |
+info: Executing: |clickAndWait | link=+Add Postback |  |
+info: Executing: |type | id=postback_name | Smokestack |
+info: Executing: |type | id=postback_url | http://www.google.com |
+info: Executing: |click | //form[@id=&apos;addForm&apos;]/div[3]/div/div[7]/div/div/label |  |
+info: Executing: |click | //form[@id=&apos;addForm&apos;]/div[3]/div/div[9]/div/div/label |  |
+info: Executing: |click | //form[@id=&apos;addForm&apos;]/div[3]/div/div[11]/div/div/label |  |
+info: Executing: |click | //form[@id=&apos;addForm&apos;]/div[3]/div[2]/div[6]/div/div/label |  |
+info: Executing: |click | //form[@id=&apos;addForm&apos;]/div[3]/div[2]/div[5]/div/div/label |  |
+info: Executing: |clickAndWait | link=cancel |  |
+info: Starting test /selenium-server/tests/create_postback.html
+info: Executing: |open | /realm/3/users |  |
+info: Executing: |click | //div[@id=&apos;realms-profile&apos;]/div/div[2]/div/div[2]/div/button |  |
+info: Executing: |clickAndWait | link=POSTBACKS |  |
+info: Executing: |clickAndWait | link=+Add Postback |  |
+info: Executing: |type | id=postback_name | Smokestack |
+info: Executing: |type | id=postback_url | http://www.google.com |
+info: Executing: |click | //form[@id=&apos;addForm&apos;]/div[3]/div/div[7]/div/div/label |  |
+info: Executing: |click | //form[@id=&apos;addForm&apos;]/div[3]/div/div[9]/div/div/label |  |
+info: Executing: |click | //form[@id=&apos;addForm&apos;]/div[3]/div/div[11]/div/div/label |  |
+info: Executing: |click | //form[@id=&apos;addForm&apos;]/div[3]/div[2]/div[6]/div/div/label |  |
+info: Executing: |click | //form[@id=&apos;addForm&apos;]/div[3]/div[2]/div[5]/div/div/label |  |
+info: Executing: |clickAndWait | //input[@value=&apos;Save&apos;] |  |
+info: Starting test /selenium-server/tests/edit_postback_cancel.html
+info: Executing: |open | /realm/3/users |  |
+info: Executing: |click | //div[@id=&apos;realms-profile&apos;]/div/div[2]/div/div[2]/div/button |  |
+info: Executing: |clickAndWait | link=POSTBACKS |  |
+info: Executing: |clickAndWait | link=test hook and triggers... |  |
+error: Element link=test hook and triggers... not found
+warn: currentTest.recordFailure: Element link=test hook and triggers... not found
+info: Starting test /selenium-server/tests/edit_postback.html
+info: Executing: |open | /realm/3/users |  |
+info: Executing: |click | //div[@id=&apos;realms-profile&apos;]/div/div[2]/div/div[2]/div/button |  |
+info: Executing: |clickAndWait | link=POSTBACKS |  |
+info: Executing: |clickAndWait | link=test hook and triggers... |  |
+error: Element link=test hook and triggers... not found
+warn: currentTest.recordFailure: Element link=test hook and triggers... not found
+info: Starting test /selenium-server/tests/delete_postback_cancel.html
+info: Executing: |open | /realm/3/users |  |
+info: Executing: |click | //div[@id=&apos;realms-profile&apos;]/div/div[2]/div/div[2]/div/button |  |
+info: Executing: |click | //div[@id=&apos;realms-profile&apos;]/div/div[2]/div/div[2]/div/button |  |
+info: Executing: |click | xpath=(//div[@id=&apos;postback-settings-button&apos;]/button)[2] |  |
+error: Element xpath=(//div[@id=&apos;postback-settings-button&apos;]/button)[2] not found
+warn: currentTest.recordFailure: Element xpath=(//div[@id=&apos;postback-settings-button&apos;]/button)[2] not found
+info: Starting test /selenium-server/tests/delete_postback.html
+info: Executing: |open | /realm/3/users |  |
+info: Executing: |click | //div[@id=&apos;realms-profile&apos;]/div/div[2]/div/div[2]/div/button |  |
+info: Executing: |click | //div[@id=&apos;realms-profile&apos;]/div/div[2]/div/div[2]/div/button |  |
+info: Executing: |click | //div[@id=&apos;realms-profile&apos;]/div/div[2]/div/div[2]/div/button |  |
+info: Executing: |clickAndWait | link=POSTBACKS |  |
+info: Executing: |clickAndWait | //div[@id=&apos;realms-profile&apos;]/div/div[2]/div/div[15]/a |  |
+info: Executing: |clickAndWait | //div[@id=&apos;realms-profile&apos;]/div/div[2]/div/div[15]/a[2] |  |
+info: Executing: |clickAndWait | //div[@id=&apos;realms-profile&apos;]/div/div[2]/div/div[15]/a[2] |  |
+info: Executing: |clickAndWait | //div[@id=&apos;realms-profile&apos;]/div/div[2]/div/div[15]/a[2] |  |
+info: Executing: |clickAndWait | //div[@id=&apos;realms-profile&apos;]/div/div[2]/div/div[15]/a[2] |  |
+info: Executing: |clickAndWait | //div[@id=&apos;realms-profile&apos;]/div/div[2]/div/div[15]/a[2] |  |
+info: Executing: |click | xpath=(//div[@id=&apos;postback-settings-button&apos;]/button)[2] |  |
+info: Executing: |click | xpath=(//a[contains(text(),&apos;DELETE&apos;)])[2] |  |
+info: Executing: |clickAndWait | xpath=(//input[@value=&apos;Confirm&apos;])[2] |  |
+info: Starting test /selenium-server/tests/edit_domain_cancel.html
+info: Executing: |open | /realm/3/users |  |
+info: Executing: |click | //div[@id=&apos;realms-profile&apos;]/div/div[2]/div/div[2]/div/button |  |
+info: Executing: |clickAndWait | link=SETTINGS |  |
+info: Executing: |clickAndWait | link=Edit |  |
+info: Executing: |type | id=RealmDisplayName | Example.com! |
+info: Executing: |type | id=RealmDomain | http://example.com? |
+info: Executing: |type | id=RealmIpAddress | 94.94.94.94! |
+info: Executing: |type | id=RealmInfoUrl | http://example.com/about-us? |
+info: Executing: |clickAndWait | link=Edit |  |
+error: Element link=Edit not found
+warn: currentTest.recordFailure: Element link=Edit not found
+info: Starting test /selenium-server/tests/edit_domain.html
+info: Executing: |open | /realm/3/users |  |
+info: Executing: |click | //div[@id=&apos;realms-profile&apos;]/div/div[2]/div/div[2]/div/button |  |
+info: Executing: |clickAndWait | link=SETTINGS |  |
+info: Executing: |clickAndWait | link=Edit |  |
+info: Executing: |type | id=RealmDisplayName | Example.com! |
+info: Executing: |type | id=RealmDomain | http://example.com? |
+info: Executing: |type | id=RealmIpAddress | 94.94.94.94! |
+info: Executing: |type | id=RealmInfoUrl | http://example.com/about-us? |
+info: Executing: |click | css=label.switch-small |  |
+info: Executing: |type | id=RealmLogoUrl | http://66.147.244.206/~uafsunst/wp-content/uploads/2012/08/Batman-Logo-50x35.jpg! |
+info: Executing: |clickAndWait | //input[@value=&apos;Save&apos;] |  |
+info: Starting test /selenium-server/tests/create_key_cancel.html
+info: Executing: |open | /realm/3/users |  |
+info: Executing: |clickAndWait | css=div.counts a |  |
+info: Executing: |clickAndWait | link=+Add Key |  |
+info: Executing: |clickAndWait | link=cancel |  |
+info: Starting test /selenium-server/tests/create_key.html
+info: Executing: |open | /realm/3/users |  |
+info: Executing: |clickAndWait | css=div.counts a |  |
+info: Executing: |clickAndWait | link=+Add Key |  |
+info: Executing: |type | id=KeyName | Destructoid |
+info: Executing: |clickAndWait | //input[@value=&apos;Save&apos;] |  |
+info: Executing: |click | link=Me |  |
+info: Executing: |clickAndWait | link=Logout |  |
+info: Starting test /selenium-server/tests/reset_secret_key.html
+info: Executing: |open | /realm/3/users |  |
+info: Executing: |clickAndWait | css=div.counts a |  |
+error: Element css=div.counts a not found
+warn: currentTest.recordFailure: Element css=div.counts a not found
+info: Starting test /selenium-server/tests/edit_key_cancel.html
+info: Executing: |open | /realm/3/users |  |
+info: Executing: |clickAndWait | css=div.counts a |  |
+error: Element css=div.counts a not found
+warn: currentTest.recordFailure: Element css=div.counts a not found
+info: Starting test /selenium-server/tests/edit_key_no_reroll.html
+info: Executing: |open | /realm/3/users |  |
+info: Executing: |clickAndWait | css=div.counts a |  |
+error: Element css=div.counts a not found
+warn: currentTest.recordFailure: Element css=div.counts a not found
+info: Starting test /selenium-server/tests/edit_key_reroll.html
+info: Executing: |open | /realm/3/users |  |
+info: Executing: |clickAndWait | css=div.counts a |  |
+error: Element css=div.counts a not found
+warn: currentTest.recordFailure: Element css=div.counts a not found
+info: Starting test /selenium-server/tests/delete_key_cancel.html
+info: Executing: |open | /realm/3/users |  |
+info: Executing: |click | //div[@id=&apos;realms-profile&apos;]/div/div[2]/div/div[2]/div/button |  |
+error: Element //div[@id=&apos;realms-profile&apos;]/div/div[2]/div/div[2]/div/button not found
+warn: currentTest.recordFailure: Element //div[@id=&apos;realms-profile&apos;]/div/div[2]/div/div[2]/div/button not found
+info: Starting test /selenium-server/tests/delete_key.html
+info: Executing: |open | /realm/3/users |  |
+info: Executing: |click | //div[@id=&apos;realms-profile&apos;]/div/div[2]/div/div[2]/div/button |  |
+error: Element //div[@id=&apos;realms-profile&apos;]/div/div[2]/div/div[2]/div/button not found
+warn: currentTest.recordFailure: Element //div[@id=&apos;realms-profile&apos;]/div/div[2]/div/div[2]/div/button not found
+info: Starting test /selenium-server/tests/create_user_cancel.html
+info: Executing: |open | /realm/3/users |  |
+info: Executing: |clickAndWait | link=+Add User |  |
+error: Element link=+Add User not found
+warn: currentTest.recordFailure: Element link=+Add User not found
+info: Starting test /selenium-server/tests/create_user.html
+info: Executing: |open | /realm/3/users |  |
+info: Executing: |clickAndWait | link=+Add User |  |
+error: Element link=+Add User not found
+warn: currentTest.recordFailure: Element link=+Add User not found
+info: Starting test /selenium-server/tests/edit_user_cancel.html
+info: Executing: |open | /realm/3/users |  |
+info: Executing: |click | //div[@id=&apos;user-settings-button&apos;]/button |  |
+error: Element //div[@id=&apos;user-settings-button&apos;]/button not found
+warn: currentTest.recordFailure: Element //div[@id=&apos;user-settings-button&apos;]/button not found
+info: Starting test /selenium-server/tests/edit_user.html
+info: Executing: |open | /realm/3/users |  |
+info: Executing: |click | //div[@id=&apos;user-settings-button&apos;]/button |  |
+error: Element //div[@id=&apos;user-settings-button&apos;]/button not found
+warn: currentTest.recordFailure: Element //div[@id=&apos;user-settings-button&apos;]/button not found
+info: Starting test /selenium-server/tests/delete_user_cancel.html
+info: Executing: |open | /realm/3/users |  |
+info: Executing: |click | //div[@id=&apos;user-settings-button&apos;]/button |  |
+error: Element //div[@id=&apos;user-settings-button&apos;]/button not found
+warn: currentTest.recordFailure: Element //div[@id=&apos;user-settings-button&apos;]/button not found
+info: Starting test /selenium-server/tests/delete_user.html
+info: Executing: |open | /realm/3/users |  |
+info: Executing: |click | //div[@id=&apos;user-settings-button&apos;]/button |  |
+error: Element //div[@id=&apos;user-settings-button&apos;]/button not found
+warn: currentTest.recordFailure: Element //div[@id=&apos;user-settings-button&apos;]/button not found
+info: Starting test /selenium-server/tests/device_setup_email_cancel.html
+info: Executing: |open | /realm/3/users |  |
+info: Executing: |click | //div[@id=&apos;user-settings-button&apos;]/button |  |
+error: Element //div[@id=&apos;user-settings-button&apos;]/button not found
+warn: currentTest.recordFailure: Element //div[@id=&apos;user-settings-button&apos;]/button not found
+info: Starting test /selenium-server/tests/device_setup_email.html
+info: Executing: |open | /realm/3/users |  |
+info: Executing: |clickAndWait | css=div.title a |  |
+error: Element css=div.title a not found
+warn: currentTest.recordFailure: Element css=div.title a not found
+info: Starting test /selenium-server/tests/edit_device_cancel.html
+info: Executing: |open | /realm/3/users |  |
+info: Executing: |click | //div[@id=&apos;user-settings-button&apos;]/button |  |
+error: Element //div[@id=&apos;user-settings-button&apos;]/button not found
+warn: currentTest.recordFailure: Element //div[@id=&apos;user-settings-button&apos;]/button not found
+info: Starting test /selenium-server/tests/edit_device.html
+info: Executing: |open | /realm/3/users |  |
+info: Executing: |click | //div[@id=&apos;user-settings-button&apos;]/button |  |
+error: Element //div[@id=&apos;user-settings-button&apos;]/button not found
+warn: currentTest.recordFailure: Element //div[@id=&apos;user-settings-button&apos;]/button not found
+info: Starting test /selenium-server/tests/delete_device_cancel.html
+info: Executing: |open | /realm/3/users |  |
+info: Executing: |click | //div[@id=&apos;realms-profile&apos;]/div/div[2]/div/div[2]/div/button |  |
+error: Element //div[@id=&apos;realms-profile&apos;]/div/div[2]/div/div[2]/div/button not found
+warn: currentTest.recordFailure: Element //div[@id=&apos;realms-profile&apos;]/div/div[2]/div/div[2]/div/button not found
+info: Starting test /selenium-server/tests/delete_device.html
+info: Executing: |open | /realm/3/users |  |
+info: Executing: |click | //div[@id=&apos;user-settings-button&apos;]/button |  |
+error: Element //div[@id=&apos;user-settings-button&apos;]/button not found
+warn: currentTest.recordFailure: Element //div[@id=&apos;user-settings-button&apos;]/button not found
+info: Starting test /selenium-server/tests/edit_self.html
+info: Executing: |open | /realm/3/users |  |
+info: Executing: |click | link=Me |  |
+error: Element link=Me not found
+warn: currentTest.recordFailure: Element link=Me not found
+info: Starting test /selenium-server/tests/edit_self_cancel.html
+info: Executing: |open | /realm/3/users |  |
+info: Executing: |click | link=Me |  |
+error: Element link=Me not found
+warn: currentTest.recordFailure: Element link=Me not found
+info: Starting test /selenium-server/tests/check_user_activity.html
+info: Executing: |open | /realm/3/users |  |
+info: Executing: |clickAndWait | css=div.title a |  |
+error: Element css=div.title a not found
+warn: currentTest.recordFailure: Element css=div.title a not found
+info: Starting test /selenium-server/tests/search_existing.html
+info: Executing: |open | /realm/3/users |  |
+info: Executing: |type | id=search_name | Testname |
+error: Element id=search_name not found
+warn: currentTest.recordFailure: Element id=search_name not found
+info: Starting test /selenium-server/tests/search_nonexisting.html
+info: Executing: |open | /realm/3/users |  |
+info: Executing: |type | id=search_name | thisisnotausername |
+error: Element id=search_name not found
+warn: currentTest.recordFailure: Element id=search_name not found
+info: Starting test /selenium-server/tests/test_device_navigator.html
+info: Executing: |open | /realm/3/users |  |
+info: Executing: |clickAndWait | css=div.counts a |  |
+error: Element css=div.counts a not found
+warn: currentTest.recordFailure: Element css=div.counts a not found
+info: Starting test /selenium-server/tests/logout.html
+info: Executing: |open | /realm/3/users |  |
+info: Executing: |click | link=Me |  |
+error: Element link=Me not found
+warn: currentTest.recordFailure: Element link=Me not found
 </pre></body></html>
