@@ -1,0 +1,134 @@
+<?php
+
+/**
+ * @file
+ * Hook_requirements for the SAML Service Provider module.
+ */
+
+
+/**
+ * Implements hook_schema().
+ */
+function saml_sp_schema() {
+  $schema = array();
+
+  // Cache all outbound SAML SP requests.
+  $schema['saml_sp_request_tracking_cache'] = drupal_get_schema_unprocessed('system', 'cache');
+
+
+  // Store the IDP data.
+  $schema['saml_sp_idps'] = array(
+    'description' => 'Seqrd IDP Configurations',
+
+    // Enable CTools exportables based on this table.
+    'export' => array(
+      // SAML IDP machine name key.
+      'key' => 'machine_name',
+      // In the export, entries will be identified as $idp
+      'export' => 'idp',
+      // Description of key.
+      'key name' => 'IDP machine name',
+      // Variable name to use in exported code.
+      'identifier' => 'saml_idp',
+
+      // // Use the environment load callback directly.
+      // 'load callback' => 'apachesolr_environment_load',
+      // // Thin wrapper for the environment save callback.
+      // 'save callback' => 'apachesolr_ctools_environment_save',
+      // // Thin wrapper for the environment delete callback.
+      // 'delete callback' => 'apachesolr_ctools_environment_delete',
+      // // Includes the environment variables in 'conf' as well as the fields in this table.
+      // 'export callback' => 'apachesolr_ctools_environment_export',
+
+      // Use the same hook as the API name below.
+      'default hook' => 'saml_sp_default_idps',
+      // CTools API implementation.
+      'api' => array(
+        'owner' => 'saml_sp',
+        // Base name for API files: foo.saml_sp_idps.inc
+        'api' => 'saml_sp_idps',
+        'minimum_version' => 1,
+        'current_version' => 1,
+      ),
+    ),
+
+    'fields' => array(
+      'machine_name' => array(
+        'description' => 'Unique identifier for the environment',
+        'type' => 'varchar',
+        'length' => 32,
+        'not null' => TRUE,
+      ),
+      'name' => array(
+        'description' => 'Human-readable name for the SAML IDP',
+        'type' => 'varchar',
+        'length' => 30,
+        'not null' => TRUE,
+        'default' => ''
+      ),
+      'app_name' => array(
+        'description' => 'Human-readable name to provide to the IDP to identify the application',
+        'type' => 'varchar',
+        'length' => 30,
+        'not null' => TRUE,
+        'default' => ''
+      ),
+      'login_url' => array(
+        'description' => 'Full url to connect to the SAML login endpoint',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ),
+      'x509_cert' => array(
+        'description' => 'The x.509 public certificate of the IDP',
+        'type' => 'text',
+        // 2048 chars should be enough for any x.509 certs.
+        'length' => 2048,
+        'not null' => TRUE,
+      ),
+    ),
+    'primary key' => array('machine_name'),
+  );
+
+  return $schema;
+}
+
+
+// /**
+//  * Implements hook_requirements().
+//  */
+// function samp_sp_requirements($phase) {
+// 
+// }
+
+
+function saml_sp_install() {
+  // Populate the default seqrd record.
+  db_insert('saml_sp_idps')->fields(array(
+    'machine_name' => 'seqrd',
+    'name' => 'SEQRD - Globe Sherpa Default',
+    'app_name' => 'globesherpa',
+    'login_url' => 'http://gstest.seqrd.com/simplesaml/saml2/idp/SSOService.php',
+    'x509_cert' => '-----BEGIN CERTIFICATE-----
+MIIDZTCCAk2gAwIBAgIJALPNe0+STJopMA0GCSqGSIb3DQEBBQUAMEkxCzAJBgNV
+BAYTAlVTMQ8wDQYDVQQIDAZPcmVnb24xETAPBgNVBAcMCFBvcnRsYW5kMRYwFAYD
+VQQKDA1TRVFSRCBTQU5EQk9YMB4XDTEzMDYxMDIyMDcyMVoXDTIzMDYxMDIyMDcy
+MVowSTELMAkGA1UEBhMCVVMxDzANBgNVBAgMBk9yZWdvbjERMA8GA1UEBwwIUG9y
+dGxhbmQxFjAUBgNVBAoMDVNFUVJEIFNBTkRCT1gwggEiMA0GCSqGSIb3DQEBAQUA
+A4IBDwAwggEKAoIBAQDaFYOp6+8m8nqYLQxoZovGMvjqPSFC/Hqkt3odnGnZ20nV
+wpcWqnOl3B295dt+do7qInSCYcfM3PDl8gpahVfhdsD8PXIXtLIAfsegA9vkfhq0
+qg+VCHM2ANoTGTTp/0jo65pyBSZu0vufS0vkssQRExWmdNwwhsLxh9IvNxLsMgxI
+zypOcIO5D8pMasFAG21S9k4sq+9ACHR7uVuMJNx9wx4khkN0cX5MF0D0ED4NhaAn
+O3JyFXYbfUPPV2OdtE7+OzxcBVOVhueLO5qccNQP7B3fmgZOpl8bCQseQCzIPic5
+m7IvCqQNd0g2Y7LpCuRBqIygiztCc0TgD3vUt7yPAgMBAAGjUDBOMB0GA1UdDgQW
+BBSiw8FRhnv/y5JNSsEWnjzK4eUVhzAfBgNVHSMEGDAWgBSiw8FRhnv/y5JNSsEW
+njzK4eUVhzAMBgNVHRMEBTADAQH/MA0GCSqGSIb3DQEBBQUAA4IBAQB+T3s2S5D9
+xCQxH3KM/BatQzNclnn+8R7MHLrDM89PjOE3VUAh0/gYDcZs7HnmHyg14vOzgrVh
+pD2GgWc/hn1eWRbrSQOM9mlBfpj4uI4DiPTvwfaHTi/PpC1CesY/bL6ItjxG1JLH
+HaTl52FXTDAz3tibDcjzCJkg72w9D460ByjYDEq4sfOEEXHtw545Z5PclUAmzbFQ
+NRYer7rXauarp796lfdKMAfbSJ5Mo2kKQxNdeMThF+nITZQ6gfvpRHkx9Spk1MhS
+pMuN3X0zyHu4dVz9dJ1DwKbAROISKdbY1OSBaqOsWCX+boIvsBUvkdfsk5GckiBF
+td27LaUm52RF
+-----END CERTIFICATE-----'
+  ))->execute();
+}
