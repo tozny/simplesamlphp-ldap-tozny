@@ -140,12 +140,9 @@ $authUrl = "seqrdauth://sandbox.seqrd.com/api/"
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>Authentication</title>
 
-	<link rel="stylesheet" type="text/css" href="/simplesaml/resources/default.css" />
-	<link rel="icon" type="image/icon" href="/simplesaml/resources/icons/favicon.ico" />
-
-
 	<!-- seqrd stuff -->
-    <link rel="stylesheet" type="text/css" href="/simplesaml/resources/seqrd/seqrd.css" />
+
+    <link rel="stylesheet" type="text/css" href="seqrd.css" />
     
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="//sandbox.seqrd.com/api/interface/javascript/jquery.seqrd.js"></script>
