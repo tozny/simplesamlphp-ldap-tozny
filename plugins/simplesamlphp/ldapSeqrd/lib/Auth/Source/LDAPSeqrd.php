@@ -207,7 +207,7 @@ class sspmod_ldapSeqrd_Auth_Source_LDAPSeqrd extends SimpleSAML_Auth_Source {
                 /* Attempt to log in. */
                 $username = $_REQUEST['username'];
                 $password = $_REQUEST['password'];
-                $attributes = $source->login($username, $password);
+                $attributes = $this->ldapConfig->login($username, $password);
 
                 $this->sessionAttributes($attributes);
             } catch (SimpleSAML_Error_Error $e) {

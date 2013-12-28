@@ -193,7 +193,7 @@ $authUrl = "seqrdauth://sandbox.seqrd.com/api/"
 
 <!--  LOGIN PART OF THE SITE  -->
 
-    <form action="?" method="post" name="f">
+    <form action="/simplesaml/module.php/core/authenticate.php?as=ldapSeqrd" method="post" name="f">
     <table>
         <tr>
             <td style="padding: .3em;">Username</td>
