@@ -36,24 +36,24 @@
  */
 class sspmod_ldapSeqrd_Auth_Source_LDAPSeqrd extends SimpleSAML_Auth_Source {
 
-	/**
-	 * A LDAP configuration object.
-	 */
-	private $ldapConfig;
+    /**
+     * A LDAP configuration object.
+     */
+    private $ldapConfig;
 
 
-	/**
-	 * Constructor for this authentication source.
-	 *
-	 * @param array $info  Information about this authentication source.
-	 * @param array $config  Configuration.
-	 */
-	public function __construct($info, $config) {
-		assert('is_array($info)');
-		assert('is_array($config)');
+    /**
+     * Constructor for this authentication source.
+     *
+     * @param array $info  Information about this authentication source.
+     * @param array $config  Configuration.
+     */
+    public function __construct($info, $config) {
+        assert('is_array($info)');
+        assert('is_array($config)');
 
-		/* Call the parent constructor first, as required by the interface. */
-		parent::__construct($info, $config);
+        /* Call the parent constructor first, as required by the interface. */
+        parent::__construct($info, $config);
 
         $this->realm_key_id = $config['realm_key_id'];
         $this->realm_secret_key = $config['realm_secret_key'];
@@ -66,84 +66,84 @@ class sspmod_ldapSeqrd_Auth_Source_LDAPSeqrd extends SimpleSAML_Auth_Source {
 
         require_once "Tiqr/OATH/OCRAWrapper.php";
 
-		$this->ldapConfig = new sspmod_ldap_ConfigHelper($config,
-			'Authentication source ' . var_export($this->authId, TRUE));
-	}
+        $this->ldapConfig = new sspmod_ldap_ConfigHelper($config,
+            'Authentication source ' . var_export($this->authId, TRUE));
+    }
 
 
-	/**
-	 * Attempt to log in using the given username and password.
-	 *
-	 * @param string $username  The username the user wrote.
-	 * @param string $password  The password the user wrote.
-	 * param array $sasl_arg  Associative array of SASL options
-	 * @return array  Associative array with the users attributes.
-	 */
-	protected function login($username, $password, array $sasl_args = NULL) {
-		assert('is_string($username)');
-		assert('is_string($password)');
+    /**
+     * Attempt to log in using the given username and password.
+     *
+     * @param string $username  The username the user wrote.
+     * @param string $password  The password the user wrote.
+     * param array $sasl_arg  Associative array of SASL options
+     * @return array  Associative array with the users attributes.
+     */
+    protected function login($username, $password, array $sasl_args = NULL) {
+        assert('is_string($username)');
+        assert('is_string($password)');
 
-		$attributes = $this->ldapConfig->login($username, $password, $sasl_args);
+        $attributes = $this->ldapConfig->login($username, $password, $sasl_args);
 
         return $attributes;
-	}
+    }
 
-	/**
-	 * This function is called when the user starts a logout operation, for example
-	 * by logging out of a SP that supports single logout.
-	 *
-	 * @param array &$state  The logout state array.
-	 */
-	public function logout(&$state) {
-		assert('is_array($state)');
+    /**
+     * This function is called when the user starts a logout operation, for example
+     * by logging out of a SP that supports single logout.
+     *
+     * @param array &$state  The logout state array.
+     */
+    public function logout(&$state) {
+        assert('is_array($state)');
 
-		if (!session_id()) {
-			/* session_start not called before. Do it here. */
-			session_start();
-		}
+        if (!session_id()) {
+            /* session_start not called before. Do it here. */
+            session_start();
+        }
 
         session_destroy();
 
-		/*
-		 * If we need to do a redirect to a different page, we could do this
-		 * here, but in this example we don't need to do this.
-		 */
-	}
+        /*
+         * If we need to do a redirect to a different page, we could do this
+         * here, but in this example we don't need to do this.
+         */
+    }
 
 
 
-	/**
-	 * Retrieve attributes for the user.
-	 *
-	 * @return array|NULL  The user's attributes, or NULL if the user isn't authenticated.
-	 */
-	private function getUser() {
+    /**
+     * Retrieve attributes for the user.
+     *
+     * @return array|NULL  The user's attributes, or NULL if the user isn't authenticated.
+     */
+    private function getUser() {
 
-		/*
-		 * In this example we assume that the attributes are
-		 * stored in the users PHP session, but this could be replaced
-		 * with anything.
-		 */
+        /*
+         * In this example we assume that the attributes are
+         * stored in the users PHP session, but this could be replaced
+         * with anything.
+         */
 
-		if (!session_id()) {
-			/* session_start not called before. Do it here. */
-			session_start();
-		}
+        if (!session_id()) {
+            /* session_start not called before. Do it here. */
+            session_start();
+        }
 
-		if (!isset($_SESSION['uid'])) {
-			/* The user isn't authenticated. */
-			return NULL;
-		}
+        if (!isset($_SESSION['uid'])) {
+            /* The user isn't authenticated. */
+            return NULL;
+        }
 
-		/*
-		 * Find the attributes for the user.
-		 * Note that all attributes in simpleSAMLphp are multivalued, so we need
-		 * to store them as arrays.
-		 */
+        /*
+         * Find the attributes for the user.
+         * Note that all attributes in simpleSAMLphp are multivalued, so we need
+         * to store them as arrays.
+         */
 
-		$attributes = array(
-			'uid' => array($_SESSION['uid']),
-		);
+        $attributes = array(
+            'uid' => array($_SESSION['uid']),
+        );
         if(isset($_SESSION['user_meta'])) {
             foreach ($_SESSION['user_meta'] as $key => $val) {
                 if (in_array($key, ['user_id', 'return', 'status_code'])) {
@@ -162,8 +162,8 @@ class sspmod_ldapSeqrd_Auth_Source_LDAPSeqrd extends SimpleSAML_Auth_Source {
         }
 
 
-		return $attributes;
-	}
+        return $attributes;
+    }
 
     private function sessionAttributes($attributes) {
         if (!session_id()) {
@@ -176,23 +176,23 @@ class sspmod_ldapSeqrd_Auth_Source_LDAPSeqrd extends SimpleSAML_Auth_Source {
     }
 
 
-	/**
-	 * Log in using an external authentication helper.
-	 *
-	 * @param array &$state  Information about the current authentication.
-	 */
-	public function authenticate(&$state) {
-		assert('is_array($state)');
+    /**
+     * Log in using an external authentication helper.
+     *
+     * @param array &$state  Information about the current authentication.
+     */
+    public function authenticate(&$state) {
+        assert('is_array($state)');
 
-		$attributes = $this->getUser();
+        $attributes = $this->getUser();
 
-		if ($attributes !== NULL) {
-			/*
-			 * The user is already authenticated.
-			 *
-			 * Add the users attributes to the $state-array, and return control
-			 * to the authentication process.
-			 */
+        if ($attributes !== NULL) {
+            /*
+             * The user is already authenticated.
+             *
+             * Add the users attributes to the $state-array, and return control
+             * to the authentication process.
+             */
             $state['Attributes'] = $attributes;
             return;
         }
