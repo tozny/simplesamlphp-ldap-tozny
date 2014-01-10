@@ -203,6 +203,7 @@ class sspmod_ldapSeqrd_Auth_Source_LDAPSeqrd extends SimpleSAML_Auth_Source {
          */
 
         $auth = FALSE;
+        $msg = '';
         $userApi = new SEQRD_Remote_User_API($this->realm_key_id, $this->api_url);
 
         $state['LDAPSeqrd:AuthID'] = $this->authId;
@@ -212,7 +213,7 @@ class sspmod_ldapSeqrd_Auth_Source_LDAPSeqrd extends SimpleSAML_Auth_Source {
                 /* Attempt to log in. */
                 $username = $_REQUEST['username'];
                 $password = $_REQUEST['password'];
-                $attributes = $this->ldapConfig->login($username, $password);
+                $attributes = $this->login($username, $password);
 
                 $this->sessionAttributes($attributes);
                 $auth = TRUE;
@@ -221,7 +222,10 @@ class sspmod_ldapSeqrd_Auth_Source_LDAPSeqrd extends SimpleSAML_Auth_Source {
                  * Login failed. Return the error code to the login form, so that it
                  * can display an error message to the user.
                  */
-                return $e->getErrorCode();
+                $msg = 'Unable to login via LDAP. Bad username/password.';
+                // This is how it's done elsewhere... Its kinda of ugly so Im going to do it a prettier way
+                //SimpleSAML_Auth_State::throwException($state,
+                //    new SimpleSAML_Error_Exception('Unable to login via LDAP. Error code: '. $e->getErrorCode()));
             }
         } else if (!empty($_REQUEST['auth_type']) && $_REQUEST['auth_type'] === 'seqrd') {
             $siteApi = new SEQRD_Remote_Realm_API($this->realm_key_id, $this->realm_secret_key, $this->api_url);
@@ -257,13 +261,15 @@ class sspmod_ldapSeqrd_Auth_Source_LDAPSeqrd extends SimpleSAML_Auth_Source {
                         // If we make it here, we're auth. We'll redirect below
                         $auth = TRUE;
                     } else {
-                        SimpleSAML_Auth_State::throwException($state,
-                                new SimpleSAML_Error_Exception('Unable to match payload signature with private key.'));
+                        $msg = 'Error logging in with Seqrd.';
+                        //SimpleSAML_Auth_State::throwException($state,
+                        //        new SimpleSAML_Error_Exception('Unable to match payload signature with private key.'));
                     }
                 }
             } else {
-                SimpleSAML_Auth_State::throwException($state,
-                        new SimpleSAML_Error_Exception('Expected a session_id in payload.'));
+                $msg = 'Error logging in with Seqrd.';
+                //SimpleSAML_Auth_State::throwException($state,
+                //        new SimpleSAML_Error_Exception('Expected a session_id in payload.'));
             }
         }
 
@@ -307,16 +313,15 @@ class sspmod_ldapSeqrd_Auth_Source_LDAPSeqrd extends SimpleSAML_Auth_Source {
             if ($challenge['return'] == 'error') {
                 // We should add better bailing code here, like the option to send a message to the auth page
                 // which indicates an error in the seqrd portion
+                // XXX Im not sure what should happen here
                 return;
             }
 
             $_SESSION['seqrd_session_id'] = $challenge['session_id'];
-            $_SESSION['qrUrl'] = $challenge['qr_url'];
-            $_SESSION['authUrl'] = $this->api_url 
-                . "?s=" . $challenge['session_id']
-                . "&c=" . $challenge['challenge']
-                . "&r=" . $challenge['realm_key_id'];
-            $_SESSION['realm_key_id'] = $this->realm_key_id;
+            $_SESSION['qrUrl']            = $challenge['qr_url'];
+            $_SESSION['realm_key_id']     = $this->realm_key_id;
+            $_SESSION['mobile_url']       = $challenge['mobile_url'];
+            $_SESSION['msg']              = $msg;
 
             /*
              * Get the URL of the authentication page.

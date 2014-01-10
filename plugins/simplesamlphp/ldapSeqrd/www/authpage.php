@@ -27,7 +27,7 @@
                 'realm_key_id':'<?php echo $_SESSION['realm_key_id']; ?>',
                 'session_id': '<?php echo $_SESSION['seqrd_session_id']; ?>',
                 'qr_url': '<?php echo $_SESSION['qrUrl']; ?>',
-                'mobile_url': 'http://what.is.this./',
+                'mobile_url': '<?php echo $_SESSION['mobile_url']; ?>',
                 'form_type': 'custom',
                 'form_id':'seqrd-form',
                 'debug':true
@@ -62,8 +62,11 @@
 
 
 <h2 class="main">Authentication</h2>
+<?php if (!empty($_SESSION['msg'])) {
+    echo '<h3 class="error-msg">'.$_SESSION['msg'].'</h3>';
 
-
+}
+?>
 <!--  LOGIN PART OF THE SITE  -->
 
     <form action="/simplesaml/module.php/core/authenticate.php?as=ldapSeqrd" method="post" name="f">
@@ -92,7 +95,6 @@
 <input type="hidden" name="auth_type" value="seqrd" />
 <div id="qr_code_login"></div>
 </form>
-<a href="<?php echo $_SESSION['authUrl'];?>"><img src="logInWithBluetooth.png"></a>
 
 <!--  END LOGIN PART OF THE SITE -->
 
