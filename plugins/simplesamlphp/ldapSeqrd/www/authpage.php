@@ -1,9 +1,12 @@
 <?php
-    $loginurl = "http://sandbox.seqrd.com/simplesaml/module.php/core/authenticate.php?as=ldapSeqrd";
+    $scheme   = $_SERVER['HTTPS'] == on ? "https" : "http";
+    $server   = $_SERVER['SERVER_NAME'] . ($_SERVER['SERVER_PORT'] == 80 ? "" : (":" . $_SERVER['SERVER_PORT']));
+
+    $loginUrl = "$scheme://$server/simplesaml/module.php/core/authenticate.php?as=ldapSeqrd";
     session_start();
 
     if (empty($_SESSION['seqrd_session_id'])) {
-        header('Location: ' . $loginurl);
+        header('Location: ' . $loginUrl);
     }
 ?>
 
@@ -18,7 +21,7 @@
     <link rel="stylesheet" type="text/css" href="seqrd.css" />
     
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script src="//sandbox.seqrd.com/api/interface/javascript/jquery.seqrd.js"></script>
+    <script src="<?php echo $_SESSION['api_url'] . 'interface/javascript/jquery.seqrd.js'?>"></script>
     <script type="text/javascript">
     $(document).ready(function() {
 
@@ -27,6 +30,7 @@
                 'realm_key_id':'<?php echo $_SESSION['realm_key_id']; ?>',
                 'session_id': '<?php echo $_SESSION['seqrd_session_id']; ?>',
                 'qr_url': '<?php echo $_SESSION['qrUrl']; ?>',
+                'api_url': '<?php echo $_SESSION['api_url'] . 'index.php' ?>',
                 'mobile_url': '<?php echo $_SESSION['mobile_url']; ?>',
                 'form_type': 'custom',
                 'form_id':'seqrd-form',
@@ -47,7 +51,8 @@
 <div id="header">
 <div id="logo">
 <a style="text-decoration: none; color: white" href="/">
-<img src="/simplesaml/resources/seqrd/logo-seqrd_white.png" class="logo" alt="Seqrd Logo" />
+<!--img src="/simplesaml/resources/seqrd/logo-seqrd_white.png" class="logo" alt="Seqrd Logo" /-->
+<img src="seqrd.png" class="logo" alt="Seqrd Logo" />
 </a>
 </div>
 <div id="page_header">

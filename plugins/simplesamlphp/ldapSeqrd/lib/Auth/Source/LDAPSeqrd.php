@@ -322,6 +322,7 @@ class sspmod_ldapSeqrd_Auth_Source_LDAPSeqrd extends SimpleSAML_Auth_Source {
             $_SESSION['realm_key_id']     = $this->realm_key_id;
             $_SESSION['mobile_url']       = $challenge['mobile_url'];
             $_SESSION['msg']              = $msg;
+            $_SESSION['api_url']          = $this->api_url;
 
             /*
              * Get the URL of the authentication page.
