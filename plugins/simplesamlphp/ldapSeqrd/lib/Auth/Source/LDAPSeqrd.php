@@ -59,12 +59,11 @@ class sspmod_ldapSeqrd_Auth_Source_LDAPSeqrd extends SimpleSAML_Auth_Source {
         $this->realm_secret_key = $config['realm_secret_key'];
         $this->api_url = $config['api_url'];
 
-        require_once $config['seqrd_import']. "/SeqrdRemoteUserAPI.php";
-        require_once $config['seqrd_import']. "/SeqrdRemoteRealmAPI.php";
+        require_once "SeqrdRemoteUserAPI.php";
+        require_once "SeqrdRemoteRealmAPI.php";
 
-        set_include_path(get_include_path() . PATH_SEPARATOR . $config['tiqr_directory']);
+        set_include_path(get_include_path());
 
-        require_once "Tiqr/OATH/OCRAWrapper.php";
 
         $this->ldapConfig = new sspmod_ldap_ConfigHelper($config,
             'Authentication source ' . var_export($this->authId, TRUE));
