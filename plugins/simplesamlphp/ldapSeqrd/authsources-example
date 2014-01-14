@@ -11,8 +11,6 @@ $config = array(
     'realm_key_id'     => 'ROCKSTAR',
     'realm_secret_key' => 'DEADBEEF2',
     'api_url'          => 'http://sandbox.seqrd.com/api-unstable/',
-    'seqrd_import'     => '/usr/share/simplesamlphp/modules/ldapSeqrd/',
-    'tiqr_directory'   => '/usr/share/simplesamlphp/modules/ldapSeqrd/',
 
 
     // The hostname of the LDAP server.
