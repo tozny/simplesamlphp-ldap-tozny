@@ -9,50 +9,7 @@ project.xcworkspace
 # vagrant
 .vagrant
 
-# for testing purposes libs are installed but we don't need them in git
-Server/simplesamlphp-demo/Zend
-Server/simplesamlphp-demo/phpqrcode/
-Server/simplesamlphp-demo/simplesamlphp/
-Server/simplesamlphp-demo/tiqr
-
-Server/API/_notes/dwsync.xml
-
-Server/API/inc/classes/_notes/dwsync.xml
-
-Server/API/inc/functions/_notes/dwsync.xml
-
-Server/API/inc/methods/_notes/dwsync.xml
-
 #Emacs backup files
 *~
 \#*#
 
-Server/API/sample.php
-
-Server/API/interface/javascript/_notes/dwsync.xml
-
-Server/API/interface/javascript/CryptoJS v3.1.2.zip
-
-Server/API/sample/_notes/dwsync.xml
-
-Server/API/inc/methods/brian.development.php
-
-Server/API/inc/methods/brian.development.php
-
-Server/API/inc/storage/_notes/dwsync.xml
-
-Server/API/inc/checks/_notes/dwsync.xml
-
-Server/API/inc/checks/_notes/dwsync.xml
-
-Server/API/inc/checks/_notes/dwsync.xml
-
-Server/API/test/postbacks/_notes/dwsync.xml
-
-Server/API/interface/javascript/images/_notes/dwsync.xml
-
-Server/API/sample/uber/_notes/dwsync.xml
-
-Server/API/sample/uber/_notes/dwsync.xml
-
-*.xml
