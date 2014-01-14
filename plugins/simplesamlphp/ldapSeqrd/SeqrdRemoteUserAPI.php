@@ -55,10 +55,8 @@ class SEQRD_Remote_User_API
      * @var SEQRD_Challenge
      */
     private $_challenge;
-    private $_ocraWrapper;
     private $_api_url;
 
-    const DEFAULT_OCRA_SUITE = "OCRA-1:HOTP-SHA1-6:QH10-S";
 
 
     /**
@@ -71,7 +69,6 @@ class SEQRD_Remote_User_API
     {
 
         $this->_realm_key_id = $in_realm_key_id;
-        $this->_ocra_wrapper = new Tiqr_OCRAWrapper(self::DEFAULT_OCRA_SUITE);
 
         if ($in_api_url) {
             $this->_api_url = $in_api_url;
@@ -112,132 +109,6 @@ class SEQRD_Remote_User_API
         //TODO: Handle error
         $this->_challenge = $decodedValue;
         return $decodedValue;
-    }
-
-
-    /**
-     * Performs the login action by generating a response to the challenge.
-     * Requires that login_challenge is called first.
-     *
-     * @param SEQRD_User The user for this login.
-     * if the login was successful | error
-     * @param unknown $user
-     * @return array result, which is a signed payload
-     */
-    function loginResult($user)
-    {
-        return $this->loginResultRaw ($user, $this->_challenge);
-    }
-
-
-    /**
-     * Like login_result, but doesn't require that login_challenge be called.
-     *
-     * @param SEQRD_User The user for this login.
-     * @param SEQRD_Challenge The challenge
-     * if the login was successful | error
-     * @param unknown $user
-     * @param unknown $challenge
-     * @return array result, which is a signed payload
-     */
-    function loginResultRaw($user, $challenge, $type = 'HMAC')
-    {
-        $args = ['method'       => 'user.login_result',
-            'realm_key_id' => $this->_realm_key_id,
-            'user_id'      => $user['user_id'],
-            'user_key_id'  => $user['user_key_id'],
-            'session_id'   => $challenge['session_id']];
-
-        $response = '';
-
-        if ($type == 'HMAC') {
-            $response = $this->_ocra_wrapper->calculateResponse(
-                    $user['user_secret'], $challenge['challenge'], $challenge['session_id']);
-        } else if ($type == 'RSA') {
-            $data = array('challenge' => $challenge['challenge'], 
-                'session_id' => $challenge['session_id']);
-
-            $sig = '';
-            openssl_sign(json_encode($data), $sig, $user['user_secret'], OPENSSL_ALGO_SHA256);
-
-            if ($sig == '') {
-                return false;
-            }
-
-            $base = new SEQRD_BASE();
-
-            $data['signature'] = $base->base64UrlEncode($sig);
-
-            $response = json_encode($data);
-
-            $args['login_type'] = 'RSA';
-        }
-
-        if ($response == '') {
-            return false;
-        }
-
-        $args['response'] = $response;
-        //TODO: If null, return an error
-        $signed_data = $this->rawCall($args);
-        //TODO: Handle errors
-        return $signed_data;
-    }
-	
-	
-	/**
-     * Like login_result, but doesn't require that login_challenge be called.
-     *
-     * @param SEQRD_User The user for this login.
-     * @param SEQRD_Challenge The challenge
-     * if the login was successful | error
-     * @param unknown $user
-     * @param unknown $challenge
-     * @return array result, which is a signed payload
-     */
-    function questionResultRaw($user, $challenge, $answer, $type = 'HMAC')
-    {
-        $args = ['method'       => 'user.question_result',
-            'realm_key_id' => $this->_realm_key_id,
-            'user_id'      => $user['user_id'],
-            'user_key_id'  => $user['user_key_id'],
-            'session_id'   => $challenge['session_id'],
-			'answer'       => $answer];
-
-        $response = '';
-
-        if ($type == 'HMAC') {
-            $response = $this->_ocra_wrapper->calculateResponse(
-                    $user['user_secret'], $challenge['challenge'], $challenge['session_id']);
-        } else if ($type == 'RSA') {
-            $data = array('challenge' => $challenge['challenge'], 
-                'session_id' => $challenge['session_id']);
-
-            $sig = '';
-            openssl_sign(json_encode($data), $sig, $user['user_secret'], OPENSSL_ALGO_SHA256);
-
-            if ($sig == '') {
-                return false;
-            }
-
-            $base = new SEQRD_BASE();
-
-            $data['signature'] = $base->base64UrlEncode($sig);
-
-            $response = json_encode($data);
-
-            $args['login_type'] = 'RSA';
-        }
-
-        if ($response == '') {
-            return false;
-        }
-
-        $args['response'] = $response;
-        //TODO: If null, return an error
-        $signed_data = $this->rawCall($args);
-        //TODO: Handle errors
-        return $signed_data;
     }
 
 
