@@ -12,3 +12,5 @@ mkdir -p $LDAPSEQRD_DEB_DIR/usr/share/simplesamlphp/modules/
 
 cp $SCRIPT_DIR/control   $LDAPSEQRD_DEB_DIR/DEBIAN
 cp -r $LDAPSEQRD_DIR $LDAPSEQRD_DEB_DIR/usr/share/simplesamlphp/modules/
+
+fakeroot $SCRIPT_DIR/finish_package.sh $LDAPSEQRD_DEB_DIR $SCRIPT_DIR/../..

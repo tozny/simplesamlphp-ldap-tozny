@@ -1,6 +1,6 @@
 Package: simplesamlphp-ldap-seqrd
 Version: 0.0.1
-Maintainer: Isaac Potoczny-Jones<ijones@seqrd.com>
+Maintainer: Kirk Peterson<kirk@seqrd.com>
 Architecture: all
 Depends: simplesamlphp
 Description: Simple SAML PHP Auth Module that provides SEQRD authentication, with LDAP fallback.
