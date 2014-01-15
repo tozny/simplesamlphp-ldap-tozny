@@ -1,9 +1,10 @@
 <?php
-    $scheme   = $_SERVER['HTTPS'] == on ? "https" : "http";
-    $server   = $_SERVER['SERVER_NAME'] . ($_SERVER['SERVER_PORT'] == 80 ? "" : (":" . $_SERVER['SERVER_PORT']));
-
-    $loginUrl = "$scheme://$server/simplesaml/module.php/core/authenticate.php?as=ldapSeqrd";
     session_start();
+
+    $authSrcId = $_SESSION['authSrcId'];
+    $baseurlpath = SimpleSAML_Configuration::getInstance()->getBaseURL();
+
+    $loginUrl = "/$baseurlpath" . "module.php/core/authenticate.php?as=$authSrcId";
 
     if (empty($_SESSION['seqrd_session_id'])) {
         header('Location: ' . $loginUrl);
@@ -21,17 +22,17 @@
     <link rel="stylesheet" type="text/css" href="seqrd.css" />
     
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script src="<?php echo $_SESSION['api_url'] . 'interface/javascript/jquery.seqrd.js'?>"></script>
+    <script src="<?= $_SESSION['api_url'] . 'interface/javascript/jquery.seqrd.js'?>"></script>
     <script type="text/javascript">
     $(document).ready(function() {
 
             $('#qr_code_login').seqrd({
                 'type': 'verify',
-                'realm_key_id':'<?php echo $_SESSION['realm_key_id']; ?>',
-                'session_id': '<?php echo $_SESSION['seqrd_session_id']; ?>',
-                'qr_url': '<?php echo $_SESSION['qrUrl']; ?>',
-                'api_url': '<?php echo $_SESSION['api_url'] . 'index.php' ?>',
-                'mobile_url': '<?php echo $_SESSION['mobile_url']; ?>',
+                'realm_key_id':'<?= $_SESSION['realm_key_id']; ?>',
+                'session_id': '<?= $_SESSION['seqrd_session_id']; ?>',
+                'qr_url': '<?= $_SESSION['qrUrl']; ?>',
+                'api_url': '<?= $_SESSION['api_url'] . 'index.php' ?>',
+                'mobile_url': '<?= $_SESSION['mobile_url']; ?>',
                 'form_type': 'custom',
                 'form_id':'seqrd-form',
                 'debug':true
@@ -51,7 +52,6 @@
 <div id="header">
 <div id="logo">
 <a style="text-decoration: none; color: white" href="/">
-<!--img src="/simplesaml/resources/seqrd/logo-seqrd_white.png" class="logo" alt="Seqrd Logo" /-->
 <img src="seqrd.png" class="logo" alt="Seqrd Logo" />
 </a>
 </div>
@@ -74,7 +74,7 @@
 ?>
 <!--  LOGIN PART OF THE SITE  -->
 
-    <form action="/simplesaml/module.php/core/authenticate.php?as=ldapSeqrd" method="post" name="f">
+    <form action="/<?= $baseurlpath ?>module.php/core/authenticate.php?as=<?= $authSrcId ?>" method="post" name="f">
     <table>
         <tr>
             <td style="padding: .3em;">Username</td>
@@ -95,7 +95,7 @@
     </form>
 
 
-<form method="post" action="/simplesaml/module.php/core/authenticate.php?as=ldapSeqrd" id="seqrd-form">
+<form method="post" action="/<?= $baseurlpath ?>module.php/core/authenticate.php?as=<?= $authSrcId ?>" id="seqrd-form">
 <input type="hidden" name="seqrd_action" value="seqrd_login">
 <input type="hidden" name="auth_type" value="seqrd" />
 <div id="qr_code_login"></div>

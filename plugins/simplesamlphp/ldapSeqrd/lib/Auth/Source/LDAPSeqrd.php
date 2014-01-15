@@ -22,7 +22,49 @@
  * @version $Id$
  */
 
+/*
+ Requirements for an authentication source:
 
+-   Must be derived from the `SimpleSAML_Auth_Source`-class.
+
+-
+    If a constructor is implemented, it must first call the parent
+    constructor, passing along all parameters, before accessing any of
+    the parameters. In general, only the $config parameter should be
+    accessed.
+
+-
+    The `authenticate(&$state)`-function must be implemented. If this
+    function completes, it is assumed that the user is authenticated,
+    and that the $state array has been updated with the user's
+    attributes.
+
+-
+    If the `authenticate`-function does not return, it must at a later
+    time call `SimpleSAML_Auth_Source::completeAuth` with the new
+    state. The state must be an update of the array passed to the
+    `authenticate`-function.
+
+-
+    No pages may be shown to the user from the `authenticate`-function.
+    Instead, the state should be saved, and the user should be
+    redirected to a new page. This must be done to prevent
+    unpredictable events if the user for example reloads the page.
+
+-
+    No state information about any authentication should be stored in
+    the authentication source object. It must instead be stored in the
+    state array. Any changes to variables in the authentication source
+    object may be lost.
+
+-
+    The authentication source object must be serializable. It may be
+    serializes between being constructed and the call to the
+    `authenticate`-function. This means that, for example, no database
+    connections should be created in the constructor and later used in
+    the `authenticate`-function.
+
+ */
 /**
  * LDAP authentication source.
  *
@@ -156,7 +198,7 @@ class sspmod_ldapSeqrd_Auth_Source_LDAPSeqrd extends SimpleSAML_Auth_Source {
                     }                   
                     continue;
                 }
-                $attributes[$key] = array ($val);
+                $attributes[$key] = is_array($val) ? $val : array ($val);
             }
         }
 
@@ -165,13 +207,14 @@ class sspmod_ldapSeqrd_Auth_Source_LDAPSeqrd extends SimpleSAML_Auth_Source {
     }
 
     private function sessionAttributes($attributes) {
+
+        if (!is_array($attributes) || !array_key_exists('uid',$attributes)) return FALSE;
+
         if (!session_id()) {
             session_start();
         }
-
-        foreach ($attributes as $k => $v) {
-           $_SESSION[$k] = $v[0];
-        }
+        $_SESSION['uid'] = $attributes['uid'];
+        $_SESSION['user_meta'] = $attributes;
     }
 
 
@@ -322,7 +365,7 @@ class sspmod_ldapSeqrd_Auth_Source_LDAPSeqrd extends SimpleSAML_Auth_Source {
             $_SESSION['mobile_url']       = $challenge['mobile_url'];
             $_SESSION['msg']              = $msg;
             $_SESSION['api_url']          = $this->api_url;
-
+            $_SESSION['authSrcId']        = $this->authId;
             /*
              * Get the URL of the authentication page.
              *
