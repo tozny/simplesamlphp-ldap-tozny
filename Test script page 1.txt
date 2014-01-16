@@ -47,7 +47,7 @@
     * Verify that the address defaults to the user's email address
     * Send the setup email
     * Verify that the setup email arrived, the provided URLs are the same, and that you can enroll by clicking on the login link and scanning the resulting QR code
-  * Do the same process but this time check the email on your phone and click on the seqrdenroll link. the app should launch and enroll you
+  * Do the same process but this time check the email on your phone and click on the toznyenroll link. the app should launch and enroll you
   * Print the QR code and enroll by scanning the paper
 * Delete a device and hit 'cancel', confirm that it's not deleted
 * Delete a device and hit 'confirm', confirm that it's deleted
