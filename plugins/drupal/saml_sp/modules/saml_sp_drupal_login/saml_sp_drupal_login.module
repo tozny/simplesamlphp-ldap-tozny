@@ -38,7 +38,7 @@ function saml_sp_drupal_login_form_user_login_block_alter(&$form, &$form_state) 
   // Add a "Log in using SAML" link to the user-login form.
   $items = array();
    $items[] = array(
-     'data' => l(t('Log in using Seqrd'), '?q=saml/drupal_login', array('external' => TRUE)), 
+     'data' => l(t('Log in using Tozny'), '?q=saml/drupal_login', array('external' => TRUE)),
      'class' => array('saml-link'),
    );
 

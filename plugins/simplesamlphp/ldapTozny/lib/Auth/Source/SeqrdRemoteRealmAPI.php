@@ -1,36 +1,36 @@
 <?php
 /**
- * The Remote SEQRD API.
+ * The Remote Tozny API.
  *
- * This is the interface for the PHP Remote API for SEQRD's login system.
+ * This is the interface for the PHP Remote API for Tozny's login system.
  *
  * PHP version 5
  *
- * LICENSE: Copyright SEQRD LLC, All Rights Reserved
+ * LICENSE: Copyright Tozny LLC, All Rights Reserved
  *
  * @category   Security
- * @copyright  2013 SEQRD LLC
+ * @copyright  2013 Tozny LLC
  * @version    git: $Id$
- * @link       https://www.seqrd.com
+ * @link       https://www.tozny.com
  * @since      File available since Release 1.0
- * @author     Isaac Potoczny-Jones <ijones@seqrd.com>
- * @package    SEQRD
+ * @author     Isaac Potoczny-Jones <ijones@tozny.com>
+ * @package    Tozny
  */
 
 
 /**
- * The Remote SEQRD Realm API
+ * The Remote Tozny Realm API
  *
- * This is the interface for the PHP Remote User API for SEQRD's login system.
+ * This is the interface for the PHP Remote User API for Tozny's login system.
  *
  * @category   Security
- * @package    SEQRD
- * @author     Isaac Potoczny-Jones <ijones@seqrd.com>
- * @copyright  2013 SEQRD LLC
- * @link       https://www.seqrd.com
+ * @package    Tozny
+ * @author     Isaac Potoczny-Jones <ijones@tozny.com>
+ * @copyright  2013 Tozny LLC
+ * @link       https://www.tozny.com
  * @since      Class available since Release 1.0
  */
-class SEQRD_Remote_Realm_API
+class Tozny_Remote_Realm_API
 {
 
     /**
@@ -172,7 +172,7 @@ class SEQRD_Remote_Realm_API
      *
      * @param string  $defer    (optional) Whether to use deferred enrollment. Defaults false.
      * @param unknown $metadata (optional)
-     * @return The SEQRD_API_User object if successful.
+     * @return The Tozny_API_User object if successful.
      */
     function userAdd($defer = 'false', $metadata = NULL)
     {
@@ -252,9 +252,9 @@ class SEQRD_Remote_Realm_API
      *
      * @param unknown $term           (optional)
      * @param unknown $meta_advanced  (optional)
-     * @param unknown $seqrd_advanced (optional)
+     * @param unknown $tozny_advanced (optional)
      * @param unknown $meta_fields    (optional)
-     * @param unknown $seqrd_fields   (optional)
+     * @param unknown $tozny_fields   (optional)
      * @param unknown $userid         (optional)
      * @param unknown $rows           (optional)
      * @param unknown $offset         (optional)
@@ -263,9 +263,9 @@ class SEQRD_Remote_Realm_API
      */
     function usersGet($term = NULL,
         $meta_advanced = NULL,
-        $seqrd_advanced = NULL,
+        $tozny_advanced = NULL,
         $meta_fields = NULL,
-        $seqrd_fields = NULL,
+        $tozny_fields = NULL,
         $userid = NULL,
         $rows = NULL,
         $offset = NULL,
@@ -276,8 +276,8 @@ class SEQRD_Remote_Realm_API
 			$meta_advanced = self::base64UrlEncode(json_encode($meta_advanced));
 		}
 		
-		if(!empty($seqrd_advanced)){
-			$seqrd_advanced = self::base64UrlEncode(json_encode($seqrd_advanced));
+		if(!empty($tozny_advanced)){
+			$tozny_advanced = self::base64UrlEncode(json_encode($tozny_advanced));
 		}
 		
 		if (!empty($userid)) {
@@ -289,9 +289,9 @@ class SEQRD_Remote_Realm_API
         $args = ['method' => 'realm.users_get',
         'term' => $term,
         'meta_advanced' => $meta_advanced,
-        'seqrd_advanced' => $seqrd_advanced,
+        'tozny_advanced' => $tozny_advanced,
         'meta_fields' => $meta_fields,
-        'seqrd_fields' => $seqrd_fields,
+        'tozny_fields' => $tozny_fields,
 		'user_ids' => $userid,
         'rows' => $rows,
         'offset' => $offset,
@@ -1047,6 +1047,6 @@ class SEQRD_Remote_Realm_API
     }
 
 
-}// SEQRD_Remote_Realm_API class
+}// Tozny_Remote_Realm_API class
 
 ?>

@@ -1,6 +1,6 @@
 <?php
 /**
- * simplesamlphp-modules/seqrdauth/www/redirecttest.php
+ * simplesamlphp-modules/toznyauth/www/redirecttest.php
  *
  * @package default
  */
@@ -18,7 +18,7 @@ if (!array_key_exists('StateId', $_REQUEST)) {
 }
 
 $id = $_REQUEST['StateId'];
-$state = SimpleSAML_Auth_State::loadState($id, 'ldapseqrd:redirectfilter-test');
+$state = SimpleSAML_Auth_State::loadState($id, 'ldaptozny:redirectfilter-test');
 
 $state['Attributes']['RedirectTest2'] = array('OK');
 

@@ -6,7 +6,7 @@
 
     $loginUrl = "/$baseurlpath" . "module.php/core/authenticate.php?as=$authSrcId";
 
-    if (empty($_SESSION['seqrd_session_id'])) {
+    if (empty($_SESSION['tozny_session_id'])) {
         header('Location: ' . $loginUrl);
     }
 ?>
@@ -17,24 +17,24 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>Authentication</title>
 
-	<!-- seqrd stuff -->
+	<!-- tozny stuff -->
 
-    <link rel="stylesheet" type="text/css" href="seqrd.css" />
+    <link rel="stylesheet" type="text/css" href="tozny.css" />
     
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script src="<?= $_SESSION['api_url'] . 'interface/javascript/jquery.seqrd.js'?>"></script>
+    <script src="<?= $_SESSION['api_url'] . 'interface/javascript/jquery.tozny.js'?>"></script>
     <script type="text/javascript">
     $(document).ready(function() {
 
-            $('#qr_code_login').seqrd({
+            $('#qr_code_login').tozny({
                 'type': 'verify',
                 'realm_key_id':'<?= $_SESSION['realm_key_id']; ?>',
-                'session_id': '<?= $_SESSION['seqrd_session_id']; ?>',
+                'session_id': '<?= $_SESSION['tozny_session_id']; ?>',
                 'qr_url': '<?= $_SESSION['qrUrl']; ?>',
                 'api_url': '<?= $_SESSION['api_url'] . 'index.php' ?>',
                 'mobile_url': '<?= $_SESSION['mobile_url']; ?>',
                 'form_type': 'custom',
-                'form_id':'seqrd-form',
+                'form_id':'tozny-form',
                 'debug':true
                 });
 
@@ -52,7 +52,7 @@
 <div id="header">
 <div id="logo">
 <a style="text-decoration: none; color: white" href="/">
-<img src="seqrd.png" class="logo" alt="Seqrd Logo" />
+<img src="tozny.png" class="logo" alt="Tozny Logo" />
 </a>
 </div>
 <div id="page_header">
@@ -95,9 +95,9 @@
     </form>
 
 
-<form method="post" action="/<?= $baseurlpath ?>module.php/core/authenticate.php?as=<?= $authSrcId ?>" id="seqrd-form">
-<input type="hidden" name="seqrd_action" value="seqrd_login">
-<input type="hidden" name="auth_type" value="seqrd" />
+<form method="post" action="/<?= $baseurlpath ?>module.php/core/authenticate.php?as=<?= $authSrcId ?>" id="tozny-form">
+<input type="hidden" name="tozny_action" value="tozny_login">
+<input type="hidden" name="auth_type" value="tozny" />
 <div id="qr_code_login"></div>
 </form>
 
@@ -105,7 +105,7 @@
 
         <hr />
 
-        Copyright &copy; 2013 <a href="http://seqrd.com/">Seqrd</a>
+        Copyright &copy; 2013 <a href="http://tozny.com/">Tozny</a>
         
         <br style="clear: right" />
     

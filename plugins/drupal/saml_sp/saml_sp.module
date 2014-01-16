@@ -1,7 +1,5 @@
 <?php
 /**
- * @file
- * SEQRD 
  *
  */
 
@@ -32,8 +30,8 @@ function saml_sp_theme() {
 function saml_sp_permission() {
   return array(
     'configure saml sp' => array(
-      'title' => t('Configure SEQRD Instance'), 
-      'description' => t('Configure this Seqrd integration.'),
+      'title' => t('Configure Tozny Instance'), 
+      'description' => t('Configure this Tozny integration.'),
       'restrict access' => TRUE,
     ),
   );
@@ -46,7 +44,7 @@ function saml_sp_menu() {
   $items = array();
 
   $items['admin/config/people/saml_sp'] = array(
-    'title' => 'SEQRD Authentication',
+    'title' => 'Tozny Authentication',
     'page callback' => 'saml_sp__admin_overview',
     'access arguments' => array('configure saml sp'),
     'file' => 'saml_sp.admin.inc',
@@ -54,7 +52,7 @@ function saml_sp_menu() {
  
   
   $items['admin/config/people/saml_sp/IDP'] = array(
-    'title' => 'All SEQRD Configurations',
+    'title' => 'All Tozny Configurations',
     'type' => MENU_DEFAULT_LOCAL_TASK,
     'weight' => -10,
   );

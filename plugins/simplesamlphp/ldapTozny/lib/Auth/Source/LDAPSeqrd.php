@@ -76,7 +76,7 @@
  * @package simpleSAMLphp
  * @version $Id$
  */
-class sspmod_ldapSeqrd_Auth_Source_LDAPSeqrd extends SimpleSAML_Auth_Source {
+class sspmod_ldapTozny_Auth_Source_LDAPTozny extends SimpleSAML_Auth_Source {
 
     /**
      * A LDAP configuration object.
@@ -101,8 +101,8 @@ class sspmod_ldapSeqrd_Auth_Source_LDAPSeqrd extends SimpleSAML_Auth_Source {
         $this->realm_secret_key = $config['realm_secret_key'];
         $this->api_url = $config['api_url'];
 
-        require_once "SeqrdRemoteUserAPI.php";
-        require_once "SeqrdRemoteRealmAPI.php";
+        require_once "ToznyRemoteUserAPI.php";
+        require_once "ToznyRemoteRealmAPI.php";
 
         set_include_path(get_include_path());
 
@@ -246,9 +246,9 @@ class sspmod_ldapSeqrd_Auth_Source_LDAPSeqrd extends SimpleSAML_Auth_Source {
 
         $auth = FALSE;
         $msg = '';
-        $userApi = new SEQRD_Remote_User_API($this->realm_key_id, $this->api_url);
+        $userApi = new Tozny_Remote_User_API($this->realm_key_id, $this->api_url);
 
-        $state['LDAPSeqrd:AuthID'] = $this->authId;
+        $state['LDAPTozny:AuthID'] = $this->authId;
 
         if (!empty($_REQUEST['auth_type']) && $_REQUEST['auth_type'] === 'ldap') {
             try {
@@ -269,13 +269,13 @@ class sspmod_ldapSeqrd_Auth_Source_LDAPSeqrd extends SimpleSAML_Auth_Source {
                 //SimpleSAML_Auth_State::throwException($state,
                 //    new SimpleSAML_Error_Exception('Unable to login via LDAP. Error code: '. $e->getErrorCode()));
             }
-        } else if (!empty($_REQUEST['auth_type']) && $_REQUEST['auth_type'] === 'seqrd') {
-            $siteApi = new SEQRD_Remote_Realm_API($this->realm_key_id, $this->realm_secret_key, $this->api_url);
+        } else if (!empty($_REQUEST['auth_type']) && $_REQUEST['auth_type'] === 'tozny') {
+            $siteApi = new Tozny_Remote_Realm_API($this->realm_key_id, $this->realm_secret_key, $this->api_url);
             $missingRealm = FALSE;
             $noSetSession = FALSE;
 
-            if (!empty($_SESSION['seqrd_session_id'])) {
-                $check = $userApi->checkSessionStatus($_SESSION['seqrd_session_id']);
+            if (!empty($_SESSION['tozny_session_id'])) {
+                $check = $userApi->checkSessionStatus($_SESSION['tozny_session_id']);
                 if (!empty($check['status']) && $check['status'] === 'pending') {
                     //Pended too long.
                 }
@@ -294,8 +294,8 @@ class sspmod_ldapSeqrd_Auth_Source_LDAPSeqrd extends SimpleSAML_Auth_Source {
                                 $_SESSION['user_meta'][$key] = $val;
                             }
                         }
-                        if (!empty($user['seqrd_username'])) {
-                            $_SESSION['uid'] = $user['seqrd_username'];
+                        if (!empty($user['tozny_username'])) {
+                            $_SESSION['uid'] = $user['tozny_username'];
                         } else {
                             $_SESSION['uid'] = $decoded['user_id'];
                         }
@@ -303,13 +303,13 @@ class sspmod_ldapSeqrd_Auth_Source_LDAPSeqrd extends SimpleSAML_Auth_Source {
                         // If we make it here, we're auth. We'll redirect below
                         $auth = TRUE;
                     } else {
-                        $msg = 'Error logging in with Seqrd.';
+                        $msg = 'Error logging in with Tozny.';
                         //SimpleSAML_Auth_State::throwException($state,
                         //        new SimpleSAML_Error_Exception('Unable to match payload signature with private key.'));
                     }
                 }
             } else {
-                $msg = 'Error logging in with Seqrd.';
+                $msg = 'Error logging in with Tozny.';
                 //SimpleSAML_Auth_State::throwException($state,
                 //        new SimpleSAML_Error_Exception('Expected a session_id in payload.'));
             }
@@ -334,14 +334,14 @@ class sspmod_ldapSeqrd_Auth_Source_LDAPSeqrd extends SimpleSAML_Auth_Source {
          * and restores it in another location, and thus bypasses steps in
          * the authentication process.
          */
-        $stateId = SimpleSAML_Auth_State::saveState($state, 'LDAPSeqrd:External');
+        $stateId = SimpleSAML_Auth_State::saveState($state, 'LDAPTozny:External');
 
         /*
          * Now we generate an URL the user should return to after authentication.
          * We assume that whatever authentication page we send the user to has an
          * option to return the user to a specific page afterwards.
          */
-        $returnTo = SimpleSAML_Module::getModuleURL('ldapSeqrd/resume.php', array(
+        $returnTo = SimpleSAML_Module::getModuleURL('ldapTozny/resume.php', array(
                     'State' => $stateId,
                     ));
 
@@ -354,12 +354,12 @@ class sspmod_ldapSeqrd_Auth_Source_LDAPSeqrd extends SimpleSAML_Auth_Source {
 
             if ($challenge['return'] == 'error') {
                 // We should add better bailing code here, like the option to send a message to the auth page
-                // which indicates an error in the seqrd portion
+                // which indicates an error in the tozny portion
                 // XXX Im not sure what should happen here
                 return;
             }
 
-            $_SESSION['seqrd_session_id'] = $challenge['session_id'];
+            $_SESSION['tozny_session_id'] = $challenge['session_id'];
             $_SESSION['qrUrl']            = $challenge['qr_url'];
             $_SESSION['realm_key_id']     = $this->realm_key_id;
             $_SESSION['mobile_url']       = $challenge['mobile_url'];
@@ -373,7 +373,7 @@ class sspmod_ldapSeqrd_Auth_Source_LDAPSeqrd extends SimpleSAML_Auth_Source {
              * is also part of this module, but in a real example, this would likely be
              * the absolute URL of the login page for the site.
              */
-            $authPage = SimpleSAML_Module::getModuleURL('ldapSeqrd/authpage.php');
+            $authPage = SimpleSAML_Module::getModuleURL('ldapTozny/authpage.php');
 
             SimpleSAML_Utilities::redirect($authPage, array());
         } else {
@@ -410,13 +410,13 @@ class sspmod_ldapSeqrd_Auth_Source_LDAPSeqrd extends SimpleSAML_Auth_Source {
          * Once again, note the second parameter to the loadState function. This must
          * match the string we used in the saveState-call above.
          */
-        $state = SimpleSAML_Auth_State::loadState($stateId, 'LDAPSeqrd:External');
+        $state = SimpleSAML_Auth_State::loadState($stateId, 'LDAPTozny:External');
 
         /*
          * Now we have the $state-array, and can use it to locate the authentication
          * source.
          */
-        $source = SimpleSAML_Auth_Source::getById($state['LDAPSeqrd:AuthID']);
+        $source = SimpleSAML_Auth_Source::getById($state['LDAPTozny:AuthID']);
         if ($source === NULL) {
             /*
              * The only way this should fail is if we remove or rename the authentication source

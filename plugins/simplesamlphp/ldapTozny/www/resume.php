@@ -1,6 +1,6 @@
 <?php
 /**
- * simplesamlphp-modules/seqrdauth/www/resume.php
+ * simplesamlphp-modules/toznyauth/www/resume.php
  *
  * @package default
  */
@@ -15,4 +15,4 @@
  * @package simpleSAMLphp
  * @version $Id$
  */
-sspmod_ldapSeqrd_Auth_Source_LDAPSeqrd::resume();
+sspmod_ldapTozny_Auth_Source_LDAPTozny::resume();

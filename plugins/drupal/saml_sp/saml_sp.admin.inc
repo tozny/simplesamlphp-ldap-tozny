@@ -73,17 +73,17 @@ function saml_sp__configure_idp_form($form, &$form_state, $saml_idp = NULL) {
   $form['app_name'] = array(
     '#type' => 'textfield',
     '#title' => t('App name'),
-    '#description' => t('The app name is provided to SEQRD to identify the origin of the request.'),
+    '#description' => t('The app name is provided to Tozny to identify the origin of the request.'),
     '#default_value' => $saml_idp->app_name,
     '#maxlength' => 30,
   );
 
 	
-  // The Seqrd Login URL and x.509 certificate 
+  // The Tozny Login URL and x.509 certificate
   
   $form['idp'] = array(
     '#type' => 'fieldset',
-    '#title' => t('SEQRD configuration'),
+    '#title' => t('Tozny configuration'),
     '#description' => t('Use the values found in the settings area of your realm.'),
     '#collapsible' => TRUE,
     '#collapsed' => FALSE,

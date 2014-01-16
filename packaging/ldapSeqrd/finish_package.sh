@@ -5,7 +5,7 @@ echo "Building package from $DEB_DIR"
 
 # adjust ownerships
 chown -R root:root $DEB_DIR
-chown -R www-data:www-data $DEB_DIR/usr/share/simplesamlphp/modules/ldapSeqrd
+chown -R www-data:www-data $DEB_DIR/usr/share/simplesamlphp/modules/ldapTozny
 
 # finally build the package
 dpkg-deb --build $DEB_DIR $OUT_DIR

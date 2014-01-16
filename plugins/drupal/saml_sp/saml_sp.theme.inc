@@ -59,6 +59,6 @@ function theme_saml_sp__idp_list($variables) {
   return theme('table', array(
     'header' => $header,
     'rows' => $rows,
-    'empty' => t('Seqrd plugin not properly configured. <a href="@add_idp_link">Configure it here</a>.', array('@add_idp_link' => url('admin/config/people/saml_sp/IDP/add'))),
+    'empty' => t('Tozny plugin not properly configured. <a href="@add_idp_link">Configure it here</a>.', array('@add_idp_link' => url('admin/config/people/saml_sp/IDP/add'))),
   ));
 }

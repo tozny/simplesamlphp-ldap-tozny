@@ -2,15 +2,15 @@
 
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-LDAPSEQRD_DEB_DIR=/tmp/simplesamlphp-ldapSeqrd
+LDAPTOZNY_DEB_DIR=/tmp/simplesamlphp-ldapTozny
 
-LDAPSEQRD_DIR=$SCRIPT_DIR/../../plugins/simplesamlphp/ldapSeqrd
+LDAPTOZNY_DIR=$SCRIPT_DIR/../../plugins/simplesamlphp/ldapTozny
 
-rm -rf $LDAPSEQRD_DEB_DIR
-mkdir -p $LDAPSEQRD_DEB_DIR/DEBIAN
-mkdir -p $LDAPSEQRD_DEB_DIR/usr/share/simplesamlphp/modules/
+rm -rf $LDAPTOZNY_DEB_DIR
+mkdir -p $LDAPTOZNY_DEB_DIR/DEBIAN
+mkdir -p $LDAPTOZNY_DEB_DIR/usr/share/simplesamlphp/modules/
 
-cp $SCRIPT_DIR/control   $LDAPSEQRD_DEB_DIR/DEBIAN
-cp -r $LDAPSEQRD_DIR $LDAPSEQRD_DEB_DIR/usr/share/simplesamlphp/modules/
+cp $SCRIPT_DIR/control   $LDAPTOZNY_DEB_DIR/DEBIAN
+cp -r $LDAPTOZNY_DIR $LDAPTOZNY_DEB_DIR/usr/share/simplesamlphp/modules/
 
-fakeroot $SCRIPT_DIR/finish_package.sh $LDAPSEQRD_DEB_DIR $SCRIPT_DIR/../..
+fakeroot $SCRIPT_DIR/finish_package.sh $LDAPTOZNY_DEB_DIR $SCRIPT_DIR/../..

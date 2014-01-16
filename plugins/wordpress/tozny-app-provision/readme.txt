@@ -1,4 +1,4 @@
-=== Seqrd App Provision ===
+=== Tozny App Provision ===
 Contributors: SyntaxPolice
 Tags: authentication
 Requires at least: 3.0.0
@@ -30,4 +30,4 @@ todo
 TODO
 
 == Who made this? ==
-Isaac from Seqrd.
+Isaac from Tozny.

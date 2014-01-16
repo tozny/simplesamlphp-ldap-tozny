@@ -1,4 +1,4 @@
-package com.seqrd.API;
+package com.tozny.API;
 
 import java.io.IOException;
 import java.util.Dictionary;

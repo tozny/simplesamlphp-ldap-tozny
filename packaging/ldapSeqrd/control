@@ -1,6 +1,6 @@
-Package: simplesamlphp-ldap-seqrd
+Package: simplesamlphp-ldap-tozny
 Version: 0.0.1
-Maintainer: Kirk Peterson<kirk@seqrd.com>
+Maintainer: Kirk Peterson<kirk@tozny.com>
 Architecture: all
 Depends: simplesamlphp
-Description: Simple SAML PHP Auth Module that provides SEQRD authentication, with LDAP fallback.
+Description: Simple SAML PHP Auth Module that provides Tozny authentication, with LDAP fallback.

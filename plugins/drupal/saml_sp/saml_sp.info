@@ -1,5 +1,5 @@
-name = SEQRD Service Provider
-description = API module to validate SEQRD IDP (Identity Provider) credentials.
+name = Tozny Service Provider
+description = API module to validate Tozny IDP (Identity Provider) credentials.
 core = 7.x
 configure = admin/config/people/saml
 php = 5.3

@@ -7,10 +7,10 @@ $config = array(
   'example-ldap' => array(
 
     // module to use
-    'ldapSeqrd:LDAPSeqrd',
+    'ldapTozny:LDAPTozny',
     'realm_key_id'     => 'ROCKSTAR',
     'realm_secret_key' => 'DEADBEEF2',
-    'api_url'          => 'http://sandbox.seqrd.com/api-unstable/',
+    'api_url'          => 'http://sandbox.tozny.com/api-unstable/',
 
 
     // The hostname of the LDAP server.

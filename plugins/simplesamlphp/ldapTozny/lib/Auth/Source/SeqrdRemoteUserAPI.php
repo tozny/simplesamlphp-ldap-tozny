@@ -1,42 +1,42 @@
 <?php
 /**
- * SeqrdRemoteUserAPI.php
+ * ToznyRemoteUserAPI.php
  *
  * @package default
  */
 
 
 /**
- * The Remote SEQRD User API.
+ * The Remote Tozny User API.
  *
- * This is the interface for the PHP Remote API for SEQRD's login system.
+ * This is the interface for the PHP Remote API for Tozny's login system.
  *
  * PHP version 5
  *
- * LICENSE: Copyright SEQRD LLC, All Rights Reserved
+ * LICENSE: Copyright Tozny LLC, All Rights Reserved
  *
  * @category   Security
- * @package    SEQRD
- * @author     Isaac Potoczny-Jones <ijones@seqrd.com>
- * @copyright  2013 SEQRD LLC
+ * @package    Tozny
+ * @author     Isaac Potoczny-Jones <ijones@tozny.com>
+ * @copyright  2013 Tozny LLC
  * @version    git: $Id$
- * @link       https://www.seqrd.com
+ * @link       https://www.tozny.com
  * @since      File available since Release 1.0
  */
 
 /**
- * The Remote SEQRD User API
+ * The Remote Tozny User API
  *
- * This is the interface for the PHP Remote User API for SEQRD's login system.
+ * This is the interface for the PHP Remote User API for Tozny's login system.
  *
  * @category   Security
- * @package    SEQRD
- * @author     Isaac Potoczny-Jones <ijones@seqrd.com>
- * @copyright  2013 SEQRD LLC
- * @link       https://www.seqrd.com
+ * @package    Tozny
+ * @author     Isaac Potoczny-Jones <ijones@tozny.com>
+ * @copyright  2013 Tozny LLC
+ * @link       https://www.tozny.com
  * @since      Class available since Release 1.0
  */
-class SEQRD_Remote_User_API
+class Tozny_Remote_User_API
 {
 
     /**
@@ -52,7 +52,7 @@ class SEQRD_Remote_User_API
      * The Challenge package, once loginChallenge has been called.
      *
      * @access private
-     * @var SEQRD_Challenge
+     * @var Tozny_Challenge
      */
     private $_challenge;
     private $_api_url;
@@ -100,7 +100,7 @@ class SEQRD_Remote_User_API
      * Return the login challenge for this realm. Can return an error
      * if the realm does not exist.
      *
-     * @return SEQRD_Challenge | error
+     * @return Tozny_Challenge | error
      */
     function loginChallenge()
     {
@@ -118,7 +118,7 @@ class SEQRD_Remote_User_API
      *
      * @param string  $defer    (optional) Whether to use deferred enrollment. Defaults false.
      * @param unknown $metadata (optional)
-     * @return The SEQRD_API_User object if successful.
+     * @return The Tozny_API_User object if successful.
      */
     function userAdd($defer = 'false', $metadata = NULL, $pub_key = NULL)
     {
@@ -243,6 +243,6 @@ class SEQRD_Remote_User_API
         return rtrim(strtr(base64_encode($data), '+/', '-_'), '=');
     }
 
-}// SEQRD_Remote_User_API class
+}// Tozny_Remote_User_API class
 
 ?>

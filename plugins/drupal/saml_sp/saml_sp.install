@@ -18,7 +18,7 @@ function saml_sp_schema() {
 
   // Store the IDP data.
   $schema['saml_sp_idps'] = array(
-    'description' => 'Seqrd IDP Configurations',
+    'description' => 'Tozny IDP Configurations',
 
     // Enable CTools exportables based on this table.
     'export' => array(
@@ -103,12 +103,12 @@ function saml_sp_schema() {
 
 
 function saml_sp_install() {
-  // Populate the default seqrd record.
+  // Populate the default Tozny record.
   db_insert('saml_sp_idps')->fields(array(
-    'machine_name' => 'seqrd',
-    'name' => 'SEQRD - Globe Sherpa Default',
+    'machine_name' => 'tozny',
+    'name' => 'Tozny - Globe Sherpa Default',
     'app_name' => 'globesherpa',
-    'login_url' => 'http://gstest.seqrd.com/simplesaml/saml2/idp/SSOService.php',
+    'login_url' => 'http://gstest.tozny.com/simplesaml/saml2/idp/SSOService.php',
     'x509_cert' => '-----BEGIN CERTIFICATE-----
 MIIDZTCCAk2gAwIBAgIJALPNe0+STJopMA0GCSqGSIb3DQEBBQUAMEkxCzAJBgNV
 BAYTAlVTMQ8wDQYDVQQIDAZPcmVnb24xETAPBgNVBAcMCFBvcnRsYW5kMRYwFAYD

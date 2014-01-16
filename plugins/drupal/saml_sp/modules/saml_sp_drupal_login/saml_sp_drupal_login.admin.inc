@@ -21,7 +21,7 @@ function saml_sp_drupal_login__admin_config_form($form, &$form_state) {
     '#type' => 'select',
     '#options' => $idps,
     '#title' => t(''),
-    '#description' => t('Select the SEQRD configuration that can login to this Drupal instance'),
+    '#description' => t('Select the Tozny configuration that can login to this Drupal instance'),
     '#default_value' => variable_get('saml_sp_drupal_login__idp', ''),
   );
   return system_settings_form($form);

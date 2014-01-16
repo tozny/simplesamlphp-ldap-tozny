@@ -1,33 +1,33 @@
 <?php
 /*
-Plugin Name: Seqrd App Provision
+Plugin Name: Tozny App Provision
 Version: 0.1
-Plugin URI: http://www.seqrd.com
+Plugin URI: http://www.tozny.com
 Description: Provisions an app!
 Author: Isaac Potoczny-Jones
-Author URI: http://www.seqrd.com
+Author URI: http://www.tozny.com
 */
 
 /* Copyright 2013 Isaac Potoczny-Jones All Rights Reserved */
 
 
-add_action('admin_menu', 'seqrd_app_provision_add_management_page');
-add_filter('check_password',  array ('SeqrdAppProvision', 'seqrd_app_provision_check_password_xml'), 10, 4);
-add_filter( 'xmlrpc_methods', array ('SeqrdAppProvision', 'seqrd_new_xmlrpc_methods'));
+add_action('admin_menu', 'tozny_app_provision_add_management_page');
+add_filter('check_password',  array ('ToznyAppProvision', 'tozny_app_provision_check_password_xml'), 10, 4);
+add_filter( 'xmlrpc_methods', array ('ToznyAppProvision', 'tozny_new_xmlrpc_methods'));
 
 //----------------------------------------------------------------------------
 //		USER PHP FUNCTIONS
 //----------------------------------------------------------------------------
 
-if (!class_exists('SeqrdAppProvision')) {
-  class SeqrdAppProvision {
+if (!class_exists('ToznyAppProvision')) {
+  class ToznyAppProvision {
     function testFunction() {
       return 'hello world';			
     }
 
-    function seqrd_app_provision_check_password_xml ($check, $password, $hash, $user_id) {
-      $seqrdUser = get_userdata( $user_id );
-      //      echo "data: ".$check.":".$password.":".$hash.":".$user_id.":".$seqrdUser->xmlrpcPass;
+    function tozny_app_provision_check_password_xml ($check, $password, $hash, $user_id) {
+      $toznyUser = get_userdata( $user_id );
+      //      echo "data: ".$check.":".$password.":".$hash.":".$user_id.":".$toznyUser->xmlrpcPass;
       if ( defined('XMLRPC_REQUEST') && XMLRPC_REQUEST ) {
         // Check the custom set XML password.
 	global $wp_hasher;
@@ -36,7 +36,7 @@ if (!class_exists('SeqrdAppProvision')) {
 		// By default, use the portable hash from phpass
 		$wp_hasher = new PasswordHash(8, true);
 	}
-        $newCheck = $wp_hasher->CheckPassword($password, $seqrdUser->xmlrpcPass);
+        $newCheck = $wp_hasher->CheckPassword($password, $toznyUser->xmlrpcPass);
 
         return $newCheck;
       } else { 
@@ -46,7 +46,7 @@ if (!class_exists('SeqrdAppProvision')) {
     }
 
     //This is a test xmlrpc function.
-    function seqrd_app_provision_getTestPW( $args ) {
+    function tozny_app_provision_getTestPW( $args ) {
       global $wp_xmlrpc_server;
       $wp_xmlrpc_server->escape( $args );
 
@@ -60,8 +60,8 @@ if (!class_exists('SeqrdAppProvision')) {
       return "passwords:".$password.":".$user->xmlrpcPass;
     }
 
-    function seqrd_new_xmlrpc_methods( $methods ) {
-      $methods['seqrd.getTestPW'] = array ('SeqrdAppProvision', 'seqrd_app_provision_getTestPW');
+    function tozny_new_xmlrpc_methods( $methods ) {
+      $methods['tozny.getTestPW'] = array ('ToznyAppProvision', 'tozny_app_provision_getTestPW');
       return $methods;   
     }
 
@@ -72,18 +72,18 @@ if (!class_exists('SeqrdAppProvision')) {
 //		USER OPTION PAGE FUNCTIONS
 //----------------------------------------------------------------------------
 
-function seqrd_app_provision_add_management_page() {
+function tozny_app_provision_add_management_page() {
 	if (function_exists('add_management_page')) {
-		add_management_page('Seqrd App Provision', 'Seqrd App Provision', 'read',
-			basename(__FILE__), 'seqrd_app_provision_options_page');
+		add_management_page('Tozny App Provision', 'Tozny App Provision', 'read',
+			basename(__FILE__), 'tozny_app_provision_options_page');
 	}
 }
 
-function seqrd_app_provision_options_page() {
+function tozny_app_provision_options_page() {
 ?>
 
 <div class="wrap">
-<h2>Seqrd App Provision</h2>
+<h2>Tozny App Provision</h2>
 <form method="post" action="<?php echo $_SERVER['PHP_SELF'] . '?page=' . basename(__FILE__); ?>&updated=true">
 <fieldset class="options">
 
@@ -91,23 +91,23 @@ function seqrd_app_provision_options_page() {
 
 <?php
     
-  $seqrdUser = wp_get_current_user();
-  $user_id = $seqrdUser->ID;
+  $toznyUser = wp_get_current_user();
+  $user_id = $toznyUser->ID;
 
   if ( current_user_can('edit_user', $user_id )) {
     $newPass = wp_generate_password();
     $hashedNewPass = wp_hash_password ($newPass);
-    echo "Updating xmlrpc password for " . $seqrdUser->user_login . " to " . $newPass . "<br>";
+    echo "Updating xmlrpc password for " . $toznyUser->user_login . " to " . $newPass . "<br>";
     $worked = update_user_meta( $user_id, 'xmlrpcPass', $hashedNewPass);
-    $seqrdMessage = array ( 'pkg' => 'org.wordpress.android',
-                            'user' => $seqrdUser->user_login,
+    $toznyMessage = array ( 'pkg' => 'org.wordpress.android',
+                            'user' => $toznyUser->user_login,
                             'url' => site_url(),
                             'pass' => $newPass
                             );
-    $seqrdMessageJson = json_encode ($seqrdMessage);      
-    $qrValue = urlencode("seqrdgetapp://".$seqrdMessageJson);
+    $toznyMessageJson = json_encode ($toznyMessage);      
+    $qrValue = urlencode("toznygetapp://".$toznyMessageJson);
 ?>
-<img src="/wordpress/wp-content/plugins/seqrd-app-provision/qr.php?codeValue=<?php echo $qrValue ?>">
+<img src="/wordpress/wp-content/plugins/tozny-app-provision/qr.php?codeValue=<?php echo $qrValue ?>">
 <?php
 
   } else {
