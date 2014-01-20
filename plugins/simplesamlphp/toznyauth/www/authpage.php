@@ -163,7 +163,7 @@ $authUrl = "toznyauth://sandbox.tozny.com/api/"
 <div id="header">
 <div id="logo">
 <a style="text-decoration: none; color: white" href="/">
-<img src="logo-tozny_white.png" class="logo" alt="Tozny Logo" />
+<img src="tozny.png" class="logo" alt="Tozny Logo" />
 </a>
 </div>
 <div id="page_header">
