@@ -1,19 +1,17 @@
-Seqrd as a SAML Service Provider
+Tozny as a SAML Service Provider
 =====================
 
 This package provides two modules:
-- Seqrd SAML Service Provider API
-- Seqrd SAML Drupal Login
+- Tozny SAML Service Provider API
+- Tozny SAML Drupal Login
 
 
-The Seqrd SAML Drupal Login module specifically enables Drupal to become a "Service
-Provider" for Seqrd, so users can authenticate to Drupal (without entering a
-username or password) by delegating authenticate to Seqrd as the Identity
+The Tozny SAML Drupal Login module specifically enables Drupal to become a "Service
+Provider" for Tozny, so users can authenticate to Drupal (without entering a
+username or password) by delegating authenticate to Tozny as the Identity
 Provider.
 
 
-
-<<<<<<< HEAD
 =======
 Dependencies
 ============
@@ -51,4 +49,3 @@ $metadata['demoLocalDrupal'] = array(
 	'simplesaml.nameidattribute' => 'uid',
 	'simplesaml.attributes' => FALSE,
 );
->>>>>>> ecb8ff4f093b7ec9d5ebe33af7513ed0bd6b8073

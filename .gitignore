@@ -1,0 +1,15 @@
+.DS_Store
+xcuserdata
+project.xcworkspace
+
+# idea
+.idea
+*.iml
+
+# vagrant
+.vagrant
+
+#Emacs backup files
+*~
+\#*#
+

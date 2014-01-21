@@ -1,5 +1,5 @@
-name = SEQRD Drupal Login
-description = Allow users to log in to Drupal using SEQRD.
+name = Tozny Drupal Login
+description = Allow users to log in to Drupal using tozny.
 core = 7.x
 dependencies[] = saml_sp
 package = SAML

@@ -27,10 +27,10 @@ function hook_saml_sp_default_idps() {
   $saml_idp = new stdClass();
   $saml_idp->disabled = FALSE; /* Edit this to true to make a default saml_idp disabled initially */
   $saml_idp->api_version = 1;
-  $saml_idp->machine_name = 'seqrd';
-  $saml_idp->name = 'Seqrd';
+  $saml_idp->machine_name = 'tozny';
+  $saml_idp->name = 'Tozny';
   $saml_idp->app_name = 'globesherpa';
-  $saml_idp->login_url = 'http://gstest.seqrd.com/simplesaml/saml2/idp/SSOService.php';
+  $saml_idp->login_url = 'http://gstest.tozny.com/simplesaml/saml2/idp/SSOService.php';
   $saml_idp->x509_cert = '-----BEGIN CERTIFICATE-----
 MIIDZTCCAk2gAwIBAgIJALPNe0+STJopMA0GCSqGSIb3DQEBBQUAMEkxCzAJBgNV
 BAYTAlVTMQ8wDQYDVQQIDAZPcmVnb24xETAPBgNVBAcMCFBvcnRsYW5kMRYwFAYD
