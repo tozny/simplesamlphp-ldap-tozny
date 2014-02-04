@@ -287,7 +287,7 @@ class sspmod_ldapTozny_Auth_Source_LDAPTozny extends SimpleSAML_Auth_Source {
                     if ($decoded) {
                         $user = $siteApi->userGet($decoded['user_id']);
                         $_SESSION['user_meta'] = array();
-                        foreach ($user as $key => $val) {
+                        foreach ($user['meta'] as $key => $val) {
                             if (in_array(strtolower($key), ['user_id', 'return', 'status_code'])) {
                                 continue;
                             } else {
