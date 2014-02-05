@@ -316,40 +316,13 @@ class sspmod_ldapTozny_Auth_Source_LDAPTozny extends SimpleSAML_Auth_Source {
         }
 
         /*
-         * First we add the identifier of this authentication source
-         * to the state array, so that we know where to resume.
-         */
-
-
-        /*
-         * We need to save the $state-array, so that we can resume the
-         * login process after authentication.
-         *
-         * Note the second parameter to the saveState-function. This is a
-         * unique identifier for where the state was saved, and must be used
-         * again when we retrieve the state.
-         *
-         * The reason for it is to prevent
-         * attacks where the user takes a $state-array saved in one location
-         * and restores it in another location, and thus bypasses steps in
-         * the authentication process.
-         */
-        $stateId = SimpleSAML_Auth_State::saveState($state, 'LDAPTozny:External');
-
-        /*
-         * Now we generate an URL the user should return to after authentication.
-         * We assume that whatever authentication page we send the user to has an
-         * option to return the user to a specific page afterwards.
-         */
-        $returnTo = SimpleSAML_Module::getModuleURL('ldapTozny/resume.php', array(
-                    'State' => $stateId,
-                    ));
-
-        /*
          * The redirect to the authentication page.
          *
          */
         if (!$auth) {
+
+            $stateId = SimpleSAML_Auth_State::saveState($state, 'LDAPTozny:External');
+
             $challenge = $userApi->loginChallenge();
 
             if ($challenge['return'] == 'error') {
@@ -366,6 +339,7 @@ class sspmod_ldapTozny_Auth_Source_LDAPTozny extends SimpleSAML_Auth_Source {
             $_SESSION['msg']              = $msg;
             $_SESSION['api_url']          = $this->api_url;
             $_SESSION['authSrcId']        = $this->authId;
+            $_SESSION['state_id']         = $stateId;
             /*
              * Get the URL of the authentication page.
              *
@@ -377,6 +351,10 @@ class sspmod_ldapTozny_Auth_Source_LDAPTozny extends SimpleSAML_Auth_Source {
 
             SimpleSAML_Utilities::redirect($authPage, array());
         } else {
+            $stateId = $_SESSION['state_id'];
+            $returnTo = SimpleSAML_Module::getModuleURL('ldapTozny/resume.php', array(
+                    'State' => $stateId,
+            ));
             SimpleSAML_Utilities::redirect($returnTo, array());
         }
 
