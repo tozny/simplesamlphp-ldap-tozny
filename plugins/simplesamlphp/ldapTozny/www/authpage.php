@@ -32,6 +32,8 @@
                 'session_id': '<?= $_SESSION['tozny_session_id']; ?>',
                 'qr_url': '<?= $_SESSION['qrUrl']; ?>',
                 'api_url': '<?= $_SESSION['api_url'] . 'index.php' ?>',
+                'loading_image': '<?= $_SESSION['api_url'] ?>interface/javascript/images/loading.gif',
+                'login_button_image':'<?= $_SESSION['api_url'] ?>interface/javascript/images/click-to-login-black.jpg',
                 'mobile_url': '<?= $_SESSION['mobile_url']; ?>',
                 'form_type': 'custom',
                 'form_id':'tozny-form',
