@@ -101,10 +101,27 @@ class sspmod_ldapTozny_Auth_Source_LDAPTozny extends SimpleSAML_Auth_Source {
         $this->realm_secret_key = $config['realm_secret_key'];
         $this->api_url = $config['api_url'];
 
+
+        # locate the tozny-client library on the include path.
+        $paths = explode(PATH_SEPARATOR, get_include_path());
+        $foundCommon = false;
+        foreach ($paths as $path) {
+            if (file_exists($path . '/ToznyRemoteUserAPI.php')) {
+                $foundCommon = true;
+                break;
+            }
+        }
+        # if we couldnt find it, add the /var/www/library/tozny_common directory exists and is readable, then add it to the include path.
+        if (!$foundCommon) {
+            if (!file_exists('/var/www/library/tozny_client/ToznyRemoteUserAPI.php')) {
+                throw new Exception(sprintf("Could not locate Tozny Client library. Is it on the include path and readable? include_path: %s", get_include_path()));
+            }
+            set_include_path(get_include_path() . PATH_SEPARATOR . '/var/www/library/tozny_client');
+        }
+
         require_once "ToznyRemoteUserAPI.php";
         require_once "ToznyRemoteRealmAPI.php";
 
-        set_include_path(get_include_path());
 
 
         $this->ldapConfig = new sspmod_ldap_ConfigHelper($config,
@@ -187,15 +204,7 @@ class sspmod_ldapTozny_Auth_Source_LDAPTozny extends SimpleSAML_Auth_Source {
         );
         if(isset($_SESSION['user_meta'])) {
             foreach ($_SESSION['user_meta'] as $key => $val) {
-                if (in_array($key, ['user_id', 'return', 'status_code'])) {
-                    continue;
-                }
-                if ($key == 'meta') {
-                    if (is_array($val)) {
-                        foreach ($val as $k => $v) {
-                            $attributes['meta_'.$k] = array($v);
-                        } 
-                    }                   
+                if (in_array($key, ['secret_key'])) {
                     continue;
                 }
                 $attributes[$key] = is_array($val) ? $val : array ($val);
@@ -250,7 +259,7 @@ class sspmod_ldapTozny_Auth_Source_LDAPTozny extends SimpleSAML_Auth_Source {
 
         $state['LDAPTozny:AuthID'] = $this->authId;
 
-        if (!empty($_REQUEST['auth_type']) && $_REQUEST['auth_type'] === 'ldap') {
+        if (!empty($_REQUEST['auth_type']) && ($_REQUEST['auth_type'] === 'ldap' || $_REQUEST['auth_type'] === 'ldap-provision')) {
             try {
                 /* Attempt to log in. */
                 $username = $_REQUEST['username'];
@@ -285,17 +294,17 @@ class sspmod_ldapTozny_Auth_Source_LDAPTozny extends SimpleSAML_Auth_Source {
                     //Should be logged in
                     $decoded = $siteApi->checkSigGetData($check);
                     if ($decoded) {
-                        $user = $siteApi->userGet($decoded['user_id']);
+                        $attrsFromSess = $siteApi->userGet($decoded['user_id']);
                         $_SESSION['user_meta'] = array();
-                        foreach ($user['meta'] as $key => $val) {
-                            if (in_array(strtolower($key), ['user_id', 'return', 'status_code'])) {
+                        foreach ($attrsFromSess['meta'] as $key => $val) {
+                            if (in_array(strtolower($key), ['secret_key'])) {
                                 continue;
                             } else {
                                 $_SESSION['user_meta'][$key] = $val;
                             }
                         }
-                        if (!empty($user['tozny_username'])) {
-                            $_SESSION['uid'] = $user['tozny_username'];
+                        if (!empty($attrsFromSess['tozny_username'])) {
+                            $_SESSION['uid'] = $attrsFromSess['tozny_username'];
                         } else {
                             $_SESSION['uid'] = $decoded['user_id'];
                         }
@@ -315,10 +324,7 @@ class sspmod_ldapTozny_Auth_Source_LDAPTozny extends SimpleSAML_Auth_Source {
             }
         }
 
-        /*
-         * The redirect to the authentication page.
-         *
-         */
+        # Not authenticated
         if (!$auth) {
 
             $stateId = SimpleSAML_Auth_State::saveState($state, 'LDAPTozny:External');
@@ -347,10 +353,80 @@ class sspmod_ldapTozny_Auth_Source_LDAPTozny extends SimpleSAML_Auth_Source {
              * is also part of this module, but in a real example, this would likely be
              * the absolute URL of the login page for the site.
              */
-            $authPage = SimpleSAML_Module::getModuleURL('ldapTozny/authpage.php');
+            $authPage = SimpleSAML_Module::getModuleURL(
+                'ldapTozny/authpage.php' . ($_REQUEST['auth_type'] === 'ldap-provision' ? '#provision' : '')
+            );
 
             SimpleSAML_Utilities::redirect($authPage, array());
-        } else {
+        }
+
+        # Authenticated, provisioning new user/device with ldap
+        else if ($_REQUEST['auth_type'] === 'ldap-provision') {
+            $provisionFromLdapForm = 'ldapTozny/authpage.php#provision';
+            $provisionDevicePage   = 'ldapTozny/provision.php';
+
+            $attrsFromSess = $this->getUser();
+            if (empty($attrsFromSess['mail'][0])) {
+                $_SESSION['msg'] = "Could not locate email";
+                SimpleSAML_Utilities::redirect(SimpleSAML_Module::getModuleURL($provisionFromLdapForm),array());
+            }
+
+            $siteApi = new Tozny_Remote_Realm_API($this->realm_key_id, $this->realm_secret_key, $this->api_url);
+
+            $email = $attrsFromSess['mail'][0];
+
+            $user_id = $siteApi->userEmailExists($email);
+
+            # if we found an existing user, add a new device.
+            if ($user_id) {
+                $user = $siteApi->realmUserDeviceAdd($user_id);
+
+                if (!$user || !array_key_exists('secret_enrollment_qr_url',$user)) {
+                    var_dump($user_id);
+                    var_dump($user);
+                    exit;
+                    $_SESSION['msg'] = "Found an existing tozny user, however we were unable to successfully add a device.";
+                    SimpleSAML_Utilities::redirect(SimpleSAML_Module::getModuleURL($provisionFromLdapForm),array());
+                }
+            }
+
+            # otherwise we need to create the user on the Tozny side, and send the ldap attributes over to Tozny as meta fields.
+            else {
+                $meta = array();
+                foreach ($attrsFromSess as $key => $val) {
+                    if (!is_array($val) || count($val) !== 1) continue;
+                    $meta[$key] = $val[0];
+                }
+
+                $user = $siteApi->userAdd(true, $meta);
+
+                if (!$user || !array_key_exists('secret_enrollment_qr_url',$user)) {
+                    $_SESSION['msg'] = "Could not create Tozny user. We were able to authenticate you in th LDAP system, however we were unable to create your user in the Tozny system.";
+                    SimpleSAML_Utilities::redirect(SimpleSAML_Module::getModuleURL($provisionFromLdapForm),array());
+                }
+            }
+
+            # log the ldap session out.
+            $this->logout($state);
+            if (!session_id()) {
+                session_start();
+            }
+
+            # setup the  vars provision.php expects to have in the SESSION.
+            $_SESSION['provisioned']              = $user_id ? "new_device" : "new_user";
+            $_SESSION['authSrcId']                = $this->authId;
+            $_SESSION['secret_enrollment_qr_url'] = $user['secret_enrollment_qr_url'];
+
+            $redirect_url = SimpleSAML_Module::getModuleURL($provisionDevicePage);
+
+            #SimpleSAML_Utilities::redirectTrustedURL($redirect_url,array());
+            // TODO: Figure out how to get SimpleSAML to navigate to provision.php, forsome reason we're always getting redirected to the service-provider.
+            header('Location: ' . $redirect_url, TRUE, 302);
+            exit;
+        }
+
+        # Authenticated, logging in.
+        else {
             $stateId = $_SESSION['state_id'];
             $returnTo = SimpleSAML_Module::getModuleURL('ldapTozny/resume.php', array(
                     'State' => $stateId,
