@@ -104,15 +104,15 @@ class sspmod_ldapTozny_Auth_Source_LDAPTozny extends SimpleSAML_Auth_Source {
 
         # locate the tozny-client library on the include path.
         $paths = explode(PATH_SEPARATOR, get_include_path());
-        $foundCommon = false;
+        $foundClient = false;
         foreach ($paths as $path) {
             if (file_exists($path . '/ToznyRemoteUserAPI.php')) {
-                $foundCommon = true;
+                $foundClient = true;
                 break;
             }
         }
         # if we couldnt find it, add the /var/www/library/tozny_common directory exists and is readable, then add it to the include path.
-        if (!$foundCommon) {
+        if (!$foundClient) {
             if (!file_exists('/var/www/library/tozny_client/ToznyRemoteUserAPI.php')) {
                 throw new Exception(sprintf("Could not locate Tozny Client library. Is it on the include path and readable? include_path: %s", get_include_path()));
             }
