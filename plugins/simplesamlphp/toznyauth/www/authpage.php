@@ -125,14 +125,14 @@ $authUrl = "toznyauth://sandbox.tozny.com/api/"
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>Authentication</title>
 
-	<link rel="stylesheet" type="text/css" href="/simplesaml/resources/default.css" />
-	<link rel="icon" type="image/icon" href="/simplesaml/resources/icons/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="<?= SimpleSAML_Configuration::getInstance()->getBaseURL() ?>/resources/default.css" />
+	<link rel="icon" type="image/icon" href="<?= SimpleSAML_Configuration::getInstance()->getBaseURL() ?>/resources/icons/favicon.ico" />
 
 
 	<!-- tozny stuff -->
     <link rel="stylesheet" type="text/css" href="tozny.css" />
 
-    <script src="http:////ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="<?= $api_url . 'interface/javascript/jquery.tozny.js'?>"></script>
     <script type="text/javascript">
     $(document).ready(function() {
@@ -142,8 +142,10 @@ $authUrl = "toznyauth://sandbox.tozny.com/api/"
                 'realm_key_id':'<?php echo $realm_key_id; ?>',
                 'session_id': '<?php echo $challenge['session_id']; ?>',
                 'qr_url': '<?php echo $qrURL; ?>',
-                'mobile_url': 'http://what.is.this./',
                 'api_url': '<?= $api_url . 'index.php' ?>',
+                'loading_image': '<?= $_SESSION['api_url'] ?>interface/javascript/images/loading.gif',
+                'login_button_image': '<?= $_SESSION['api_url'] ?>interface/javascript/images/click-to-login-black.jpg',
+                'mobile_url': '<?= $_SESSION['mobile_url']; ?>',
                 'form_type': 'custom',
                 'form_id':'tozny-form',
                 'debug':true
