@@ -109,7 +109,7 @@ $challenge = $userApi->loginChallenge();
 //Save the session ID for later when we receive the response.
 $_SESSION['tozny_session_id'] = $challenge['session_id'];
 $qrURL = $challenge['qr_url'];
-$authUrl = "tozauth://sandbox.tozny.com/api/"
+$authUrl = "tozauth" . substr($api_url, strpos($api_url, ":"))
            . "?s=" . $challenge['session_id']
            . "&c=" . $challenge['challenge']
            . "&r=" . $challenge['realm_key_id'];
