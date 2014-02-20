@@ -143,9 +143,9 @@ $authUrl = "toznyauth://sandbox.tozny.com/api/"
                 'session_id': '<?php echo $challenge['session_id']; ?>',
                 'qr_url': '<?php echo $qrURL; ?>',
                 'api_url': '<?= $api_url . 'index.php' ?>',
-                'loading_image': '<?= $_SESSION['api_url'] ?>interface/javascript/images/loading.gif',
-                'login_button_image': '<?= $_SESSION['api_url'] ?>interface/javascript/images/click-to-login-black.jpg',
-                'mobile_url': '<?= $_SESSION['mobile_url']; ?>',
+                'loading_image': '<?= $api_url ?>interface/javascript/images/loading.gif',
+                'login_button_image': '<?= $api_url ?>interface/javascript/images/click-to-login-black.jpg',
+                'mobile_url': '<?= $challenge['mobile_url'] ?>',
                 'form_type': 'custom',
                 'form_id':'tozny-form',
                 'debug':true
