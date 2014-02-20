@@ -2,5 +2,5 @@ Package: simplesamlphp-toznyauth
 Version: 0.0.1
 Maintainer: Kirk Peterson<kirk@tozny.com>
 Architecture: all
-Depends: simplesamlphp
+Depends: simplesamlphp, tozny-api-php-client
 Description: Simple SAML PHP Auth Module that provides Tozny authentication.
