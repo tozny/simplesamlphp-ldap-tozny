@@ -79,8 +79,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $user = $siteApi->userGet($decoded['user_id']);
                 $_SESSION['uid'] = $decoded['user_id'];
                 $_SESSION['user_meta'] = array();
-                foreach ($user as $key => $val) {
-                    if (in_array(strtolower($key), ['user_id', 'return', 'status_code'])) {
+                foreach ($user['meta'] as $key => $val) {
+                    if (in_array(strtolower($key), ['secret_key'])) {
                         continue;
                     } else {
                         $_SESSION['user_meta'][$key] = $val;

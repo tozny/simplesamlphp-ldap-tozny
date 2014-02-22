@@ -81,15 +81,7 @@ class sspmod_toznyauth_Auth_Source_External extends SimpleSAML_Auth_Source {
                 if (in_array($key, ['user_id', 'return', 'status_code'])) {
                     continue;
                 }
-                if ($key == 'meta') {
-                    if (is_array($val)) {
-                        foreach ($val as $k => $v) {
-                            $attributes['meta_'.$k] = array($v);
-                        } 
-                    }                   
-                    continue;
-                }
-                $attributes[$key] = array ($val);
+                $attributes[$key] = is_array($val) ? $val : array ($val);
             }
         }
 
