@@ -1,0 +1,38 @@
+Code is pretty straight foward. There are some OS X-isms that people
+attempting to work on the code should be aware of though. Here is roughly how 
+this app works.
+
+The app can be run two ways.
+
+1) If the app is run normally (as in, the user double clicks the icon) an 
+event is sent to the app. In SeqrdBluetoothAppDelegate.m, in the 
+applicationWillFinishLaunching function we register the event handler for
+kAEOpenApplication, which a "normal" launch corresponds to. If the app is 
+opened this way, we register/run the install() function which is also in 
+SeqrdBluetoothAppDelegate.m. install() simply sets the app as the default 
+handler for seqrdenroll:// and seqrdauth:// uris.
+
+2) Once the app has been "installed" (i.e. run once), clicking on a registered 
+uri will cause the app to open with a different event. Similiar to install, 
+in applicationWillFinishLaunching we register an event handler for kAEGetURL, 
+which corresponds to a uri click. In this case, we presume the application is 
+already installed and run getURL() (in SeqrdBluetoothAppDelegate.m). This 
+instantiates a SeqrdBluetoothInterface object which sends the message.
+
+Other Info:
+
+- Its important to note the URL Types in the Info.plist. These are important 
+to the uri clicking actually working. They can be viewed raw, or in xcode.
+- The SeqrdBluetoothInterface class is really an old apple chat example 
+that's been modified. It is very basic
+- If you need to change the UUID of the bluetooth service, you can see where 
+that is done in SeqrdBluetoothInterface.m's init()
+- Because the code comes from an old Apple example, it doesnt to my knowledge 
+use reference counting. Considering the application is one shot, this isn't 
+currently a huge deal. If the application is going to be extended at all, this 
+should be revised. Im pretty sure it leaks memory now, it just doesnt matter.
+
+TODO:
+- Install should display a message stating that the app was successfully 
+isntalled
+- Once a phone has been trusted once, we should continue to trust it

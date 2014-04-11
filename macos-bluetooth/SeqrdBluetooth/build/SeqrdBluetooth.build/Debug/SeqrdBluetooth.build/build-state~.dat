@@ -1,0 +1,258 @@
+TSeqrdBluetooth
+v7
+r0
+t407655163.089383
+cCheck dependencies
+cProcessInfoPlistFile /Users/joe/ObjC/SeqrdBluetooth/build/Debug/SeqrdBluetooth.app/Contents/Info.plist SeqrdBluetooth-Info.plist
+cCopyStringsFile /Users/joe/ObjC/SeqrdBluetooth/build/Debug/SeqrdBluetooth.app/Contents/Resources/English.lproj/InfoPlist.strings English.lproj/InfoPlist.strings
+cCompileXIB /Users/joe/ObjC/SeqrdBluetooth/English.lproj/MainMenu.xib
+cProcessPCH /var/folders/bq/3syg96ns7m3gt7_0bv0z_9yr0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/SeqrdBluetooth_Prefix-hiqgxynfartdyccmjznbvycakapm/SeqrdBluetooth_Prefix.pch.gch SeqrdBluetooth_Prefix.pch normal x86_64 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/SeqrdBluetooth.build/Debug/SeqrdBluetooth.build/Objects-normal/x86_64/main.o /Users/joe/ObjC/SeqrdBluetooth/main.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/SeqrdBluetooth.build/Debug/SeqrdBluetooth.build/Objects-normal/x86_64/SeqrdBluetoothAppDelegate.o /Users/joe/ObjC/SeqrdBluetooth/SeqrdBluetoothAppDelegate.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/SeqrdBluetooth.build/Debug/SeqrdBluetooth.build/Objects-normal/x86_64/SeqrdBluetoothInterface.o /Users/joe/ObjC/SeqrdBluetooth/SeqrdBluetoothInterface.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+cLd /Users/joe/ObjC/SeqrdBluetooth/build/Debug/SeqrdBluetooth.app/Contents/MacOS/SeqrdBluetooth normal x86_64
+
+N/Developer/SDKs/MacOSX10.6.sdk
+c000000004A769DAB00000000000000EE
+t1249287595
+s238
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Cocoa.framework/Headers/Cocoa.h
+c0000000040C4AA6800000000000001E5
+t1086630504
+s485
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/IOBluetooth.framework/Headers/objc/IOBluetoothDevice.h
+c000000004CC41C1D000000000000BBB2
+t1287920669
+s48050
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/IOBluetooth.framework/Headers/objc/IOBluetoothRFCOMMChannel.h
+c000000004CC41C1D0000000000004A63
+t1287920669
+s19043
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/IOBluetooth.framework/Headers/objc/IOBluetoothSDPServiceRecord.h
+c000000004CC41C1D0000000000002708
+t1287920669
+s9992
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/IOBluetooth.framework/Headers/objc/IOBluetoothSDPUUID.h
+c000000004CC41C1D0000000000001A23
+t1287920669
+s6691
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/IOBluetoothUI.framework/Headers/objc/IOBluetoothDeviceSelectorController.h
+c000000004A73D9F400000000000033F0
+t1249106420
+s13296
+
+N/System/Library/Frameworks/Cocoa.framework/Cocoa
+c00000000528B317000000000000066C0
+t1384853872
+s26304
+
+N/Users/joe/ObjC/SeqrdBluetooth/English.lproj/InfoPlist.strings
+c00000000529C1835000000000000002D
+t1385961525
+s45
+
+N/Users/joe/ObjC/SeqrdBluetooth/English.lproj/MainMenu.xib
+c00000000529C1835000000000002BBB8
+t1385961525
+s179128
+
+N/Users/joe/ObjC/SeqrdBluetooth/SeqrdBluetoothAppDelegate.h
+c00000000529C18350000000000000147
+t1385961525
+s327
+i<Cocoa/Cocoa.h>
+
+N/Users/joe/ObjC/SeqrdBluetooth/SeqrdBluetoothAppDelegate.m
+c00000000529C18350000000000000183
+t1385961525
+s387
+i"SeqrdBluetoothAppDelegate.h"
+
+N/Users/joe/ObjC/SeqrdBluetooth/SeqrdBluetoothInterface.h
+c00000000529C1AE1000000000000041D
+t1385962209
+s1053
+
+N/Users/joe/ObjC/SeqrdBluetooth/SeqrdBluetoothInterface.m
+c00000000529C1B73000000000000218B
+t1385962355
+s8587
+i"SeqrdBluetoothInterface.h"
+i<IOBluetooth/objc/IOBluetoothDevice.h>
+i<IOBluetooth/objc/IOBluetoothRFCOMMChannel.h>
+i<IOBluetooth/objc/IOBluetoothSDPServiceRecord.h>
+i<IOBluetooth/objc/IOBluetoothSDPUUID.h>
+i<IOBluetoothUI/objc/IOBluetoothDeviceSelectorController.h>
+
+N/Users/joe/ObjC/SeqrdBluetooth/SeqrdBluetooth_Prefix.pch
+c00000000529C1835000000000000009F
+t1385961525
+s159
+i<Cocoa/Cocoa.h>
+
+N/Users/joe/ObjC/SeqrdBluetooth/build/Debug/SeqrdBluetooth.app
+t2
+s0
+
+N/Users/joe/ObjC/SeqrdBluetooth/build/Debug/SeqrdBluetooth.app/Contents/Info.plist
+t1385962360
+s1305
+
+N/Users/joe/ObjC/SeqrdBluetooth/build/Debug/SeqrdBluetooth.app/Contents/MacOS/SeqrdBluetooth
+t2
+s0
+
+N/Users/joe/ObjC/SeqrdBluetooth/build/Debug/SeqrdBluetooth.app/Contents/PkgInfo
+t1385962360
+s8
+
+N/Users/joe/ObjC/SeqrdBluetooth/build/Debug/SeqrdBluetooth.app/Contents/Resources/English.lproj/InfoPlist.strings
+t1385962360
+s92
+
+N/Users/joe/ObjC/SeqrdBluetooth/build/Debug/SeqrdBluetooth.app/Contents/Resources/English.lproj/MainMenu.nib
+t1385962360
+s28263
+
+N/Users/joe/ObjC/SeqrdBluetooth/build/SeqrdBluetooth.build/Debug/SeqrdBluetooth.build/Objects-normal/x86_64/SeqrdBluetooth.LinkFileList
+c00000000529C1B78000000000000017E
+t1385962360
+s382
+
+N/Users/joe/ObjC/SeqrdBluetooth/build/SeqrdBluetooth.build/Debug/SeqrdBluetooth.build/Objects-normal/x86_64/SeqrdBluetoothAppDelegate.o
+t1385962362
+s21272
+
+N/Users/joe/ObjC/SeqrdBluetooth/build/SeqrdBluetooth.build/Debug/SeqrdBluetooth.build/Objects-normal/x86_64/SeqrdBluetoothInterface.o
+t1385962362
+s36972
+
+N/Users/joe/ObjC/SeqrdBluetooth/build/SeqrdBluetooth.build/Debug/SeqrdBluetooth.build/Objects-normal/x86_64/main.o
+t1385962362
+s4984
+
+N/Users/joe/ObjC/SeqrdBluetooth/main.m
+c00000000529C183500000000000000FB
+t1385961525
+s251
+i<Cocoa/Cocoa.h>
+
+N/var/folders/bq/3syg96ns7m3gt7_0bv0z_9yr0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/SeqrdBluetooth_Prefix-hiqgxynfartdyccmjznbvycakapm/SeqrdBluetooth_Prefix.pch.gch
+t1385962362
+s54306576
+
+NSeqrdBluetooth-Info.plist
+c00000000529C183500000000000003EA
+t1385961525
+s1002
+
+CCheck dependencies
+r0
+lSLF07#2@18"Check dependencies407655160#407655160#0(0"0(0#1#0"17224837888#0"0#
+
+CCompileC build/SeqrdBluetooth.build/Debug/SeqrdBluetooth.build/Objects-normal/x86_64/SeqrdBluetoothAppDelegate.o /Users/joe/ObjC/SeqrdBluetooth/SeqrdBluetoothAppDelegate.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+s407655162.792063
+e407655162.944307
+r1
+xCompileC
+xbuild/SeqrdBluetooth.build/Debug/SeqrdBluetooth.build/Objects-normal/x86_64/SeqrdBluetoothAppDelegate.o
+x/Users/joe/ObjC/SeqrdBluetooth/SeqrdBluetoothAppDelegate.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@66"Compile /Users/joe/ObjC/SeqrdBluetooth/SeqrdBluetoothAppDelegate.m407655162#407655162#0(0"0(0#0#58"/Users/joe/ObjC/SeqrdBluetooth/SeqrdBluetoothAppDelegate.m4317954048#1540"    cd /Users/joe/ObjC/SeqrdBluetooth    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch x86_64 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/joe/ObjC/SeqrdBluetooth/build/SeqrdBluetooth.build/Debug/SeqrdBluetooth.build/SeqrdBluetooth-generated-files.hmap -I/Users/joe/ObjC/SeqrdBluetooth/build/SeqrdBluetooth.build/Debug/SeqrdBluetooth.build/SeqrdBluetooth-own-target-headers.hmap -I/Users/joe/ObjC/SeqrdBluetooth/build/SeqrdBluetooth.build/Debug/SeqrdBluetooth.build/SeqrdBluetooth-all-target-headers.hmap -iquote /Users/joe/ObjC/SeqrdBluetooth/build/SeqrdBluetooth.build/Debug/SeqrdBluetooth.build/SeqrdBluetooth-project-headers.hmap -F/Users/joe/ObjC/SeqrdBluetooth/build/Debug -I/Users/joe/ObjC/SeqrdBluetooth/build/Debug/include -I/Users/joe/ObjC/SeqrdBluetooth/build/SeqrdBluetooth.build/Debug/SeqrdBluetooth.build/DerivedSources/x86_64 -I/Users/joe/ObjC/SeqrdBluetooth/build/SeqrdBluetooth.build/Debug/SeqrdBluetooth.build/DerivedSources -include /var/folders/bq/3syg96ns7m3gt7_0bv0z_9yr0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/SeqrdBluetooth_Prefix-hiqgxynfartdyccmjznbvycakapm/SeqrdBluetooth_Prefix.pch -c /Users/joe/ObjC/SeqrdBluetooth/SeqrdBluetoothAppDelegate.m -o /Users/joe/ObjC/SeqrdBluetooth/build/SeqrdBluetooth.build/Debug/SeqrdBluetooth.build/Objects-normal/x86_64/SeqrdBluetoothAppDelegate.o0#
+
+CCompileC build/SeqrdBluetooth.build/Debug/SeqrdBluetooth.build/Objects-normal/x86_64/SeqrdBluetoothInterface.o /Users/joe/ObjC/SeqrdBluetooth/SeqrdBluetoothInterface.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+s407655162.792635
+e407655162.971925
+r1
+xCompileC
+xbuild/SeqrdBluetooth.build/Debug/SeqrdBluetooth.build/Objects-normal/x86_64/SeqrdBluetoothInterface.o
+x/Users/joe/ObjC/SeqrdBluetooth/SeqrdBluetoothInterface.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+o/Users/joe/ObjC/SeqrdBluetooth/SeqrdBluetoothInterface.m: In function '-[SeqrdBluetoothInterface getUrl:withReplyEvent:]':
+o/Users/joe/ObjC/SeqrdBluetooth/SeqrdBluetoothInterface.m:241: warning: passing argument 1 of 'sendData:length:' discards qualifiers from pointer target type
+lSLF07#2@64"Compile /Users/joe/ObjC/SeqrdBluetooth/SeqrdBluetoothInterface.m407655162#407655162#0(280"/Users/joe/ObjC/SeqrdBluetooth/SeqrdBluetoothInterface.m: In function '-[SeqrdBluetoothInterface getUrl:withReplyEvent:]':/Users/joe/ObjC/SeqrdBluetooth/SeqrdBluetoothInterface.m:241: warning: passing argument 1 of 'sendData:length:' discards qualifiers from pointer target type1(22@85"Passing argument 1 of 'sendData:length:' discards qualifiers from pointer target type407655162#123#157#0(6@56"/Users/joe/ObjC/SeqrdBluetooth/SeqrdBluetoothInterface.m407655155#241#0#241#0#70"passing argument * of '*' discards qualifiers from pointer target type0(0#0#56"/Users/joe/ObjC/SeqrdBluetooth/SeqrdBluetoothInterface.m4317954048#1536"    cd /Users/joe/ObjC/SeqrdBluetooth    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch x86_64 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/joe/ObjC/SeqrdBluetooth/build/SeqrdBluetooth.build/Debug/SeqrdBluetooth.build/SeqrdBluetooth-generated-files.hmap -I/Users/joe/ObjC/SeqrdBluetooth/build/SeqrdBluetooth.build/Debug/SeqrdBluetooth.build/SeqrdBluetooth-own-target-headers.hmap -I/Users/joe/ObjC/SeqrdBluetooth/build/SeqrdBluetooth.build/Debug/SeqrdBluetooth.build/SeqrdBluetooth-all-target-headers.hmap -iquote /Users/joe/ObjC/SeqrdBluetooth/build/SeqrdBluetooth.build/Debug/SeqrdBluetooth.build/SeqrdBluetooth-project-headers.hmap -F/Users/joe/ObjC/SeqrdBluetooth/build/Debug -I/Users/joe/ObjC/SeqrdBluetooth/build/Debug/include -I/Users/joe/ObjC/SeqrdBluetooth/build/SeqrdBluetooth.build/Debug/SeqrdBluetooth.build/DerivedSources/x86_64 -I/Users/joe/ObjC/SeqrdBluetooth/build/SeqrdBluetooth.build/Debug/SeqrdBluetooth.build/DerivedSources -include /var/folders/bq/3syg96ns7m3gt7_0bv0z_9yr0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/SeqrdBluetooth_Prefix-hiqgxynfartdyccmjznbvycakapm/SeqrdBluetooth_Prefix.pch -c /Users/joe/ObjC/SeqrdBluetooth/SeqrdBluetoothInterface.m -o /Users/joe/ObjC/SeqrdBluetooth/build/SeqrdBluetooth.build/Debug/SeqrdBluetooth.build/Objects-normal/x86_64/SeqrdBluetoothInterface.o0#
+
+CCompileC build/SeqrdBluetooth.build/Debug/SeqrdBluetooth.build/Objects-normal/x86_64/main.o /Users/joe/ObjC/SeqrdBluetooth/main.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+s407655162.790609
+e407655162.933128
+r1
+xCompileC
+xbuild/SeqrdBluetooth.build/Debug/SeqrdBluetooth.build/Objects-normal/x86_64/main.o
+x/Users/joe/ObjC/SeqrdBluetooth/main.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@45"Compile /Users/joe/ObjC/SeqrdBluetooth/main.m407655162#407655162#0(0"0(0#0#37"/Users/joe/ObjC/SeqrdBluetooth/main.m4317954048#1498"    cd /Users/joe/ObjC/SeqrdBluetooth    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch x86_64 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/joe/ObjC/SeqrdBluetooth/build/SeqrdBluetooth.build/Debug/SeqrdBluetooth.build/SeqrdBluetooth-generated-files.hmap -I/Users/joe/ObjC/SeqrdBluetooth/build/SeqrdBluetooth.build/Debug/SeqrdBluetooth.build/SeqrdBluetooth-own-target-headers.hmap -I/Users/joe/ObjC/SeqrdBluetooth/build/SeqrdBluetooth.build/Debug/SeqrdBluetooth.build/SeqrdBluetooth-all-target-headers.hmap -iquote /Users/joe/ObjC/SeqrdBluetooth/build/SeqrdBluetooth.build/Debug/SeqrdBluetooth.build/SeqrdBluetooth-project-headers.hmap -F/Users/joe/ObjC/SeqrdBluetooth/build/Debug -I/Users/joe/ObjC/SeqrdBluetooth/build/Debug/include -I/Users/joe/ObjC/SeqrdBluetooth/build/SeqrdBluetooth.build/Debug/SeqrdBluetooth.build/DerivedSources/x86_64 -I/Users/joe/ObjC/SeqrdBluetooth/build/SeqrdBluetooth.build/Debug/SeqrdBluetooth.build/DerivedSources -include /var/folders/bq/3syg96ns7m3gt7_0bv0z_9yr0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/SeqrdBluetooth_Prefix-hiqgxynfartdyccmjznbvycakapm/SeqrdBluetooth_Prefix.pch -c /Users/joe/ObjC/SeqrdBluetooth/main.m -o /Users/joe/ObjC/SeqrdBluetooth/build/SeqrdBluetooth.build/Debug/SeqrdBluetooth.build/Objects-normal/x86_64/main.o0#
+
+CCompileXIB /Users/joe/ObjC/SeqrdBluetooth/English.lproj/MainMenu.xib
+s407655160.179649
+e407655160.615655
+r1
+xCompileXIB
+x/Users/joe/ObjC/SeqrdBluetooth/English.lproj/MainMenu.xib
+lSLF07#2@37"CompileXIB English.lproj/MainMenu.xib407655160#407655160#0(0"0(0#0#57"/Users/joe/ObjC/SeqrdBluetooth/English.lproj/MainMenu.xib4317954048#347"    cd /Users/joe/ObjC/SeqrdBluetooth    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/joe/ObjC/SeqrdBluetooth/build/Debug/SeqrdBluetooth.app/Contents/Resources/English.lproj/MainMenu.nib /Users/joe/ObjC/SeqrdBluetooth/English.lproj/MainMenu.xib --sdk /Developer/SDKs/MacOSX10.6.sdk0#
+
+CCopyStringsFile /Users/joe/ObjC/SeqrdBluetooth/build/Debug/SeqrdBluetooth.app/Contents/Resources/English.lproj/InfoPlist.strings English.lproj/InfoPlist.strings
+s407655160.178080
+e407655160.619794
+r1
+xCopyStringsFile
+x/Users/joe/ObjC/SeqrdBluetooth/build/Debug/SeqrdBluetooth.app/Contents/Resources/English.lproj/InfoPlist.strings
+xEnglish.lproj/InfoPlist.strings
+lSLF07#2@36"Copy English.lproj/InfoPlist.strings407655160#407655160#0(0"0(0#0#62"/Users/joe/ObjC/SeqrdBluetooth/English.lproj/InfoPlist.strings4317954048#356"    cd /Users/joe/ObjC/SeqrdBluetooth    setenv ICONV /usr/bin/iconv    /Developer/Library/Xcode/Plug-ins/CoreBuildTasks.xcplugin/Contents/Resources/copystrings --validate --inputencoding utf-8 --outputencoding UTF-16 English.lproj/InfoPlist.strings --outdir /Users/joe/ObjC/SeqrdBluetooth/build/Debug/SeqrdBluetooth.app/Contents/Resources/English.lproj0#
+
+CLd /Users/joe/ObjC/SeqrdBluetooth/build/Debug/SeqrdBluetooth.app/Contents/MacOS/SeqrdBluetooth normal x86_64
+s407655162.972000
+e407655163.089331
+r0
+xLd
+x/Users/joe/ObjC/SeqrdBluetooth/build/Debug/SeqrdBluetooth.app/Contents/MacOS/SeqrdBluetooth
+xnormal
+xx86_64
+oUndefined symbols:
+o  "_OBJC_CLASS_$_IOBluetoothDeviceSelectorController", referenced from:
+o      objc-class-ref-to-IOBluetoothDeviceSelectorController in SeqrdBluetoothInterface.o
+o  "_OBJC_CLASS_$_IOBluetoothSDPUUID", referenced from:
+o      objc-class-ref-to-IOBluetoothSDPUUID in SeqrdBluetoothInterface.o
+old: symbol(s) not found
+ocollect2: ld returned 1 exit status
+lSLF07#2@96"Link /Users/joe/ObjC/SeqrdBluetooth/build/Debug/SeqrdBluetooth.app/Contents/MacOS/SeqrdBluetooth407655162#407655163#0(367"Undefined symbols:  "_OBJC_CLASS_$_IOBluetoothDeviceSelectorController", referenced from:      objc-class-ref-to-IOBluetoothDeviceSelectorController in SeqrdBluetoothInterface.o  "_OBJC_CLASS_$_IOBluetoothSDPUUID", referenced from:      objc-class-ref-to-IOBluetoothSDPUUID in SeqrdBluetoothInterface.old: symbol(s) not foundcollect2: ld returned 1 exit status6(4@69""_OBJC_CLASS_$_IOBluetoothDeviceSelectorController", referenced from:407655163#19#72#0(6@0"407655163#0#0#0#0#0"0(13@82"Objc-class-ref-to-IOBluetoothDeviceSelectorController in SeqrdBluetoothInterface.o407655163#91#89#0(6@0"407655163#0#0#0#0#0"0(4@52""_OBJC_CLASS_$_IOBluetoothSDPUUID", referenced from:407655163#180#55#0(6@0"407655163#0#0#0#0#0"0(13@65"Objc-class-ref-to-IOBluetoothSDPUUID in SeqrdBluetoothInterface.o407655163#235#72#0(6@0"407655163#0#0#0#0#0"0(13@19"Symbol(s) not found407655163#307#24#0(6@0"407655163#0#0#0#0#0"0(13@35"Collect2: ld returned 1 exit status407655163#331#36#0(6@0"407655163#0#0#0#0#0"0(0#0#0"17226735104#537"    cd /Users/joe/ObjC/SeqrdBluetooth    setenv MACOSX_DEPLOYMENT_TARGET 10.6    /Developer/usr/bin/gcc-4.2 -arch x86_64 -isysroot /Developer/SDKs/MacOSX10.6.sdk -L/Users/joe/ObjC/SeqrdBluetooth/build/Debug -F/Users/joe/ObjC/SeqrdBluetooth/build/Debug -filelist /Users/joe/ObjC/SeqrdBluetooth/build/SeqrdBluetooth.build/Debug/SeqrdBluetooth.build/Objects-normal/x86_64/SeqrdBluetooth.LinkFileList -mmacosx-version-min=10.6 -framework Cocoa -o /Users/joe/ObjC/SeqrdBluetooth/build/Debug/SeqrdBluetooth.app/Contents/MacOS/SeqrdBluetooth1#
+
+CProcessInfoPlistFile /Users/joe/ObjC/SeqrdBluetooth/build/Debug/SeqrdBluetooth.app/Contents/Info.plist SeqrdBluetooth-Info.plist
+s407655160.173312
+e407655160.177996
+r1
+xProcessInfoPlistFile
+x/Users/joe/ObjC/SeqrdBluetooth/build/Debug/SeqrdBluetooth.app/Contents/Info.plist
+xSeqrdBluetooth-Info.plist
+lSLF07#2@33"Process SeqrdBluetooth-Info.plist407655160#407655160#0(0"0(0#0#56"/Users/joe/ObjC/SeqrdBluetooth/SeqrdBluetooth-Info.plist17226636544#307"    cd /Users/joe/ObjC/SeqrdBluetooth    builtin-infoPlistUtility SeqrdBluetooth-Info.plist -genpkginfo /Users/joe/ObjC/SeqrdBluetooth/build/Debug/SeqrdBluetooth.app/Contents/PkgInfo -expandbuildsettings -platform macosx -o /Users/joe/ObjC/SeqrdBluetooth/build/Debug/SeqrdBluetooth.app/Contents/Info.plist0#
+
+CProcessPCH /var/folders/bq/3syg96ns7m3gt7_0bv0z_9yr0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/SeqrdBluetooth_Prefix-hiqgxynfartdyccmjznbvycakapm/SeqrdBluetooth_Prefix.pch.gch SeqrdBluetooth_Prefix.pch normal x86_64 objective-c com.apple.compilers.gcc.4_2
+s407655160.619988
+e407655162.790493
+r1
+xProcessPCH
+x/var/folders/bq/3syg96ns7m3gt7_0bv0z_9yr0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/SeqrdBluetooth_Prefix-hiqgxynfartdyccmjznbvycakapm/SeqrdBluetooth_Prefix.pch.gch
+xSeqrdBluetooth_Prefix.pch
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@36"Precompile SeqrdBluetooth_Prefix.pch407655160#407655162#0(0"0(0#0#56"/Users/joe/ObjC/SeqrdBluetooth/SeqrdBluetooth_Prefix.pch4317954048#1405"    cd /Users/joe/ObjC/SeqrdBluetooth    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c-header -arch x86_64 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/joe/ObjC/SeqrdBluetooth/build/SeqrdBluetooth.build/Debug/SeqrdBluetooth.build/SeqrdBluetooth-generated-files.hmap -I/Users/joe/ObjC/SeqrdBluetooth/build/SeqrdBluetooth.build/Debug/SeqrdBluetooth.build/SeqrdBluetooth-own-target-headers.hmap -I/Users/joe/ObjC/SeqrdBluetooth/build/SeqrdBluetooth.build/Debug/SeqrdBluetooth.build/SeqrdBluetooth-all-target-headers.hmap -iquote /Users/joe/ObjC/SeqrdBluetooth/build/SeqrdBluetooth.build/Debug/SeqrdBluetooth.build/SeqrdBluetooth-project-headers.hmap -F/Users/joe/ObjC/SeqrdBluetooth/build/Debug -I/Users/joe/ObjC/SeqrdBluetooth/build/Debug/include -I/Users/joe/ObjC/SeqrdBluetooth/build/SeqrdBluetooth.build/Debug/SeqrdBluetooth.build/DerivedSources/x86_64 -I/Users/joe/ObjC/SeqrdBluetooth/build/SeqrdBluetooth.build/Debug/SeqrdBluetooth.build/DerivedSources -c /Users/joe/ObjC/SeqrdBluetooth/SeqrdBluetooth_Prefix.pch -o /var/folders/bq/3syg96ns7m3gt7_0bv0z_9yr0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/SeqrdBluetooth_Prefix-hiqgxynfartdyccmjznbvycakapm/SeqrdBluetooth_Prefix.pch.gch0#
+
+CTouch /Users/joe/ObjC/SeqrdBluetooth/build/Debug/SeqrdBluetooth.app
+r0
+
