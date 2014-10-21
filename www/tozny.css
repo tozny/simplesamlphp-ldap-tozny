@@ -1,0 +1,88 @@
+@charset "UTF-8";
+
+html{
+    margin:0;
+    padding:0;
+    height:100%;
+}
+body{
+    /*background: url('http://galois.com/wp-content/uploads/2014/05/team.jpg') no-repeat #000 35% 0;*/
+    /* #256E6A */
+    /*background-size:cover !important;*/
+    margin:0;
+    padding:0;
+    height:100%;
+}
+label, .copyright {
+    color: #ccc;
+    font-size: 12pt;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    letter-spacing: 1px;
+    font-weight:300;
+}
+/*#content{border: 1px solid purple;}*/
+input[type="submit"], .qr {
+    margin-top: 10px;
+}
+#wrapper{
+    position:relative;
+    margin-top:0;
+    padding:0;
+}
+#add-device-btn {
+    margin-bottom: 10px;
+}
+.error-msg, .copyright {
+    text-align: center;
+}
+.error-msg {
+    padding: 5px 0;
+    background-color: #ff6666;
+    border: 1px solid red;
+    color: black;
+}
+h1, h4, .instruct {
+    color: white;
+}
+.instruct {
+    text-align: justify;
+}
+
+.overlay{
+    position:absolute;
+    top:0;
+    left:0;
+    height:100%;
+    width:100%;
+    background:#000;
+    opacity:0.6;
+    z-index:-1;
+    border-radius:36px;
+}
+.container {
+    margin-top:10px;
+}
+#provision, #login {
+    display: none;
+}
+.login-box{
+    padding-top:100px
+}
+#new-device button{
+    color:#ccc;
+}
+#logo{
+    padding:20px 0px;
+}
+#logo img{
+    width:200px
+}
+footer{
+    color:#fff;
+    padding:30px 0px 20px 0px;
+}
+.copyright a {
+    padding: 0 5px;
+    color: #fff;
+    text-decoration:underline;
+}
