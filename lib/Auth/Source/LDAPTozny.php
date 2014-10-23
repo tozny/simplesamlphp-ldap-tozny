@@ -306,7 +306,7 @@ class sspmod_ldapTozny2_Auth_Source_LDAPTozny extends SimpleSAML_Auth_Source {
             $user_record = NULL;
             try {$user_record = $this->toznyConfig->userGet($session_data['user_id']);}
             catch (Exception $e) {
-                $log_message = sprintf("Error retrieving TOZNY user record returned from userGet(). session_data: %s;", json_encode($session_data));
+                $log_message = sprintf("Error retrieving TOZNY user record returned from userGet(). session_data: %s; %s", json_encode($session_data), $e->getMessage());
                 SimpleSAML_Logger::error($log_message);
 
                 $user_message = 'Unable to login via TOZNY. Invalid user record.';
@@ -335,7 +335,7 @@ class sspmod_ldapTozny2_Auth_Source_LDAPTozny extends SimpleSAML_Auth_Source {
                     // attempt to bind to the LDAP server and retrieve the given user's attributes
                     try { $attributes = $this->ldapConfig->priv_login($user_id); }
                     catch (Exception $e) {
-                        $log_message = sprintf("Error retrieving LDAP properties for user %s. user_record: %s;", $user_id , json_encode($user_record));
+                        $log_message = sprintf("Error retrieving LDAP properties for user %s. user_record: %s; %s", $user_id , json_encode($user_record), $e->getMessage());
                         SimpleSAML_Logger::error($log_message);
 
                         $user_message = 'Unable to login via TOZNY. Unable to retrieve LDAP properties for TOZNY user.';
