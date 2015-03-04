@@ -1,5 +1,5 @@
 Package: simplesamlphp-ldap-tozny
-Version: 2.0.2
+Version: 2.0.3
 Maintainer: Kirk Peterson<kirk@tozny.com>
 Architecture: all
 Depends: simplesamlphp, tozny-api-php-client
