@@ -1,0 +1,6 @@
+Package: simplesamlphp-ldap-tozny
+Version: 2.0.2
+Maintainer: Kirk Peterson<kirk@tozny.com>
+Architecture: all
+Depends: simplesamlphp, tozny-api-php-client
+Description: Simple SAML PHP Auth Module that provides Tozny authentication, with LDAP fallback.
